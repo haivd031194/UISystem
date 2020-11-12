@@ -24,6 +24,8 @@
 
 using System.Collections;
 using Loxodon.Framework.Views;
+using Loxodon.Framework.Contexts;
+using Loxodon.Framework.Services;
 using Loxodon.Log;
 using UnityEngine;
 
@@ -32,11 +34,21 @@ namespace Loxodon.Framework.Examples
     public class Launcher : MonoBehaviour
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(Launcher));
+        
+        private ApplicationContext context;
+        
         private void Awake()
         {
             GlobalWindowManager windowManager = FindObjectOfType<GlobalWindowManager>();
             if (windowManager == null)
                 throw new NotFoundException("Not found the GlobalWindowManager.");
+            
+            context = Context.GetApplicationContext();
+
+            IServiceContainer container = context.GetContainer();
+            
+            /* Initialize the ui view locator and register UIViewLocator */
+            container.Register<IUIViewLocator>(new ResourcesViewLocator());
         }
 
         private IEnumerator Start()
@@ -46,7 +58,7 @@ namespace Loxodon.Framework.Examples
 
             yield return null;
 
-            IUIViewLocator locator = new ResourcesViewLocator();
+            var locator = context.GetService<IUIViewLocator>();
             
             var result = locator.LoadWindowAsync<LaunchWindow>(winContainer, "UI/Startup/Startup");
             while (!result.IsDone)
