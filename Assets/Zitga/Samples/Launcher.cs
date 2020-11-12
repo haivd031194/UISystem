@@ -48,7 +48,7 @@ namespace Loxodon.Framework.Examples
 
             IUIViewLocator locator = new ResourcesViewLocator();
             
-            var result = locator.LoadWindowAsync<StartupWindow>(winContainer, "UI/Startup/Startup");
+            var result = locator.LoadWindowAsync<LaunchWindow>(winContainer, "UI/Startup/Startup");
             while (!result.IsDone)
             {
                 Debug.LogFormat("Percentage: {0}% ", result.Progress);
