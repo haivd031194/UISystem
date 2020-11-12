@@ -22,34 +22,9 @@
  * SOFTWARE.
  */
 
-using System;
-using Loxodon.Framework.Views;
-using UnityEngine;
-using UnityEngine.UI;
-
-namespace Loxodon.Framework.Examples
+namespace Loxodon.Framework.Services
 {
-    public class StartupWindow : Window
+    public interface IServiceContainer : IServiceLocator, IServiceRegistry
     {
-        public Text progressBarText;
-        public Slider progressBarSlider;
-        public Text tipText;
-        public Button button;
-        private IDisposable subscription;
-
-        private IUIViewLocator viewLocator;
-
-        protected override void OnCreate(IBundle bundle)
-        {
-            
-        }
-
-        public override void DoDismiss()
-        {
-            base.DoDismiss();
-            if (subscription == null) return;
-            subscription.Dispose();
-            subscription = null;
-        }
     }
 }
