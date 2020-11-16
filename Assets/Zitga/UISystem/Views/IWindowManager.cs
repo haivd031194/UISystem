@@ -107,7 +107,7 @@ namespace Loxodon.Framework.Views
         /// </summary>
         /// <param name="window"></param>
         /// <returns></returns>
-        ITransition Show(IWindow window);
+        ITransition Show(IWindow window, IScreenProperties properties);
 
         /// <summary>
         /// </summary>

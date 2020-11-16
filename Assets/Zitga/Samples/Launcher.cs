@@ -36,10 +36,12 @@ namespace Loxodon.Framework.Examples
         private static readonly ILog log = LogManager.GetLogger(typeof(Launcher));
         
         private ApplicationContext context;
+
+        private GlobalWindowManager windowManager;
         
         private void Awake()
         {
-            GlobalWindowManager windowManager = FindObjectOfType<GlobalWindowManager>();
+            windowManager = FindObjectOfType<GlobalWindowManager>();
             if (windowManager == null)
                 throw new NotFoundException("Not found the GlobalWindowManager.");
             
@@ -49,33 +51,16 @@ namespace Loxodon.Framework.Examples
             
             /* Initialize the ui view locator and register UIViewLocator */
             container.Register<IUIViewLocator>(new ResourcesViewLocator());
+            /* register GlobalWindowManager */
+            container.Register(windowManager);
         }
 
         private IEnumerator Start()
         {
-            /* Create a window container */
-            WindowContainer winContainer = WindowContainer.Create("MAIN");
-
-            yield return null;
-
-            var locator = context.GetService<IUIViewLocator>();
-            
-            var result = locator.LoadWindowAsync<LaunchWindow>(winContainer, "UI/Startup/Startup");
-            while (!result.IsDone)
-            {
-                Debug.LogFormat("Percentage: {0}% ", result.Progress);
-                yield return null;
-            }
-
-            Debug.LogFormat("IsDone:{0} Result:{1}", result.IsDone, result.Result);
-            var window = result.Result;
-            window.Create();
-            ITransition transition = window.Show().OnStateChanged((w, state) =>
-            {
-                log.DebugFormat("Window:{0} State{1}",w.Name,state);
-            });
-            
-            yield return transition.WaitForDone();
+            log.Debug("Start");
+            yield return windowManager.Show(UIViewIds.StartupWindow);
+            yield return windowManager.Show(UIViewIds.LoginWindow);
+            log.Debug("End");
         }
     }
 }

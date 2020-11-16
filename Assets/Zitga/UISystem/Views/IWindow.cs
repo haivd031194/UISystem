@@ -130,6 +130,12 @@ namespace Loxodon.Framework.Views
         ///     windows with higher priority will be opened first.
         /// </summary>
         int WindowPriority { get; set; }
+        
+        /// <summary>
+        ///  The properties contain value of this visual
+        /// </summary>
+        IScreenProperties Properties { get; set; }
+
 
         /// <summary>
         ///     Triggered when the Visibility's value to be changed.

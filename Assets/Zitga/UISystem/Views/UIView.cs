@@ -30,7 +30,7 @@ using UnityEngine.EventSystems;
 namespace Loxodon.Framework.Views
 {
     [RequireComponent(typeof(RectTransform), typeof(CanvasGroup))]
-    public class UIView : UIBehaviour, IUIView
+    public class UIView: UIBehaviour, IUIView
     {
         private CanvasGroup canvasGroup;
         private RectTransform rectTransform;
@@ -46,7 +46,7 @@ namespace Loxodon.Framework.Views
             OnVisibilityChanged();
             base.OnDisable();
         }
-
+        
         public virtual string Name
         {
             get => !IsDestroyed() && gameObject != null ? gameObject.name : null;

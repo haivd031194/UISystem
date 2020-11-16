@@ -191,7 +191,7 @@ namespace Loxodon.Framework.Views
             return list;
         }
 
-        public ITransition Show(IWindow window)
+        public ITransition Show(IWindow window, IScreenProperties properties)
         {
             ShowTransition transition = new ShowTransition(this, (IManageable) window);
             GetTransitionExecutor().Execute(transition);
@@ -200,6 +200,10 @@ namespace Loxodon.Framework.Views
                 /* Control the layer of the window */
                 if (state == WindowState.VISIBLE)
                     MoveToIndex(w, transition.Layer);
+                
+                /* Just set properties when popup finish animation. Make sure they are smooth when show the window */
+                if (state == WindowState.ACTIVATION_ANIMATION_END)
+                    w.Properties = properties;
 
                 //if (state == WindowState.INVISIBLE)
                 //    this.MoveToLast(w);
@@ -350,8 +354,8 @@ namespace Loxodon.Framework.Views
                 if (window == null)
                     return null;
 
-                if (window is UIView)
-                    return (window as UIView).Transform;
+                if (window is IUIView)
+                    return (window as IUIView).Transform;
 
                 PropertyInfo propertyInfo = window.GetType().GetProperty("Transform");
                 if (propertyInfo != null)

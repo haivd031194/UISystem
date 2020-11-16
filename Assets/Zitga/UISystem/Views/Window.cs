@@ -24,6 +24,7 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using Loxodon.Framework.Asynchronous;
 using Loxodon.Log;
 using UnityEngine;
@@ -284,6 +285,8 @@ namespace Loxodon.Framework.Views
             }
         }
 
+        public IScreenProperties Properties { get; set; }
+
         public event EventHandler VisibilityChanged
         {
             add
@@ -402,13 +405,23 @@ namespace Loxodon.Framework.Views
 
         public ITransition Show(bool ignoreAnimation = false)
         {
+            return Show(null, ignoreAnimation);
+        }
+        
+        public ITransition Show(IScreenProperties properties)
+        {
+            return Show(properties, false);
+        }
+        
+        public ITransition Show(IScreenProperties properties, bool ignoreAnimation = false)
+        {
             if (dismissTransition != null || Dismissed)
                 throw new InvalidOperationException("The window has been destroyed");
 
             if (Visibility)
                 throw new InvalidOperationException("The window is already visible.");
 
-            return WindowManager.Show(this).DisableAnimation(ignoreAnimation);
+            return WindowManager.Show(this, properties).DisableAnimation(ignoreAnimation);
         }
 
         public ITransition Hide(bool ignoreAnimation = false)
