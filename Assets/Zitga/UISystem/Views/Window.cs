@@ -52,6 +52,8 @@ namespace Loxodon.Framework.Views
         private EventHandler visibilityChanged;
         private IWindowManager windowManager;
 
+        private GlobalWindowManager globalWindowManager;
+
         protected WindowState State
         {
             get => state;
@@ -343,8 +345,14 @@ namespace Loxodon.Framework.Views
 
         public IWindowManager WindowManager
         {
-            get => windowManager ?? (windowManager = FindObjectOfType<GlobalWindowManagerBase>());
+            get => windowManager ?? (windowManager = FindObjectOfType<GlobalWindowManager>());
             set => windowManager = value;
+        }
+        
+        public GlobalWindowManager CurrentGlobalWindowManager
+        {
+            get => globalWindowManager ?? (globalWindowManager = FindObjectOfType<GlobalWindowManager>());
+            set => globalWindowManager = value;
         }
 
         public bool Created { get; private set; }
@@ -407,12 +415,7 @@ namespace Loxodon.Framework.Views
         {
             return Show(null, ignoreAnimation);
         }
-        
-        public ITransition Show(IScreenProperties properties)
-        {
-            return Show(properties, false);
-        }
-        
+
         public ITransition Show(IScreenProperties properties, bool ignoreAnimation = false)
         {
             if (dismissTransition != null || Dismissed)

@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Collections;
+using System.Text.RegularExpressions;
 using Loxodon.Framework.Views;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,12 +25,12 @@ public class LoginWindow : Window
             return;
         }
 
-        Hide();
+        StartCoroutine(CurrentGlobalWindowManager.Hide(UIViewIds.LoginWindow));
     }
 
     private void OnClickCancel()
     {
-        Hide();
+        StartCoroutine(CurrentGlobalWindowManager.Hide(UIViewIds.LoginWindow));
     }
 
     private bool ValidateUsername(string username)

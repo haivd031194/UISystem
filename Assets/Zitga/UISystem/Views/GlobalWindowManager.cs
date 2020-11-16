@@ -24,7 +24,6 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using DuloGames.UI;
 using Loxodon.Framework.Contexts;
 using Loxodon.Log;
 using UnityEngine;
@@ -32,7 +31,7 @@ using UnityEngine;
 namespace Loxodon.Framework.Views
 {
     [RequireComponent(typeof(RectTransform), typeof(Canvas))]
-    public class GlobalWindowManager : GlobalWindowManagerBase
+    public class GlobalWindowManager : WindowManager
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(GlobalWindowManager));
 
@@ -51,7 +50,7 @@ namespace Loxodon.Framework.Views
         /// <summary>
         /// All showing windows in the game. Just contain window after finish animations.
         /// </summary> 
-        private Stack<string> showingWindow;
+        private List<IWindow> showingWindow;
 
         /// <summary>
         /// All loaded windows in the game. It contains all showing window collection
@@ -64,12 +63,12 @@ namespace Loxodon.Framework.Views
 
             loadingWindow = new Queue<string>();
 
-            showingWindow = new Stack<string>();
+            showingWindow = new List<IWindow>();
 
             loadedWindow = new Dictionary<string, IWindow>();
         }
 
-        public IEnumerator Show(string uiViewId)
+        public new IEnumerator Show(string uiViewId)
         {
             IWindow window;
 
@@ -116,9 +115,11 @@ namespace Loxodon.Framework.Views
 
             if (window != null && window.Visibility == false)
             {
+                showingWindow.Add(window);
+                
                 ITransition transition = window.Show().OnStateChanged((w, state) =>
                 {
-                    log.DebugFormat("Window:{0} State{1}", w.Name, state);
+                    // log.DebugFormat("Window Show:{0} State{1}", w.Name, state);
                 });
 
                 yield return transition.WaitForDone();
@@ -128,6 +129,33 @@ namespace Loxodon.Framework.Views
             {
                 var nextUIViewId = loadingWindow.Peek();
                 yield return Show(nextUIViewId);
+            }
+        }
+
+        public new IEnumerator Hide(string uiViewId)
+        {
+            loadedWindow.TryGetValue(uiViewId, out IWindow window);
+            if (window != null)
+            {
+                if (showingWindow.Contains(window) && window.Visibility)
+                {
+                    ITransition transition = window.Hide().OnStateChanged((w, state) =>
+                    {
+                        // log.DebugFormat("Window Hide:{0} State{1}", w.Name, state);
+                    });
+                
+                    yield return transition.WaitForDone();
+                
+                    showingWindow.Remove(window);
+                }
+                else
+                {
+                    log.WarnFormat("Window has already hid: {0}", uiViewId);
+                }
+            }
+            else
+            {
+                log.ErrorFormat("Window is not exist: {0}", uiViewId);
             }
         }
 
