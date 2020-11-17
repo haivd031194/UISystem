@@ -59,7 +59,6 @@ namespace Loxodon.Framework.Examples
         {
             log.Debug("Start");
             yield return windowManager.Show(UIViewIds.StartupWindow);
-            yield return windowManager.Show(UIViewIds.LoginWindow);
             log.Debug("End");
         }
     }
