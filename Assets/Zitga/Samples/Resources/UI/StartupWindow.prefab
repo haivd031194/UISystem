@@ -294,8 +294,9 @@ GameObject:
   - component: {fileID: 114000011485059922}
   - component: {fileID: 114000011835279766}
   - component: {fileID: 3982358515563139045}
+  - component: {fileID: -1999528569580044075}
   m_Layer: 5
-  m_Name: Startup
+  m_Name: StartupWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -467,6 +468,22 @@ MonoBehaviour:
   progressBarSlider: {fileID: 114000013170448662}
   tipText: {fileID: 114000011950960436}
   button: {fileID: 114000011835279766}
+--- !u!114 &-1999528569580044075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012008041232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86044145ce87be409eb3235ce4cb391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontal: 1
+  horizontalRange: {x: 0, y: 1}
+  vertical: 1
+  verticalRange: {x: 0, y: 1}
 --- !u!1 &1000012402441566
 GameObject:
   m_ObjectHideFlags: 0

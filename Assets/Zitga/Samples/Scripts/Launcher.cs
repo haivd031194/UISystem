@@ -58,7 +58,7 @@ namespace Loxodon.Framework.Examples
         private IEnumerator Start()
         {
             log.Debug("Start");
-            yield return windowManager.ShowWindowById(WindowIds.StartupWindow);
+            yield return windowManager.ShowWindowById(WindowIds.UIStartupWindow);
             log.Debug("End");
         }
     }
