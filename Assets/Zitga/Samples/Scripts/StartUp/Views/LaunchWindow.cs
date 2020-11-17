@@ -64,7 +64,7 @@ namespace Loxodon.Framework.Examples
 
         private void OnClickButton()
         {
-            StartCoroutine(OnOpenLoginWindow());
+            OnOpenLoginWindow();
         }
 
         private async void Unzip()
@@ -86,13 +86,13 @@ namespace Loxodon.Framework.Examples
             {
                 progressBarSlider.gameObject.SetActive(false);
                 tipText.text = "";
-                StartCoroutine(OnOpenLoginWindow());
+                OnOpenLoginWindow();
             }
         }
 
-        private IEnumerator OnOpenLoginWindow()
+        private void OnOpenLoginWindow()
         {
-            return windowManager.ShowWindowById(WindowIds.LoginWindow, new LoginWindowProperties());
+            CurrentGlobalWindowManager.OpenWindow(WindowIds.LoginWindow, new LoginWindowProperties());
         }
     }
 }

@@ -92,11 +92,18 @@ namespace Loxodon.Framework.Views
         /// </summary>
         /// <param name="windowId">Identifier.</param>
         /// <param name="properties">Properties.</param>
-        /// <typeparam name="T">The type of properties to be passed in.</typeparam>
         /// <seealso cref="AWindowProperties"/>
-        public void OpenWindow<T>(string windowId, T properties) where T : AWindowProperties
+        public void OpenWindow(string windowId, IScreenProperties properties)
         {
             StartCoroutine(ShowWindowById(windowId, properties));
+        }
+        
+        /// <summary>
+        /// Closes the Window with the given Id.
+        /// </summary>
+        /// <param name="window">Identifier.</param>
+        public void CloseWindow(IWindow window) {
+            StartCoroutine(HideWindow(window));
         }
         
         /// <summary>

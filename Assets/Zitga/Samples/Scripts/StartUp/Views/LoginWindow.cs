@@ -36,12 +36,12 @@ public class LoginWindow : Window<LoginWindowProperties>
             return;
         }
 
-        StartCoroutine(CurrentGlobalWindowManager.HideWindow(this));
+        CurrentGlobalWindowManager.CloseWindow(this);
     }
 
     private void OnClickCancel()
     {
-        StartCoroutine(CurrentGlobalWindowManager.HideWindow(this));
+        CurrentGlobalWindowManager.CloseWindow(this);
     }
 
     private bool ValidateUsername(string username)
