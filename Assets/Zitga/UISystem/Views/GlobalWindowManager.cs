@@ -24,12 +24,31 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Loxodon.Framework.Contexts;
 using Loxodon.Log;
 using UnityEngine;
 
 namespace Loxodon.Framework.Views
 {
+    /// <summary>
+    /// Contain properties need to show a window
+    /// </summary>
+    class WindowOpenProperties
+    {
+        // Id of the window: Path to load window
+        public string Id { get; private set; }
+
+        // Data when need to show window
+        public IScreenProperties Properties { get; private set; }
+
+        public WindowOpenProperties(string id, IScreenProperties properties)
+        {
+            Id = id;
+            Properties = properties;
+        }
+    }
+    
     [RequireComponent(typeof(RectTransform), typeof(Canvas))]
     public class GlobalWindowManager : WindowManager
     {
@@ -45,7 +64,7 @@ namespace Loxodon.Framework.Views
         /// Add when call to show
         /// Remove when showing animation finish
         /// </summary>
-        private Queue<string> loadingWindow;
+        private Queue<WindowOpenProperties> loadingWindow;
 
         /// <summary>
         /// All showing windows in the game. Just contain window after finish animations.
@@ -61,34 +80,66 @@ namespace Loxodon.Framework.Views
         {
             context = Context.GetApplicationContext();
 
-            loadingWindow = new Queue<string>();
+            loadingWindow = new Queue<WindowOpenProperties>();
 
             showingWindow = new List<IWindow>();
 
             loadedWindow = new Dictionary<string, IWindow>();
         }
 
-        public new IEnumerator Show(string uiViewId)
+        /// <summary>
+        /// Opens the Window with the given id, passing in Properties.
+        /// </summary>
+        /// <param name="windowId">Identifier.</param>
+        /// <param name="properties">Properties.</param>
+        /// <seealso cref="AWindowProperties"/>
+        public void OpenWindow(string windowId, IScreenProperties properties)
+        {
+            StartCoroutine(ShowWindowById(windowId, properties));
+        }
+        
+        /// <summary>
+        /// Closes the Window with the given Id.
+        /// </summary>
+        /// <param name="window">Identifier.</param>
+        public void CloseWindow(IWindow window) {
+            StartCoroutine(HideWindow(window));
+        }
+        
+        /// <summary>
+        /// Closes the Window with the given Id.
+        /// </summary>
+        /// <param name="windowId">Identifier.</param>
+        public void CloseWindow(string windowId) {
+            StartCoroutine(HideWindowById(windowId));
+        }
+
+        public IEnumerator ShowWindowById(string windowId)
+        {
+            yield return ShowWindowById(windowId, null);
+        }
+
+        public IEnumerator ShowWindowById(string windowId, IScreenProperties properties)
         {
             IWindow window;
 
-            if (IsWindowLoading(uiViewId))
+            if (IsWindowLoading(windowId))
             {
                 // may be can update model view after that
                 yield break;
             }
 
-            if (IsWindowLoaded(uiViewId))
+            if (IsWindowLoaded(windowId))
             {
-                loadedWindow.TryGetValue(uiViewId, out window);
+                loadedWindow.TryGetValue(windowId, out window);
             }
             else
             {
-                loadingWindow.Enqueue(uiViewId);
+                loadingWindow.Enqueue(new WindowOpenProperties(windowId, properties));
                 
                 var locator = context.GetService<IUIViewLocator>();
                 
-                var result = locator.LoadWindowAsync<IWindow>(uiViewId);
+                var result = locator.LoadWindowAsync<IWindow>(windowId);
 
                 while (!result.IsDone)
                 {
@@ -102,22 +153,22 @@ namespace Loxodon.Framework.Views
 
                 window.Create();
                 
-                string lastUIViewId = loadingWindow.Dequeue();
+                var lastWindowOpenProperties = loadingWindow.Dequeue();
 
-                if (lastUIViewId != uiViewId)
+                if (lastWindowOpenProperties.Id != windowId)
                 {
-                    log.ErrorFormat("Window is valid: {0} != {1}", lastUIViewId, uiViewId);
+                    log.ErrorFormat("Window is valid: {0} != {1}", lastWindowOpenProperties.Id, windowId);
                     yield break;
                 }
 
-                loadedWindow.Add(uiViewId, window);
+                loadedWindow.Add(windowId, window);
             }
 
             if (window != null && window.Visibility == false)
             {
                 showingWindow.Add(window);
                 
-                ITransition transition = window.Show().OnStateChanged((w, state) =>
+                ITransition transition = window.Show(properties).OnStateChanged((w, state) =>
                 {
                     // log.DebugFormat("Window Show:{0} State{1}", w.Name, state);
                 });
@@ -127,46 +178,56 @@ namespace Loxodon.Framework.Views
 
             if (loadingWindow.Count > 0)
             {
-                var nextUIViewId = loadingWindow.Peek();
-                yield return Show(nextUIViewId);
+                var nextWindowOpenProperties = loadingWindow.Peek();
+                yield return ShowWindowById(nextWindowOpenProperties.Id, nextWindowOpenProperties.Properties);
             }
         }
 
-        public new IEnumerator Hide(string uiViewId)
+        public IEnumerator HideWindow(IWindow window)
         {
-            loadedWindow.TryGetValue(uiViewId, out IWindow window);
-            if (window != null)
+            if (showingWindow.Contains(window) && window.Visibility)
             {
-                if (showingWindow.Contains(window) && window.Visibility)
+                ITransition transition = window.Hide().OnStateChanged((w, state) =>
                 {
-                    ITransition transition = window.Hide().OnStateChanged((w, state) =>
-                    {
-                        // log.DebugFormat("Window Hide:{0} State{1}", w.Name, state);
-                    });
+                    // log.DebugFormat("Window Hide:{0} State{1}", w.Name, state);
+                });
                 
-                    yield return transition.WaitForDone();
+                yield return transition.WaitForDone();
                 
-                    showingWindow.Remove(window);
-                }
-                else
-                {
-                    log.WarnFormat("Window has already hid: {0}", uiViewId);
-                }
+                showingWindow.Remove(window);
             }
             else
             {
-                log.ErrorFormat("Window is not exist: {0}", uiViewId);
+                log.WarnFormat("Window has already hid: {0}", nameof(window));
             }
+        }
+
+        public IEnumerator HideWindowById(string windowId)
+        {
+            loadedWindow.TryGetValue(windowId, out IWindow window);
+            if (window != null)
+            {
+                yield return HideWindow(window);
+            }
+            else
+            {
+                log.ErrorFormat("Window is not exist: {0}", windowId);
+            }
+        }
+
+        public void CloseTopPopup()
+        {
+            StartCoroutine(HideWindow(Current));
         }
 
         /// <summary>
         /// Is window loading or in queue to load?
         /// </summary>
-        /// <param name="uiViewId"></param>
+        /// <param name="windowId"></param>
         /// <returns></returns>
-        private bool IsWindowLoading(string uiViewId)
+        private bool IsWindowLoading(string windowId)
         {
-            return loadingWindow.Contains(uiViewId);
+            return loadingWindow.Any(x => x.Id.Equals(windowId)) ;
         }
 
         /// <summary>

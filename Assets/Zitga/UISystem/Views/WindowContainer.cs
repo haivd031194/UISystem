@@ -105,9 +105,9 @@ namespace Loxodon.Framework.Views
             localWindowManager.Clear();
         }
 
-        public ITransition Show(IWindow window, IScreenProperties properties)
+        public ITransition Show(IWindow window)
         {
-            return localWindowManager.Show(window, properties);
+            return localWindowManager.Show(window);
         }
 
         public ITransition Hide(IWindow window)
@@ -139,7 +139,7 @@ namespace Loxodon.Framework.Views
             WindowContainer container = root.AddComponent<WindowContainer>();
             container.WindowManager = windowManager;
             container.Create();
-            container.Show(true);
+            container.Show(null, true);
             return container;
         }
 

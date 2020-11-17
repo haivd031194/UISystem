@@ -27,7 +27,6 @@ using System.Collections;
 using Cysharp.Threading.Tasks;
 using Loxodon.Framework.Contexts;
 using Loxodon.Framework.Views;
-using Loxodon.Log;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,8 +34,6 @@ namespace Loxodon.Framework.Examples
 {
     public class LaunchWindow : Window
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(LaunchWindow));
-        
         public Text progressBarText;
         public Slider progressBarSlider;
         public Text tipText;
@@ -48,9 +45,8 @@ namespace Loxodon.Framework.Examples
         protected override void OnCreate(IBundle bundle)
         {
             windowManager = Context.GetApplicationContext().GetService<GlobalWindowManager>();
-            
+
             button.onClick.AddListener(OnClickButton);
-            
         }
 
         protected override void OnShow()
@@ -68,7 +64,7 @@ namespace Loxodon.Framework.Examples
 
         private void OnClickButton()
         {
-            StartCoroutine(OnOpenLoginWindow());
+            OnOpenLoginWindow();
         }
 
         private async void Unzip()
@@ -90,13 +86,13 @@ namespace Loxodon.Framework.Examples
             {
                 progressBarSlider.gameObject.SetActive(false);
                 tipText.text = "";
-                StartCoroutine(OnOpenLoginWindow());
+                OnOpenLoginWindow();
             }
         }
-        
-        protected IEnumerator OnOpenLoginWindow()
+
+        private void OnOpenLoginWindow()
         {
-            return windowManager.Show(UIViewIds.LoginWindow);
+            CurrentGlobalWindowManager.OpenWindow(WindowIds.LoginWindow, new LoginWindowProperties());
         }
     }
 }

@@ -84,11 +84,13 @@ namespace Loxodon.Framework.Views
 
         public WindowState State { get; }
     }
+    
+    public interface IWindow : IWindow<AWindowProperties>{}
 
     /// <summary>
     ///     Window
     /// </summary>
-    public interface IWindow
+    public interface IWindow<TProps> where TProps : AWindowProperties
     {
         /// <summary>
         ///     The name of the window.
@@ -130,12 +132,6 @@ namespace Loxodon.Framework.Views
         ///     windows with higher priority will be opened first.
         /// </summary>
         int WindowPriority { get; set; }
-        
-        /// <summary>
-        ///  The properties contain value of this visual
-        /// </summary>
-        IScreenProperties Properties { get; set; }
-
 
         /// <summary>
         ///     Triggered when the Visibility's value to be changed.
@@ -166,7 +162,7 @@ namespace Loxodon.Framework.Views
         /// <summary>
         /// </summary>
         /// <exception cref="InvalidOperationException"></exception>
-        ITransition Show(bool ignoreAnimation = false);
+        ITransition Show(IScreenProperties props, bool ignoreAnimation = false);
 
         /// <summary>
         /// </summary>
