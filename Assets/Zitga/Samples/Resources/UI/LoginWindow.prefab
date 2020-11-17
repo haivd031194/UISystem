@@ -251,8 +251,9 @@ GameObject:
   - component: {fileID: 114000011764595210}
   - component: {fileID: 5479605457321674498}
   - component: {fileID: 8003780882970063470}
+  - component: {fileID: -9185546634301118037}
   m_Layer: 5
-  m_Name: Login
+  m_Name: LoginWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,6 +380,22 @@ MonoBehaviour:
   from: 1
   to: 0
   duration: 0.2
+--- !u!114 &-9185546634301118037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011205695590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86044145ce87be409eb3235ce4cb391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontal: 1
+  horizontalRange: {x: 0, y: 1}
+  vertical: 1
+  verticalRange: {x: 0, y: 1}
 --- !u!1 &1000011324644622
 GameObject:
   m_ObjectHideFlags: 0
