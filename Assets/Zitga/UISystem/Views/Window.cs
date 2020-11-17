@@ -24,6 +24,7 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using Loxodon.Framework.Asynchronous;
 using Loxodon.Log;
 using UnityEngine;
@@ -50,6 +51,8 @@ namespace Loxodon.Framework.Views
         private EventHandler<WindowStateEventArgs> stateChanged;
         private EventHandler visibilityChanged;
         private IWindowManager windowManager;
+
+        private GlobalWindowManager globalWindowManager;
 
         protected WindowState State
         {
@@ -284,6 +287,8 @@ namespace Loxodon.Framework.Views
             }
         }
 
+        public IScreenProperties Properties { get; set; }
+
         public event EventHandler VisibilityChanged
         {
             add
@@ -340,8 +345,14 @@ namespace Loxodon.Framework.Views
 
         public IWindowManager WindowManager
         {
-            get => windowManager ?? (windowManager = FindObjectOfType<GlobalWindowManagerBase>());
+            get => windowManager ?? (windowManager = FindObjectOfType<GlobalWindowManager>());
             set => windowManager = value;
+        }
+        
+        public GlobalWindowManager CurrentGlobalWindowManager
+        {
+            get => globalWindowManager ?? (globalWindowManager = FindObjectOfType<GlobalWindowManager>());
+            set => globalWindowManager = value;
         }
 
         public bool Created { get; private set; }
@@ -402,13 +413,18 @@ namespace Loxodon.Framework.Views
 
         public ITransition Show(bool ignoreAnimation = false)
         {
+            return Show(null, ignoreAnimation);
+        }
+
+        public ITransition Show(IScreenProperties properties, bool ignoreAnimation = false)
+        {
             if (dismissTransition != null || Dismissed)
                 throw new InvalidOperationException("The window has been destroyed");
 
             if (Visibility)
                 throw new InvalidOperationException("The window is already visible.");
 
-            return WindowManager.Show(this).DisableAnimation(ignoreAnimation);
+            return WindowManager.Show(this, properties).DisableAnimation(ignoreAnimation);
         }
 
         public ITransition Hide(bool ignoreAnimation = false)

@@ -23,7 +23,11 @@
  */
 
 using System;
+using System.Collections;
+using Cysharp.Threading.Tasks;
+using Loxodon.Framework.Contexts;
 using Loxodon.Framework.Views;
+using Loxodon.Log;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,17 +35,27 @@ namespace Loxodon.Framework.Examples
 {
     public class LaunchWindow : Window
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(LaunchWindow));
+        
         public Text progressBarText;
         public Slider progressBarSlider;
         public Text tipText;
         public Button button;
         private IDisposable subscription;
 
-        private IUIViewLocator viewLocator;
+        private GlobalWindowManager windowManager;
 
         protected override void OnCreate(IBundle bundle)
         {
+            windowManager = Context.GetApplicationContext().GetService<GlobalWindowManager>();
             
+            button.onClick.AddListener(OnClickButton);
+            
+        }
+
+        protected override void OnShow()
+        {
+            Unzip();
         }
 
         public override void DoDismiss()
@@ -50,6 +64,39 @@ namespace Loxodon.Framework.Examples
             if (subscription == null) return;
             subscription.Dispose();
             subscription = null;
+        }
+
+        private void OnClickButton()
+        {
+            StartCoroutine(OnOpenLoginWindow());
+        }
+
+        private async void Unzip()
+        {
+            tipText.text = "Do not play with the knife. it's very sharp";
+            progressBarSlider.gameObject.SetActive(true);
+            try
+            {
+                var progress = 0f;
+                while (progress < 1f)
+                {
+                    progress += 0.01f;
+                    progressBarSlider.value = progress;
+                    progressBarText.text = $"{progress * 100}%";
+                    await new WaitForSecondsRealtime(0.02f);
+                }
+            }
+            finally
+            {
+                progressBarSlider.gameObject.SetActive(false);
+                tipText.text = "";
+                StartCoroutine(OnOpenLoginWindow());
+            }
+        }
+        
+        protected IEnumerator OnOpenLoginWindow()
+        {
+            return windowManager.Show(UIViewIds.LoginWindow);
         }
     }
 }

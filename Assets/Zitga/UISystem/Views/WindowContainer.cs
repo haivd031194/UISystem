@@ -105,9 +105,9 @@ namespace Loxodon.Framework.Views
             localWindowManager.Clear();
         }
 
-        public ITransition Show(IWindow window)
+        public ITransition Show(IWindow window, IScreenProperties properties)
         {
-            return localWindowManager.Show(window);
+            return localWindowManager.Show(window, properties);
         }
 
         public ITransition Hide(IWindow window)
