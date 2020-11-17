@@ -24,19 +24,21 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
 using Loxodon.Framework.Asynchronous;
 using Loxodon.Log;
 using UnityEngine;
 using IAsyncResult = Loxodon.Framework.Asynchronous.IAsyncResult;
+using IPromise = Loxodon.Framework.Asynchronous.IPromise;
 
 namespace Loxodon.Framework.Views
 {
+    public abstract class Window : Window<AWindowProperties>{}
+    
     [DisallowMultipleComponent]
     [SuppressMessage("ReSharper", "DelegateSubtraction")]
-    public abstract class Window : WindowView, IManageable
+    public abstract class Window<TProps> : WindowView, IManageable where TProps : AWindowProperties
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(Window));
+        protected static readonly ILog log = LogManager.GetLogger(typeof(Window<TProps>));
 
         [SerializeField] private WindowType windowType = WindowType.FULL;
 
@@ -44,6 +46,7 @@ namespace Loxodon.Framework.Views
 
         private readonly object _lock = new object();
         private bool activated;
+        private TProps properties;
         private EventHandler activatedChanged;
         private ITransition dismissTransition;
         private EventHandler onDismissed;
@@ -287,7 +290,20 @@ namespace Loxodon.Framework.Views
             }
         }
 
-        public IScreenProperties Properties { get; set; }
+        public TProps Properties
+        {
+            get
+            {
+                return properties;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    SetProperties(value);
+                }
+            }
+        }
 
         public event EventHandler VisibilityChanged
         {
@@ -410,21 +426,18 @@ namespace Loxodon.Framework.Views
             State = WindowState.CREATE_END;
         }
 
-
-        public ITransition Show(bool ignoreAnimation = false)
-        {
-            return Show(null, ignoreAnimation);
-        }
-
-        public ITransition Show(IScreenProperties properties, bool ignoreAnimation = false)
+        public ITransition Show(IScreenProperties props, bool ignoreAnimation = false)
         {
             if (dismissTransition != null || Dismissed)
                 throw new InvalidOperationException("The window has been destroyed");
 
             if (Visibility)
                 throw new InvalidOperationException("The window is already visible.");
-
-            return WindowManager.Show(this, properties).DisableAnimation(ignoreAnimation);
+            
+            if (props != null)
+                SetProperties(props);
+            
+            return WindowManager.Show(this).DisableAnimation(ignoreAnimation);
         }
 
         public ITransition Hide(bool ignoreAnimation = false)
@@ -451,6 +464,24 @@ namespace Loxodon.Framework.Views
 
             dismissTransition = WindowManager.Dismiss(this).DisableAnimation(ignoreAnimation);
             return dismissTransition;
+        }
+
+        /// <summary>
+        /// When setting the properties, this method is called.
+        /// This way, you can extend the usage of your properties by
+        /// certain conditions.
+        /// </summary>
+        /// <param name="props">Properties.</param>
+        public void SetProperties(IScreenProperties props)
+        {
+            if (props != null)
+            {
+                if (props is TProps windowProperties)
+                {
+                    properties = windowProperties;
+                    OnPropertiesSet();
+                }
+            }
         }
 
         protected void RaiseActivatedChanged()
@@ -499,8 +530,7 @@ namespace Loxodon.Framework.Views
         {
             try
             {
-                if (stateChanged != null)
-                    stateChanged(this, new WindowStateEventArgs(windowState));
+                stateChanged?.Invoke(this, new WindowStateEventArgs(windowState));
             }
             catch (Exception e)
             {
@@ -531,6 +561,14 @@ namespace Loxodon.Framework.Views
         }
 
         protected virtual void OnDismiss()
+        {
+        }
+
+        /// <summary>
+        /// When Properties are set for this screen, this method is called.
+        /// At this point, you can safely access Properties.
+        /// </summary>
+        protected virtual void OnPropertiesSet()
         {
         }
     }

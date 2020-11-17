@@ -4,7 +4,13 @@ using Loxodon.Framework.Views;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoginWindow : Window
+public class LoginWindowProperties : AWindowProperties
+{
+    public string name = "Hai";
+    public int level = 5;
+}
+
+public class LoginWindow : Window<LoginWindowProperties>
 {
     public InputField username;
     public InputField password;
@@ -17,20 +23,25 @@ public class LoginWindow : Window
         cancelButton.onClick.AddListener(OnClickCancel);
     }
 
+    protected override void OnPropertiesSet()
+    {
+        log.Debug(Properties.name);
+    }
+
     private void OnClickConfirm()
     {
         if (!(ValidateUsername(username.text) && ValidatePassword(password.text)))
         {
-            Debug.Log("Input is not valid");
+            log.Debug("Input is not valid");
             return;
         }
 
-        StartCoroutine(CurrentGlobalWindowManager.Hide(UIViewIds.LoginWindow));
+        StartCoroutine(CurrentGlobalWindowManager.HideWindow(this));
     }
 
     private void OnClickCancel()
     {
-        StartCoroutine(CurrentGlobalWindowManager.Hide(UIViewIds.LoginWindow));
+        StartCoroutine(CurrentGlobalWindowManager.HideWindow(this));
     }
 
     private bool ValidateUsername(string username)
