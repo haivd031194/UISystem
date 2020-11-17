@@ -23,7 +23,6 @@
  */
 
 using System;
-using System.Collections;
 using Cysharp.Threading.Tasks;
 using Loxodon.Framework.Contexts;
 using Loxodon.Framework.Views;
@@ -92,7 +91,7 @@ namespace Loxodon.Framework.Examples
 
         private void OnOpenLoginWindow()
         {
-            CurrentGlobalWindowManager.OpenWindow(WindowIds.LoginWindow, new LoginWindowProperties());
+            CurrentGlobalWindowManager.OpenWindow(WindowIds.UILoginWindow, new LoginWindowProperties());
         }
     }
 }
