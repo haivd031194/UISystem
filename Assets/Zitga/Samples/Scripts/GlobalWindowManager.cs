@@ -22,10 +22,12 @@
  * SOFTWARE.
  */
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Loxodon.Framework.Contexts;
+using Loxodon.Framework.Examples;
 using Loxodon.Log;
 using UnityEngine;
 
@@ -48,9 +50,9 @@ namespace Loxodon.Framework.Views
             Properties = properties;
         }
     }
-    
+
     [RequireComponent(typeof(RectTransform), typeof(Canvas))]
-    public class GlobalWindowManager : WindowManager
+    public class GlobalWindowManager : WindowManager, IUpdateSystem
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(GlobalWindowManager));
 
@@ -70,6 +72,11 @@ namespace Loxodon.Framework.Views
         /// All showing windows in the game. Just contain window after finish animations.
         /// </summary> 
         private List<IWindow> showingWindow;
+        
+        /// <summary>
+        /// All showing windows in the game. Just contain window after finish animations.
+        /// </summary> 
+        private List<IWindow> hidingWindow;
 
         /// <summary>
         /// All loaded windows in the game. It contains all showing window collection
@@ -83,8 +90,22 @@ namespace Loxodon.Framework.Views
             loadingWindow = new Queue<WindowOpenProperties>();
 
             showingWindow = new List<IWindow>();
+            
+            hidingWindow = new List<IWindow>();
 
             loadedWindow = new Dictionary<string, IWindow>();
+        }
+
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            context.GetService<GlobalUpdateSystem>().Add(this);
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            context.GetService<GlobalUpdateSystem>().Remove(this);
         }
 
         /// <summary>
@@ -97,20 +118,22 @@ namespace Loxodon.Framework.Views
         {
             StartCoroutine(ShowWindowById(windowId, properties));
         }
-        
+
         /// <summary>
         /// Closes the Window with the given Id.
         /// </summary>
         /// <param name="window">Identifier.</param>
-        public void CloseWindow(IWindow window) {
+        public void CloseWindow(IWindow window)
+        {
             StartCoroutine(HideWindow(window));
         }
-        
+
         /// <summary>
         /// Closes the Window with the given Id.
         /// </summary>
         /// <param name="windowId">Identifier.</param>
-        public void CloseWindow(string windowId) {
+        public void CloseWindow(string windowId)
+        {
             StartCoroutine(HideWindowById(windowId));
         }
 
@@ -136,9 +159,9 @@ namespace Loxodon.Framework.Views
             else
             {
                 loadingWindow.Enqueue(new WindowOpenProperties(windowId, properties));
-                
+
                 var locator = context.GetService<IUIViewLocator>();
-                
+
                 var result = locator.LoadWindowAsync<IWindow>(windowId);
 
                 while (!result.IsDone)
@@ -152,7 +175,7 @@ namespace Loxodon.Framework.Views
                 window = result.Result;
 
                 window.Create();
-                
+
                 var lastWindowOpenProperties = loadingWindow.Dequeue();
 
                 if (lastWindowOpenProperties.Id != windowId)
@@ -167,7 +190,7 @@ namespace Loxodon.Framework.Views
             if (window != null && window.Visibility == false)
             {
                 showingWindow.Add(window);
-                
+
                 ITransition transition = window.Show(properties).OnStateChanged((w, state) =>
                 {
                     // log.DebugFormat("Window Show:{0} State{1}", w.Name, state);
@@ -185,16 +208,25 @@ namespace Loxodon.Framework.Views
 
         public IEnumerator HideWindow(IWindow window)
         {
+            if (hidingWindow.Contains(window))
+            {
+                log.WarnFormat("Window was hiding: {0}", nameof(window));
+                yield break;
+            }
+            
             if (showingWindow.Contains(window) && window.Visibility)
             {
+                hidingWindow.Add(window);
+                
                 ITransition transition = window.Hide().OnStateChanged((w, state) =>
                 {
                     // log.DebugFormat("Window Hide:{0} State{1}", w.Name, state);
                 });
-                
+
                 yield return transition.WaitForDone();
-                
+
                 showingWindow.Remove(window);
+                hidingWindow.Remove(window);
             }
             else
             {
@@ -215,9 +247,23 @@ namespace Loxodon.Framework.Views
             }
         }
 
-        public void CloseTopPopup()
+        protected void CloseTopPopup()
         {
-            StartCoroutine(HideWindow(Current));
+            if (Current == null)
+            {
+                log.Error("No available window to close");
+            }
+            else
+            {
+                if (Current as LaunchWindow)
+                {
+                    log.Warn("Do something! Can't close this popup");
+                }
+                else
+                {
+                    StartCoroutine(HideWindow(Current));
+                }
+            }
         }
 
         /// <summary>
@@ -227,7 +273,7 @@ namespace Loxodon.Framework.Views
         /// <returns></returns>
         private bool IsWindowLoading(string windowId)
         {
-            return loadingWindow.Any(x => x.Id.Equals(windowId)) ;
+            return loadingWindow.Any(x => x.Id.Equals(windowId));
         }
 
         /// <summary>
@@ -238,6 +284,17 @@ namespace Loxodon.Framework.Views
         private bool IsWindowLoaded(string uiViewId)
         {
             return loadedWindow.ContainsKey(uiViewId);
+        }
+
+        public void OnUpdate(float deltaTime)
+        {
+#if UNITY_ANDROID
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                // log.DebugFormat("Current window: {0}", Current.Name);
+                CloseTopPopup();
+            }
+#endif
         }
     }
 }

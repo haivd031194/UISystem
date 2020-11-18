@@ -22,6 +22,7 @@
  * SOFTWARE.
  */
 
+using System;
 using System.Collections;
 using Loxodon.Framework.Views;
 using Loxodon.Framework.Contexts;
@@ -34,23 +35,37 @@ namespace Loxodon.Framework.Examples
     public class Launcher : MonoBehaviour
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(Launcher));
-        
+
         private ApplicationContext context;
 
         private GlobalWindowManager windowManager;
-        
+
+        private GlobalUpdateSystem globalUpdateSystem;
+
         private void Awake()
         {
-            windowManager = FindObjectOfType<GlobalWindowManager>();
-            if (windowManager == null)
-                throw new NotFoundException("Not found the GlobalWindowManager.");
-            
             context = Context.GetApplicationContext();
 
+            RegisterService();
+        }
+
+        private void RegisterService()
+        {
             IServiceContainer container = context.GetContainer();
-            
+
             /* Initialize the ui view locator and register UIViewLocator */
             container.Register<IUIViewLocator>(new ResourcesViewLocator());
+
+            globalUpdateSystem = new GlobalUpdateSystem();
+            /* register IUpdateSystem */
+            container.Register(globalUpdateSystem);
+
+#if UNITY_EDITOR
+            windowManager = FindObjectOfType<GlobalWindowManager>();
+            if (windowManager != null)
+                throw new NotFoundException("Exist the GlobalWindowManager.");
+#endif
+            windowManager = GetComponentInChildren<Canvas>().gameObject.AddComponent<GlobalWindowManager>();
             /* register GlobalWindowManager */
             container.Register(windowManager);
         }
@@ -60,6 +75,11 @@ namespace Loxodon.Framework.Examples
             log.Debug("Start");
             yield return windowManager.ShowWindowById(WindowIds.UIStartupWindow);
             log.Debug("End");
+        }
+
+        private void Update()
+        {
+            globalUpdateSystem.OnUpdate(Time.deltaTime);
         }
     }
 }
