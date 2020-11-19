@@ -29,6 +29,7 @@ using Loxodon.Framework.Contexts;
 using Loxodon.Framework.Services;
 using Loxodon.Log;
 using UnityEngine;
+using Zitga.Sound;
 
 namespace Loxodon.Framework.Examples
 {
@@ -55,10 +56,14 @@ namespace Loxodon.Framework.Examples
 
             /* Initialize the ui view locator and register UIViewLocator */
             container.Register<IUIViewLocator>(new ResourcesViewLocator());
-
-            globalUpdateSystem = new GlobalUpdateSystem();
+            
             /* register IUpdateSystem */
-            container.Register(globalUpdateSystem);
+            container.Register(new GlobalUpdateSystem());
+           
+            /* register IUpdateSystem */
+            container.Register(new SoundManager());
+
+            globalUpdateSystem = context.GetService <GlobalUpdateSystem>();
 
 #if UNITY_EDITOR
             windowManager = FindObjectOfType<GlobalWindowManager>();
