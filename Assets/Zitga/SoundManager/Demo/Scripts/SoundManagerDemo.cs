@@ -1,24 +1,66 @@
 ﻿using System;
+using Loxodon.Framework.Contexts;
+using Loxodon.Framework.Examples;
+using Loxodon.Framework.Services;
+using Loxodon.Framework.Views;
+using Loxodon.Log;
 using UnityEngine;
 using UnityEngine.UI;
 using Zitga.Sound;
 
-public class EazysoundManagerDemo : MonoBehaviour
+public class SoundManagerDemo : MonoBehaviour
 {
     public EazySoundDemoAudioControls[] AudioControls;
     public Slider globalVolSlider;
     public Slider globalMusicVolSlider;
     public Slider globalSoundVolSlider;
 
-    private soundManager soundManager;
+    private SoundManager soundManager;
+
+    private ApplicationContext context;
+
+    private GlobalWindowManager windowManager;
+
+    private GlobalUpdateSystem globalUpdateSystem;
 
     private void Awake()
     {
-        soundManager = new soundManager();
+        context = Context.GetApplicationContext();
+
+        RegisterService();
+    }
+
+    private void RegisterService()
+    {
+        IServiceContainer container = context.GetContainer();
+
+        /* Initialize the ui view locator and register UIViewLocator */
+        container.Register<IUIViewLocator>(new ResourcesViewLocator());
+            
+        /* register IUpdateSystem */
+        container.Register(new GlobalUpdateSystem());
+           
+        /* register IUpdateSystem */
+        container.Register(new SoundManager());
+
+        globalUpdateSystem = context.GetService <GlobalUpdateSystem>();
+
+        soundManager = context.GetService<SoundManager>();
+
+#if UNITY_EDITOR
+        windowManager = FindObjectOfType<GlobalWindowManager>();
+        if (windowManager != null)
+            throw new NotFoundException("Exist the GlobalWindowManager.");
+#endif
+        windowManager = GetComponentInChildren<Canvas>().gameObject.AddComponent<GlobalWindowManager>();
+        /* register GlobalWindowManager */
+        container.Register(windowManager);
     }
 
     private void Update ()
     {
+        globalUpdateSystem.OnUpdate(Time.deltaTime);
+        
         // Update UI
         for(int i=0; i < AudioControls.Length; i++)
         {

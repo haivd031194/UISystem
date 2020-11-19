@@ -1,12 +1,14 @@
-﻿using UnityEngine;
+﻿using Loxodon.Framework.Contexts;
+using UnityEngine;
 
-namespace Hellmade.Sound
+namespace Zitga.Sound
 {
     /// <summary>
     /// The audio object
     /// </summary>
     public class Audio
     {
+        private SoundManager SoundManager { get; set; }
         /// <summary>
         /// The ID of the Audio
         /// </summary>
@@ -38,7 +40,7 @@ namespace Hellmade.Sound
         public bool Activated { get; private set; }
 
         /// <summary>
-        /// Whether the audio is currently pooled. Do not modify this value, it is specifically used by EazySoundManager.
+        /// Whether the audio is currently pooled. Do not modify this value, it is specifically used by SoundManager.
         /// </summary>
         public bool Pooled { get; set; }
 
@@ -48,27 +50,17 @@ namespace Hellmade.Sound
         public float Volume { get; private set; }
 
         /// <summary>
-        /// The audio source that is responsible for this audio. Do not modify the audiosource directly as it could result to unpredictable behaviour. Use the Audio class instead.
+        /// The audio source that is responsible for this audio. Do not modify the audioSource directly as it could result to unpredictable behaviour. Use the Audio class instead.
         /// </summary>
         public AudioSource AudioSource { get; private set; }
 
         /// <summary>
         /// The source transform of the audio.
         /// </summary>
-        public Transform SourceTransform
+        private Transform SourceTransform
         {
-            get { return sourceTransform; }
-            set
-            {
-                if(value == null)
-                {
-                    sourceTransform = EazySoundManager.Gameobject.transform;
-                }
-                else
-                {
-                    sourceTransform = value;
-                }
-            }
+            get => sourceTransform;
+            set => sourceTransform = value == null ? SoundManager.transform : value;
         }
 
         /// <summary>
@@ -76,8 +68,8 @@ namespace Hellmade.Sound
         /// </summary>
         public AudioClip Clip
         {
-            get { return clip; }
-            set
+            get => clip;
+            private set
             {
                 clip = value;
                 if (AudioSource != null)
@@ -90,9 +82,9 @@ namespace Hellmade.Sound
         /// <summary>
         /// Whether the audio will be lopped
         /// </summary>
-        public bool Loop
+        private bool Loop
         {
-            get { return loop; }
+            get => loop;
             set
             {
                 loop = value;
@@ -106,9 +98,9 @@ namespace Hellmade.Sound
         /// <summary>
         /// Whether the audio is muted
         /// </summary>
-        public bool Mute
+        private bool Mute
         {
-            get { return mute; }
+            get => mute;
             set
             {
                 mute = value;
@@ -122,9 +114,9 @@ namespace Hellmade.Sound
         /// <summary>
         /// Sets the priority of the audio
         /// </summary>
-        public int Priority
+        private int Priority
         {
-            get { return priority; }
+            get => priority;
             set
             {
                 priority = Mathf.Clamp(value, 0, 256);
@@ -138,9 +130,9 @@ namespace Hellmade.Sound
         /// <summary>
         /// The pitch of the audio
         /// </summary>
-        public float Pitch
+        private float Pitch
         {
-            get { return pitch; }
+            get => pitch;
             set
             {
                 pitch = Mathf.Clamp(value, -3, 3);
@@ -154,9 +146,9 @@ namespace Hellmade.Sound
         /// <summary>
         /// Pans a playing sound in a stereo way (left or right). This only applies to sounds that are Mono or Stereo.
         /// </summary>
-        public float StereoPan
+        private float StereoPan
         {
-            get { return stereoPan; }
+            get => stereoPan;
             set
             {
                 stereoPan = Mathf.Clamp(value, -1, 1);
@@ -168,11 +160,11 @@ namespace Hellmade.Sound
         }
 
         /// <summary>
-        /// Sets how much this AudioSource is affected by 3D spatialisation calculations (attenuation, doppler etc). 0.0 makes the sound full 2D, 1.0 makes it full 3D.
+        /// Sets how much this AudioSource is affected by 3D specialisation calculations (attenuation, doppler etc). 0.0 makes the sound full 2D, 1.0 makes it full 3D.
         /// </summary>
-        public float SpatialBlend
+        private float SpatialBlend
         {
-            get { return spatialBlend; }
+            get => spatialBlend;
             set
             {
                 spatialBlend = Mathf.Clamp01(value);
@@ -186,9 +178,9 @@ namespace Hellmade.Sound
         /// <summary>
         /// The amount by which the signal from the AudioSource will be mixed into the global reverb associated with the Reverb Zones.
         /// </summary>
-        public float ReverbZoneMix
+        private float ReverbZoneMix
         {
-            get { return reverbZoneMix; }
+            get => reverbZoneMix;
             set
             {
                 reverbZoneMix = Mathf.Clamp(value, 0, 1.1f);
@@ -202,9 +194,9 @@ namespace Hellmade.Sound
         /// <summary>
         /// The doppler scale of the audio
         /// </summary>
-        public float DopplerLevel
+        private float DopplerLevel
         {
-            get { return dopplerLevel; }
+            get => dopplerLevel;
             set
             {
                 dopplerLevel = Mathf.Clamp(value, 0, 5);
@@ -218,9 +210,9 @@ namespace Hellmade.Sound
         /// <summary>
         /// The spread angle (in degrees) of a 3d stereo or multichannel sound in speaker space.
         /// </summary>
-        public float Spread
+        private float Spread
         {
-            get { return spread; }
+            get => spread;
             set
             {
                 spread = Mathf.Clamp(value, 0, 360);
@@ -234,9 +226,9 @@ namespace Hellmade.Sound
         /// <summary>
         /// How the audio attenuates over distance
         /// </summary>
-        public AudioRolloffMode RolloffMode
+        private AudioRolloffMode RolloffMode
         {
-            get { return rolloffMode; }
+            get => rolloffMode;
             set
             {
                 rolloffMode = value;
@@ -250,9 +242,9 @@ namespace Hellmade.Sound
         /// <summary>
         /// (Logarithmic rolloff) MaxDistance is the distance a sound stops attenuating at.
         /// </summary>
-        public float Max3DDistance
+        private float Max3DDistance
         {
-            get { return max3DDistance; }
+            get => max3DDistance;
             set
             {
                 max3DDistance = Mathf.Max(value, 0.01f);
@@ -266,9 +258,9 @@ namespace Hellmade.Sound
         /// <summary>
         /// Within the Min distance the audio will cease to grow louder in volume.
         /// </summary>
-        public float Min3DDistance
+        private float Min3DDistance
         {
-            get { return min3DDistance; }
+            get => min3DDistance;
             set
             {
                 min3DDistance = Mathf.Max(value, 0);
@@ -282,12 +274,12 @@ namespace Hellmade.Sound
         /// <summary>
         /// Whether the audio persists in between scene changes
         /// </summary>
-        public bool Persist { get; set; }
+        public bool Persist { get; private set; }
 
         /// <summary>
         /// How many seconds it needs for the audio to fade in/ reach target volume (if higher than current)
         /// </summary>
-        public float FadeInSeconds { get; set; }
+        private float FadeInSeconds { get; set; }
 
         /// <summary>
         /// How many seconds it needs for the audio to fade out/ reach target volume (if lower than current)
@@ -304,7 +296,7 @@ namespace Hellmade.Sound
             UISound
         }
 
-        private static int audioCounter = 0;
+        private static int audioCounter;
 
         private AudioClip clip;
         private bool loop;
@@ -329,31 +321,33 @@ namespace Hellmade.Sound
 
         public Audio(AudioType audioType, AudioClip clip, bool loop, bool persist, float volume, float fadeInValue, float fadeOutValue, Transform sourceTransform)
         {
+            SoundManager = Context.GetApplicationContext().GetService<SoundManager>();
+            
             // Set unique audio ID
             AudioID = audioCounter;
             audioCounter++;
 
             // Initialize values
-            this.Type = audioType;
-            this.Clip = clip;
-            this.SourceTransform = sourceTransform;
-            this.Loop = loop;
-            this.Persist = persist;
-            this.targetVolume = volume;
-            this.initTargetVolume = volume;
-            this.tempFadeSeconds = -1;
-            this.FadeInSeconds = fadeInValue;
-            this.FadeOutSeconds = fadeOutValue;
+            Type = audioType;
+            Clip = clip;
+            SourceTransform = sourceTransform;
+            Loop = loop;
+            Persist = persist;
+            targetVolume = volume;
+            initTargetVolume = volume;
+            tempFadeSeconds = -1;
+            FadeInSeconds = fadeInValue;
+            FadeOutSeconds = fadeOutValue;
 
             Volume = 0f;
             Pooled = false;
 
-            // Set audiosource default values
+            // Set audioSource default values
             Mute = false;
             Priority = 128;
             Pitch = 1;
             StereoPan = 0;
-            if (sourceTransform != null && sourceTransform != EazySoundManager.Gameobject.transform)
+            if (sourceTransform != null && sourceTransform != SoundManager.transform)
             {
                 SpatialBlend = 1;
             }
@@ -364,18 +358,18 @@ namespace Hellmade.Sound
             Min3DDistance = 1;
             Max3DDistance = 500;
 
-            // Initliaze states
+            // Initialize states
             IsPlaying = false;
             Paused = false;
             Activated = false;
         }
 
         /// <summary>
-        /// Creates and initializes the audiosource component with the appropriate values
+        /// Creates and initializes the audioSource component with the appropriate values
         /// </summary>
-        private void CreateAudiosource()
+        private void CreateAudioSource()
         {
-            AudioSource = SourceTransform.gameObject.AddComponent<AudioSource>() as AudioSource;
+            AudioSource = SourceTransform.gameObject.AddComponent<AudioSource>();
             AudioSource.clip = Clip;
             AudioSource.loop = Loop;
             AudioSource.mute = Mute;
@@ -401,7 +395,7 @@ namespace Hellmade.Sound
         }
 
         /// <summary>
-        /// Start playing audio clip from the beggining
+        /// Start playing audio clip from the beginning
         /// </summary>
         /// <param name="volume">The target volume</param>
         public void Play(float volume)
@@ -410,7 +404,7 @@ namespace Hellmade.Sound
             if (Pooled)
             {
                 // If not, restore it from the audioPool
-                bool restoredFromPool = EazySoundManager.RestoreAudioFromPool(Type, AudioID);
+                bool restoredFromPool = SoundManager.RestoreAudioFromPool(Type, AudioID);
                 if (!restoredFromPool)
                 {
                     return;
@@ -419,10 +413,10 @@ namespace Hellmade.Sound
                 Pooled = true;
             }
 
-            // Recreate audiosource if it does not exist
+            // Recreate audioSource if it does not exist
             if (AudioSource == null)
             {
-                CreateAudiosource();
+                CreateAudioSource();
             }
 
             AudioSource.Play();
@@ -561,17 +555,17 @@ namespace Hellmade.Sound
             {
                 case AudioType.Music:
                     {
-                        AudioSource.volume = Volume * EazySoundManager.GlobalMusicVolume * EazySoundManager.GlobalVolume;
+                        AudioSource.volume = Volume * SoundManager.GlobalMusicVolume * SoundManager.GlobalVolume;
                         break;
                     }
                 case AudioType.Sound:
                     {
-                        AudioSource.volume = Volume * EazySoundManager.GlobalSoundsVolume * EazySoundManager.GlobalVolume;
+                        AudioSource.volume = Volume * SoundManager.GlobalSoundsVolume * SoundManager.GlobalVolume;
                         break;
                     }
                 case AudioType.UISound:
                     {
-                        AudioSource.volume = Volume * EazySoundManager.GlobalUISoundsVolume * EazySoundManager.GlobalVolume;
+                        AudioSource.volume = Volume * SoundManager.GlobalUISoundsVolume * SoundManager.GlobalVolume;
                         break;
                     }
             }
