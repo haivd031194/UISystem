@@ -27,7 +27,7 @@ namespace Loxodon.UIFramework.Editor
     /// </summary>
     public class WindowIdProcessor : AssetPostprocessor
     {
-        private const string UIPrefabFolder = "Assets/Zitga/Samples/Resources/UI";
+        private const string UIPrefabFolder = "Assets/Zitga/Samples/UISystem/Resources/UI";
         private const string UIIdScriptFolder = "Assets/Zitga/Samples/Scripts";
         private const string WindowIdScriptName = "WindowIds";
         private const string WindowIdScriptNamespace = "Loxodon.Framework.Examples";
