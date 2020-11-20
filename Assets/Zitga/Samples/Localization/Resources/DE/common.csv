@@ -1,0 +1,921 @@
+key~value
+notice_content~<size=50>1.0.12 Patch Note: </size>\n\n1. New Hero - Arryl\n∘ Faction: Nature\n∘ Class: Assassin \n\n2. Halloween Event\n∘ Main Event Time: 0:00 23/10 - 23:59 05/11 [UTC+0]\n∘ You will have 1 more day to exchange rewards and buy bundle\n\n3. Optimize and fix bugs
+notice~Ankündigung
+tap_to_play~Tippe, um zu spielen
+setting~Einstellungen
+account~Konto
+id~ID
+summoner~Name
+register_account~Konto registrieren
+change_password~Passwort ändern
+switch_server~Server wechseln
+switch_account~Konto wechseln
+email_verify~Wiederherstellung von E-Mail
+game_version~Spielversion
+close~Schließen
+closed~Geschlossen
+sound~Soundeffekte
+music~Musik
+graphic_quality~Grafikqualität
+low~Niedrig
+medium~Mittel
+high~Hoch
+language~Sprache
+language_setting~Spracheinstellungen
+password~Passwort
+enter_text~Die ID deines Freundes eingeben
+forget~Vergessen?
+do_you_want_restore~Möchtest du wiederherstellen?
+register~Registrieren
+login~Anmelden
+restore~Wiederherstellen
+confirm_password~Passwort bestätigen
+cancel~abbrechen
+confirm~bestätigen
+new_password~Neues Passwort
+confirm_new_password~Neues Passwort bestätigen
+please_select_language~Bitte wähle die Sprache
+daily_checkin~Einchecken
+mail~Brief
+friend~Freund
+shop~Geschäft
+main_character~Beschwörer
+mastery~Beherrschung
+inventory~Tasche
+hero_list~Helden
+event~Veranstaltung
+daily_reward~Tägliche Belohnung
+checkin_progress~Check-in-Fortschritt %s
+reply~Antworten
+claim~erhalten
+mail_box~Briefkasten
+claim_all~Alles erhalten
+system_mail~System-Brief
+player_mail~Spieler-Brief
+mail_empty~Leerer Briefkasten
+received_applications~Anfrage erhalten
+recommended_friend~Empfohlen
+claim_and_send~Erhalten und senden
+friend_list~Freundesliste
+search~Suche
+friend_request~Freundschaftsanfrage
+help_fight~Erforschen
+apply~Anwenden
+delete_all~Alles löschen
+delete~Löschen
+scout~Erkunden
+ranking_point~Ranking-Punkte
+ranking_reward~Ranking-Belohnung
+battle_reward~Schlachtbelohnung
+battle~Schlacht
+smash~Schlagen
+preview~Vorschau
+auto_fill~Automatisches Ausfüllen
+disassemble~zerlegen
+heroese~Helden
+ok~OK
+yes~Ja
+no~Nein
+not_select_all_hero~Alle Helden können nicht ausgewählt werden
+do_disassemble_hero_4_star~Möchtest du den Held mit %s-Stern oder höher zerlegen?
+you_need_select_hero~Du musst einen Held auswählen.
+do_you_want_disassemble~Möchtest du zerlegen?
+basic~Grundlage
+premium~Prämie
+refresh~Aktualisierung
+time~Zeit
+forge~schmieden
+available_to_forge~verfügbar zu schmieden
+weapon~Waffe
+armor~Rüstung
+helmet~Helm
+ring~Schmuck
+rank_x~Rang: %s
+season_ranking~Saisonale Rangliste
+point~Punkte
+group_ranking~Die Rangliste der Gruppe
+score~Punktzahl
+reward~Belohnung
+record~Aufzeichnung
+defense~Verteidiger
+choose_rival~Gegner auswählen
+change~ändern
+your_current_rank_x~Aktueller Rang: %s
+reward_will_sent~Belohnungen werden nach ... gesendet
+reward_will_sent_x~Belohnungen werden nach %s gesendet
+wave~Welle
+will_open_in~In ... öffnen
+will_end_in~Beenden in:
+quick~Schnell
+secret_shop~Händlerladen
+skip~Überspringen
+buy~Kaufen
+primary_merchant~Primärer Händler
+medium_merchant~Mittlerer Händler
+senior_merchant~Leitender Händler
+mysterious_merchant~Geheimnisvoller Händler
+primary~Junior
+senior~Senior
+formation~Formation
+save~Speichern
+material~Material
+upgrade~Verbesserung
+skip_battle~Schlacht überspringen
+back~Zurück
+front~Vorderseite
+gallery~Galerie
+linking~Verbinden
+sort~Sortieren
+level~Level
+star~Stern
+select_hero_altar~Wähle einen Held zum Abbau
+replay~Wiederholung
+reward_current_ranking~Die Belohnungen von aktuellen Rangliste
+hero_shard~Die Scherbe des Helden
+tap_to_close~Tippe, um zu schließen
+avatar~Avatar
+border~Rand
+avatar_border~Avatar und Rand
+current_avatar~Aktueller Avatar & Rand
+select_avatar~Bitte wähle Avatar
+select_border~Bitte wähle Rand
+world~Welt
+send~Senden
+chat_option_1~VIP-Informationen
+chat_option_2~Welt-Chat blockieren
+chat_option_3~Verein-Chat blockieren
+chat_option_4~Rekrutierung-Chat blockieren
+select_hero_battle~Wähle Held für die Schlacht
+vs~VS
+hero_info~Informationen
+equip~Ausrüsten
+evolve~Entwickeln
+skin~Skin
+level_to_max~Lv.Max
+level_up~Lv.Up
+unlock_level~Lv.%s freischalten
+unequip~Unausrüsten
+auto_equip~Automatische Ausrüstung
+awaken~Wecken
+switch_character~Beschwörer wechseln
+exp~EXP
+free~Kostenlos
+free_x~Kostenlos %s
+summon~Beschwören
+summon_x~%s beschwören
+storage~Lager
+fragment~Fragment
+artifact~Artefakt
+leaderboard~Bestenliste
+quest~Suche
+damage_stat~Schadensstatistik
+notification~Mitteilung
+spin_x~%s drehen
+next_force_refresh~In ... erneuern
+pack_of_item~Das Paket der Gegenstände
+congratulation~Glückwunsch
+smash_title~Wie oft möchtest du herausfordern?
+select_heroes~Held wählen
+requirement~Bedarf
+start~Anfangen
+quest_refresh_in~Die Suche ({1}) wird in {2} zurückgesetzt
+speed_up~Beschleunigen
+complete~Beenden
+block~Blockieren
+unblock~frei machen
+send_mail~Brief senden
+refresh_in~In %s erneuern
+remaining_attempts~Verbleibende Schlacht
+challenge~Herausforderung
+rename~Umbenennen
+x_character~%s Buchstabe
+change_avatar~Avatar & Rand anpassen
+vip~VIP-Informationen
+replace_hero~Held ersetzen
+select_your_hero~Wähle deinen Held
+please_select_hero_replace~Bitte wähle Held zum Ersetzen
+convert~Konvertieren
+lock_current_stat~Aktuelle Statistiken sperren
+upgrade_artifact~Artefakt verbessern
+select_material_artifact~Bitte wähle Materialartefakt
+training_hero~Training
+to_complete_training~Bis alle Helden das Training abgeschlossen haben
+select_item~Gegenstand wählen
+map~Karte
+select_material_hero~Bitte wähle Materialheld
+select~Wählen
+unlock_star~Bei %s Stern freischalten
+guild_application~Bewerbungsliste
+request_x~Anfrage %s
+accept~Akzeptieren
+decline~Ablehnen
+guild_foundation~Verein-Einstellungen
+recommended~Empfohlen
+enter_guild_name_id~ID oder Vereinsname eingeben
+found~Erstellen
+guild_content~Du kannst in einem Verein beitreten oder ein Verein erstellen, um viele Belohnungen aus Vereinsaktivitäten zu erhalten
+member_x~Mitglied %s
+emblem~Emblem
+info~Informationen
+enter_guild_name~Name des Vereins eingeben
+enter_guild_info~Vereinsinformationen\neingeben
+recruit~Rekrutieren
+daily_boss~Verein-Boss
+checkin~Einchecken
+application~Bewerbungsliste
+input_recruit_info~Eine Rekrutierungsnachricht eingeben
+kick~Kicken
+demote~degradieren
+promote~befördern
+season_reward~Saisonale Belohnung
+self_damage~Dein Schaden:
+guild_damage~Vereinsschaden:
+level_boss_x~Boss-Level: %s
+unlock_at_guild_x~Auf Vereinslevel %s freischalten
+current_reward~Aktuelle Belohnung
+next_reward~Nächste Belohnung
+guild_log~Vereinstagebuch
+stage_reward~Phase-Belohnung
+map_stage~Karte {1}, Phase {2}, Schwierigkeit {3}
+need_input_code~Bitte gib den Code ein
+need_input_mail~Bitte gib die E-Mail-Adresse ein, um das Konto wiederherzustellen
+input_code_fail~Ungültiger Code
+confirm_new_password_fail~Das neue Passwort kann nicht bestätigt werden.
+need_input_new_password~Bitte gib ein neues Passwort ein.
+can_not_claim_reward~Erhalten!
+max_buy_turn_daily~Maximale tägliche Male für Kauf
+coming_soon~Kommt bald
+limit_purchase_this_pack~Du hast maximale Käufe für dieses Paket erreicht.
+member_kick_guild~Das Mitglied wurde aus dem Verein geworfen.
+failed_kick_member~Dieses Mitglied kann nicht aus dem Verein geworfen werden.
+login_current_account~Aktuelles Konto anmelden
+member_role_changed~Die Rolle des Mitglieds wurde geändert.
+guild_sub_leader_reached_limit~Die Anzahl der Co-Leiter hat die Grenze erreicht.
+failed_change_member_role~Die Rolle dieses Mitglieds kann nicht geändert werden
+input_password_failed~Falsches Passwort
+input_user_name_failed~Falscher Benutzername
+enter_recruit_info_please~Bitte gib die Rekrutierungsinformationen ein.
+send_recruit_successful~Rekrutierungsnachricht erfolgreich gesendet hat.
+fail_send_recruit_info~Rekrutierungsnachricht kann nicht gesendet werden
+fail_get_data~Daten können nicht empfangen werden
+fail_refresh~fehlgeschlagen erneuern
+player_joined_guild~Der Spieler ist bereits einem Verein beigetreten.
+guild_limit_member~Die Anzahl der Mitglieder hat die Grenze erreicht
+need_permission_perform_action~Du hast keine Berechtigung, diese Aktion auszuführen
+failed_get_dungeon_stage~Detaillierte Daten von Verlies können nicht empfangen werden
+send_request_successful~Anfrage erfolgreich gesendet
+already_in_guild~Du bist bereits in einem Verein
+please_enter_guild_name~Bitte gib Vereinsname ein
+create_guild_success~Verein erfolgreich erstellen
+create_guild_failed~Verein kann nicht erstellt werden
+upgrade_guild_success~Die Vereinsinformationen erfolgreich aktualisieren
+challenge_guild_dungeon_success~Herausforderung Verein-Verlies erfolgreich beenden
+guild_description_invalid~Ungültige Vereinsbeschreibung
+failed_challenge_guild_dungeon~Herausforderung Verein-Verlies fehlgeschlagen
+guild_description_bad_word~Die Informationen können nicht aktualisiert werden. Ungültige Vereinsbeschreibung
+password_failed~Ungültiges Passwort
+try_again_few_seconds~Bitte versuche es später nach einigen Sekunden erneut
+need_input~Bitte gib ID oder Vereinsname ein
+insert_least_one_hero~Bitte wähle mindestens einen Held
+change_success~Erfolgreich ändern!
+email~E-Mail
+code_verify~Verifizierungscode
+master_can_not_quit_guild~Der Leiter kann den Verein nicht verlassen
+sure_leave_guild~Bist du sicher, dass du diesen Verein verlassen willst?
+have_left_guild~Du hast den Verein verlassen
+need_level_mastery~Du musst alle Beherrschung auf Level %s aktualisieren.
+login_failed~Anmelden fehlgeschlagen
+boss_died~Boss wurde besiegt
+limit_level_x~Levelgrenze %s
+continue_facebook~Weiter mit Facebook
+remove_friend_success~Erfolgreich löschen!
+do_want_delete_mail~Möchtest du diese E-Mail  löschen?
+can_not_claim_mail~E-Mail kann nicht empfangen werden
+send_success~Erfolgreich senden!
+claim_success~Erfolgreich erhalten!
+claim_send_success~Erfolgreich erhalten und senden!
+can_not_claim_send~Keine verfügbaren Herzen zum Anfordern oder Senden
+do_want_delete_all~Möchtest du alles löschen?
+add_friend_success~Freunde hinzugefügt
+hero_in_arena~Helden sind in der Arena
+hero_in_training~Helden sind im Autotraining
+require_level_x~Level %s erforderlich
+help~Hilfe
+guild_name_contain_banned_word~Ungültiger Vereinsname
+guild_desc_contain_banned_word~Ungültige Vereinsbeschreibung
+selected~Ausgewählt
+not_enough_x~Nicht genug %s
+casino_shop~Wunschladen
+altar_shop~Schreinladen
+guild_shop~Vereinladen
+arena_shop~Arena-Laden
+want_to_buy~Bist du sicher, dass du kaufen möchtest?
+require_tavern~Dieser Held erfüllt nicht die Anforderungen der Suche
+require_hero_star_x~Held mit %s Stern benötigen
+require_hero_faction_x~Held von Fraktion %s  benötigen
+require_hero_class_x~Held von Fraktion %s  benötigen
+want_to_cancel_quest~Möchtest du diese Suche abbrechen?
+want_to_speed_up~Möchtest du die Suche beschleunigen?
+not_enough_equipment~Nicht genug Material
+noti_full_hero~Die Heldenliste ist voll
+unlock_new_function~Neue Funktion
+reset~Zurücksetzen
+mastery_skill~Beherrschungsfähigkeiten
+need_reset_main_mastery~Willst du die Beherrschung erneut aufbauen?
+want_to_reset~Willst du erneut aufbauen?
+not_enough_resource~Nicht genug Resourcen
+user_profile~Benutzerprofil
+fanpage~Startseite
+go_to_fanpage_notice~Bitte besuche unsere Website für weitere Informationen
+want_to_switch_server~Möchtest du den Server wechseln?
+want_to_new_server~Möchtest du ein neues Profil auf diesem Server registrieren?
+want_to_clear_data~Möchtest du Daten löschen?
+connecting_server~Verbindung zum Server herstellen ...
+init_service~Initialisieren …
+init_data_request~Daten initialisieren ...
+init_resource_request~Ressource initialisieren ...
+download_asset_bundle~Ressource herunterladen …
+next_scout~Nächste Erkundung in: %s
+summoner_can_view~Die Fraktion des Beschwörers wird als jede Art von Fraktion verwendet
+require_stage_x~Phase {1} {2}-{3} beenden, um freizuschalten
+hero_info_max_level~Maximalen Heldenlevel erreicht
+daily_quest~Tägliche Suche
+hero_level_cap_to~Levelgrenze erhöht sich auf %s
+bonus_class~Bonus für Klasse {1}
+bonus_faction~Bonus für Fraktion {1}
+bonus_class_faction~Bonus für Klasse {1} und Fraktion {2}
+free_gem~Kostenlose Juwelen
+skill_enhance~Fähigkeiten verbessern
+level_cap~Levelgrenze
+how_many_purchase~Bitte gib die Menge {1} ein
+sell~Verkaufen
+vip_full~Maximales VIP-Level erreicht
+copy_to_clipboard~In die Zwischenablage kopieren
+player_blocked~Spieler wird schon blockiert
+hero_fragment_title_star~Fragment des Helden mit {1} Stern
+hero_fragment_faction~Fragment des Helden mit {1} Stern von Fraktion {2}
+hero_fragment_name~Fragment von {1}
+hero_fragment_star~Fragment des Helden mit {1} Stern
+hero_fragment_star_faction~Fragment des Helden {2} {1} Stern
+hero_fragment_info~{1} Fragmente sammeln, um den Held zu beschwören
+artifact_fragment_title_1~Seltenes Artefakt
+artifact_fragment_title_2~Mythisches Artefakt
+artifact_fragment_title_3~Legendäres Artefakt
+artifact_fragment_title_4~Legendäres Artefakt (speziell)
+artifact_fragment_title_5~Unsterbliches Artefakt
+artifact_fragment_title_6~Unsterbliches Artefakt (speziell)
+artifact_fragment_info~{1} Fragmente sammeln, um ein zufälliges Artefakt zu beschwören
+require_level_stage~Phase{2}  {3}-{4} und Level {1} benötigen
+require_vip_or_stage~VIP {1} oder Phase {2} {3}-{4} benötigen
+require_vip_or_level_stage~VIP {1} oder Level {2}, Phase {4}-{5} benötigen
+achievement~Leistungen
+quest_tree~Suche-Baum
+achievement_tittle_group_1~Verbindungsmacht
+achievement_tittle_group_2~Leben oder Tod
+achievement_tittle_group_3~Beschwörungsstrategie
+achievement_tittle_group_4~Enorme Herausforderung
+achievement_tittle_group_5~Andere
+quest_tree_tittle_group_1~Beginn der Reise
+quest_tree_tittle_group_2~Monstereroberung
+quest_tree_tittle_group_3~Endlose Herausforderung
+completed~Beendet
+player_already_show_info~Die Spielerinformationen wurden angezeigt
+in_progress~In Bearbeitung
+new_password_is_last~Dupliziertes Passwort
+new_password_failed~Das neuen Passwort kann nicht bestätigt werden.
+chat_delay~Nach %s Sekunden chatten
+search_failed~Suche fehlgeschlagen
+need_input_friend_id~Die Freund-ID darf nicht leer sein
+send_failed~Senden fehlgeschlagen
+warning_send_mail~Nach %s Sekunden senden
+mail_content~Der E-Mail-Inhalt darf nicht leer sein
+max_hero~Maximale Anzahl der Helden
+enough_hero_material~Nicht genug Helden-Materialien
+max_turn_bought~Die Anzahl der Käufe hat die Grenze erreicht
+hero_max_star~Held mit maximalen Stern
+need_up_max_level~Der Held muss zuerst das maximale Level erreichen
+hero_is_training~In Bearbeitung
+hour_x~%s Stunde
+min_x~%s Minute
+smash_reward~Smash-Belohnung
+refresh_x~Nach %s aktualisieren
+potion_1~%s HP wiederherstellen
+potion_2~%s Energie erhöhen
+potion_3~%s HP und %s Energie  erhöhen
+full_slot~besetzt
+want_to_use_potion~Möchtest du einen Trank verwenden?
+day_ago_format~Vor {0} Tage {1} Stunden
+hour_ago_format~Vor {0} Stunden {1} Minuten
+min_ago_format~Vor {0} Minuten {1} Sekunden
+second_ago_format~Vor {0} Sekunden
+tower_record_error~Aufzeichnung kann nicht wiedergegeben werden. Bitte versuche es mit einer anderen
+require_vip_or_level~VIP {1} oder Level {2} benötigen
+reach_limited_pack~Dieses Paket hat seine Grenze erreicht!
+all_heroes_were_killed~Alle Helden wurden besiegt!
+use_id_format~Stattdessen das ID-Format verwenden
+guild_not_found~Verein nicht gefunden
+recommend_guild_failed~Empfohlener Verein kann nicht angezeigt werden
+have_just_joined_guild~Du bist einem Verein beigetreten
+boss_changed_successful~Boss erfolgreich ändern!
+select_boss_failed~Boss kann nicht ausgewählt werden!
+challenge_guild_boss_successful~Verein-Boss erfolgreich herausfordern
+challenge_guild_boss_failed~Verein-Boss kann nicht herausgefordert werden!
+guild_was_kicked~Du wurdest aus dem Verein geworfen!
+check_in_successful~Erfolgreich anmelden!
+restore_failed~Wiederherstellung fehlgeschlagen!
+play_record_failed~In Record ist ein Fehler aufgetreten. Bitte versuche es mit einem anderen!
+need_clear_previous_stage~Du musst zuerst die vorherige Phase beenden!
+map_cleared~Beendet
+no_video~Video nicht verfügbar
+current_name~Aktueller Name
+product_not_exist~Diese ID existiert nicht!
+purchase_processing~Bearbeiten …
+register_account_success~Registrierung erfolgreich!
+new_pass_limit~Neues Passwort auf %s Buchstaben beschränken
+new_pass_special~Neues Passwort enthält spezielle Buchstaben
+confirm_pass_fail~Bestätigung des Passworts fehlgeschlagen!
+disconnect~Getrennt!
+dungeon_time_up~Das Verlies ist geschlossen!
+change_language~Möchtest du die Sprache in %s ändern?
+create_guild~Willst du deinen Verein gründen?
+want_block~Willst du blockieren?
+want_unblock~Willst du entsperren?
+want_delete_all_mail~Willst du alle E-Mails löschen?
+want_refresh_tavern~Willst du die Taverne aktualisieren?
+remove_friend~Willst du diesen Freund entfernen?
+have_verified_email~Hast du die Wiederherstellungs-E-Mail hinzugefügt?
+quit_game~Willst du das Spiel beenden?
+want_refresh_shop~Willst du den Laden aktualisieren?
+all_hero_died~Alle Helden wurden besiegt!
+resend~Nochmals senden
+input_code~Code eingeben
+noti_code~Eine Nachricht wurde an deine Mailbox gesendet!
+update~Aktualisieren
+raw_pack_1~Handvoll von Juwelen
+raw_pack_2~Menge von Juwelen
+raw_pack_3~Beutel mit Juwelen
+raw_pack_4~Schachtel mit Juwelen
+raw_pack_5~Truhe mit Juwelen
+limited_pack_1~Kleines wöchentliches Paket
+limited_pack_2~Wöchentliches Paket von Mittelgröße
+limited_pack_3~Großes wöchentliches Paket
+limited_pack_4~Wöchentliches Paket Sonne
+limited_pack_5~Goldenes wöchentliches Paket
+limited_pack_6~Kleines monatliches Paket
+limited_pack_7~Monatliches Paket von Mittelgröße
+limited_pack_8~Großes monatliches Paket
+limited_pack_9~Silberne monatliches Paket
+limited_pack_10~Goldenes monatliches Paket
+smash_many~Bitte Menge eingeben
+events~Ereignisse
+event_summon~Beschwören
+event_prophet_tree~Altes Relikt
+event_arena~Arena
+event_wheel_of_fate~Rad des Schicksals
+event_tavern~Taverne
+event_collection~Sammlung
+event_exchange~Austausch
+event_bundle~Paket
+event_hot_deal~Tolle Angeboten
+event_prophet_tree_info~Die erforderliche Anzahl an Beschwörungen in Altem Baum beenden, um die Belohnungen zu erhalten.
+event_wheel_of_fate_info~Die erforderliche Anzahl von Drehen im Rad des Schicksals beenden, um die Belohnungen zu erhalten.
+event_collection_info~Die erforderliche Anzahl an Helden sammeln, um die Belohnungen zu erhalten.
+event_tavern_info~Die erforderliche Anzahl von Suchen in der Taverne beenden, um die Belohnungen zu erhalten.
+event_summon_info~Die erforderliche Anzahl an Beschwörungen in der Beschwörung beenden, um die Belohnungen zu erhalten.
+event_arena_info~Die erforderliche Anzahl an Spielen in der Arena beenden, um die Belohnungen zu erhalten.
+event_bundle_info~Während der Veranstaltung kannst du limitierte Packungen kaufen.
+event_hot_deal_info~Während der Veranstaltung kannst du limitierte Packungen kaufen.
+gate~Karte
+enemy~Feind
+faction_restrain~Fraktionsbeschränkung
+faction_restrain_info~Fraktionsbeschränkung verursacht {1} mehr Schaden und erhöht {2} Genauigkeit.
+round~Runde
+invite~Einladen
+name~Name
+stock~Grenze
+select_guild_logo~Wähle das Logo deines Vereins
+member~Mitglied
+master~Leiter
+deputy~Co-Leiter
+guild_notice~Benachrichtigung
+season_end_in~Saison endet in:
+stage~Phase
+hall_of_fame~Ruhmeshalle
+floor~Etage
+remove_all~Alles entfernen
+enemy_team~Gegnerisches Team
+go~Gehen
+save_point~Speicherpunkt
+next_stage~Nächste Phase
+attacker~Angreifer
+defender~Verteidiger
+forge_equipment~Ausrüstung schmieden
+upgrade_hero~Held verbessern
+summon_hero~Held beschwören
+enter_redemption_code~Erlösungscode eingeben
+gift_code~Geschenkcode
+current_ranking~Aktuelles Ranking
+monthly_packs~Monatliche Angebote
+raw_packs~Juwelen-Pakete
+limited_packs~Begrenzte Pakete
+total_reward~Gesamtbelohnung
+instant_reward~Sofortige Belohnung
+weekly~Monatskarte
+monthly~Juwelen-Karte
+premium_monthly~Prämie-Juwelen-Karte
+free_acquire_video_reward~Kostenlose Video-Belohnung erhalten
+limit_pack_per_week~%s Pakete/Woche begrenzen
+limit_pack_per_month~%s Pakete/Monat begrenzen
+lock~Sperre
+edit_lock_heroes~Sperre bearbeiten
+back_to_current~Aktuell
+mastery_name~{1} von {2}
+get_vip_point_to_reach~%s VIP-Punkt holen, um zu erreichen
+remove~Entfernen
+replace~Ersetzen
+use~Verwenden
+add_one~x1 hinzufügen
+add_ten~x10 hinzufügen
+admin_mail~Administrations-E-Mail
+moderator_mail~Moderators-E-Mail
+merchant~Händler
+enter_name_please~Bitte gib einen Namen ein
+enter_chat~Text eingeben
+chat~Chatten
+join~Beitreten
+please_wait_for_seconds~Bitte warte %s Sekunden
+max~Max
+gold_mine~Goldgrube
+friend_not_save_formation~Dieser Freund hat kein Team aufgebaut
+not_enough_quest_refresh~Keine Suche zur Erneuerung
+do_you_want_use_resource~Möchtest du {1} {2} verwenden?
+wanna_kick_member~Möchtest du dieses Mitglied rausschmeißen?
+special~Speziell
+first_purchase~Nur für dich
+account_limit_character~Das Konto muss zwischen {1} und {2} Zeichen bestehen.
+hero_food_moon_title~Mond
+hero_food_sun_info~Verwendet werden, um Helden von Fraktion Dunkelheit und Licht zu entwickeln
+hero_food_sun_title~Sonne
+hero_food_moon_info~Verwendet werden, um Helden von Fraktion Feuer, Wasser, Natur und Abgrund zu entwickeln
+boss~Boss
+verify_email_success~Wiederherstellungs-E-Mail erfolgreich hinzugefügt
+level_up_reward~Level-Up-Belohnung
+no_tavern_quest~Keine Aufgabe
+season_open_in~Saison beginnt in:
+cleared~Beendet
+claim_reach_level~Leerlaufbelohnungen sofort erhalten, um das erforderliche Level zu erreichen
+more_time_reach_level~{1} mehr brauchen, um Level {2} zu erreichen
+claim_to_not_max~Daran denken, die Leerlaufbelohnung zu erhalten, bevor sie die Grenze erreicht
+to_reach_level_x~{1} brauchen, um Level {2} zu erreichen
+ranking_1~Eisen
+ranking_2~Bronze
+ranking_3~Silber
+ranking_4~Gold
+ranking_5~Platin
+ranking_6~Diamant
+ranking_7~Meister
+ranking_top_1~Großmeister
+ranking_top_2~Herausfordern
+top_x~Rang {1}
+top_x+~Rang {1}+
+top_x_x~Rang {1} - Rang {2}
+point_x-~{1}pt-
+point_x+~{1}pt+
+point_x_x~{1}pt - {2}pt
+not_ranked~Nicht eingestuft
+version_outdate~Deine Version %s ist veraltet. Bitte aktualisiere auf die neue Version.
+role~Rolle
+ago~vor
+preload_resources~Ressourcen vorladen
+download_resource_complete~Laden der Ressourcen beendete
+load_user_data~Benutzerdaten laden ...
+start_game~Spiel starten
+under_maintenance~Der Server ist unter Wartung
+no_data~Keine Daten verfügbar
+change_leader~Leiter ändern
+set_as_leader~Als Leiter festlegen
+guild_member_list~Mitgliederliste
+confirm_change_leader~Möchtest du {1} wirklich als {2} festlegen?
+unblock_training_condition~Du kannst den Helden wechseln, nachdem du eine Belohnung erhalten hast
+quick_battle~Schnelle Schlacht
+quick_battle_info~Du erhältst eine Leerlaufbelohnung von %s Minuten, einschließlich EXP und Gold.
+monthly_reward~Monatliche Belohnung
+max_quick_battle_turn~Die schnelle Schlacht hat die Grenze erreicht
+event_has_ended~Veranstaltung ist beendet
+archived~Leistung
+more_items~%s weitere Gegenstand
+purchase_items~Gegenstände kaufen
+limited_pack_desc_1~1 kluge Wahl
+limited_pack_desc_2~Diese Wahl erhöht deinen Ruf
+limited_pack_desc_3~Diese Wahl bringt unerwartete Vorteile
+limited_pack_desc_4~Es ist eine geniale Investition
+limited_pack_desc_5~Diese Wahl bringt dir den Ruhm des Champions
+limited_pack_desc_6~Eine sehr wichtige Wahl eines Eroberers
+limited_pack_desc_7~Vor allem die größte Investition
+limited_pack_desc_8~Die Vorteile dieser Investition werden sofort bewiesen
+companion_buff~Begleiter-Buff
+total~Gesamt
+when_you_login~Bonus für Anmelden
+claim_each_day~Jeden Tag für %s Tage
+day~Tage
+speed_up_gold~Gold beschleunigen
+speed_up_hero_exp~Alter Trank beschleunigen
+speed_up_summoner_exp~EXP des Beschwörers beschleunigen
+speed_up_gold_info~Gold im Wert von %s Stunden jetzt erhalten
+speed_up_hero_exp_info~Gold im Wert von %s Stunden jetzt erhalten
+speed_up_summoner_exp_info~EXP des Beschwörers im Wert von %s Stunden jetzt erhalten
+all_received~Alles empfangen
+attack_success~Angriff erfolgreich
+attack_fail~Angriff gescheitert
+defense_success~Verteidigung erfolgreich
+defense_fail~Verteidigung gescheitert
+revenge~Rache
+hide~Verstecken
+season_end_reward~Saisonbelohnung
+champion~Champion
+reward_area_end~Mail öffnen, um Belohnung zu erhalten
+go_to_mail~Zur Mail gehen
+arena_point_reset~Dein Ranglistenpunkt wurde auf %s zurückgesetzt
+rate_x~%s Satz
+season_end~Saisonende
+highest_ever~Rekord
+random_item_pool~Liste der Gegenständen
+next_refresh~Nächste Aktualisierung in:
+community~Gemeinschaft
+guild_log_join~{0} ist unserem Verein beigetreten
+guild_log_leave~{0} hat unseren Verein verlassen
+guild_log_assign_leader~{0} hat {1} als Leiter zugewiesen
+guild_log_assign_sub_leader~{0} hat {1} als Co-Leiter zugewiesen
+guild_log_kick_out~{0} wurde aus dem Verein geworfen
+free_refresh~Kostenlose Aktualisierung in:
+flash_sale~Blitzangebot
+rate_title~Gefällt dir dieses Spiel?
+not_rate_contain~Wir entschuldigen uns für die unangenehme Erfahrung. Bitte besuche unsere Fanpage und hinterlass dort dein Feedback. Es wird viel dazu beitragen, unser Spiel immer besser zu machen.
+transaction_mail~Transaktionsmail
+weekly_packs~Wöchentliche Angebote
+subscription_packs~Monatskarte
+rate_content~Hast du Summoner Era genossen? Ermutige unser Team mit einer 5-Sterne-Bewertung!
+rate~Jetzt bewerten!
+not_rate~Nein, Danke
+go_to_fanpage~Zur Fanpage gehen
+notice_watch_ads~Möchtest du eine Anzeige sehen, um Belohnung zu erhalten?
+play_video~Video abspielen
+init_proceed_failed~Die Bestellung kann nicht mit Ihrem Konto fortgesetzt werden. Bitte überprüf dein Konto und versuche es erneut.
+start_free_trial~Starte deine kostenlose %s-Tage-Testversion
+trial_available~Vielen Dank, dass du mit deiner Testversion begonnen hast
+warning_flash_sale~Dieses Paket erscheint nur einmal. Bist du sicher, diese Chance zu überspringen?
+warning_download_data~{1} MB Daten herunterladen. \n<color=#{2}> WLAN-Verbindung empfohlen </color>
+not_enough_space_memory~Es gibt nicht genug freien verfügbaren Platz zum Herunterladen von Daten. %sMB des freien Platzes ist erforderlich, um fortzufahren.
+retry~Wiederholen
+download~Herunterladen
+event_login~Anmeldungsveranstaltung
+event_login_info~Während der Veranstaltung die erforderliche Anzahl an Anmeldungen sammeln, um die Belohnungen zu erhalten.
+tip_1~Beim Verkauf oder bei der Verwendung von Helden mit Level 80 oder niedriger werden 100% der für die Verbesserung dieser Helden verwendeten Materialien zurückgegeben.
+tip_2~Bitte überlege genau, bevor du Helden verkaufst. Sogar 1-Stern-Held kann als Material für die Entwicklung anderer Helden verwendet werden. Jeder Held kann weiterentwickelt werden
+tip_3~Die auf Levels der Helden basierenden Statistiken werden mit der Evolution stark erhöht.
+tip_4~Versuche den höchstmöglichen Rang in der Arena zu erreichen. Du kannst viele Beherrschungspunkte erhalten.
+tip_5~Auto-Training ist der beste Weg, um einen Held von 3 Sternen nach unten zu verbessern
+tip_6~Bitte vergiss nicht, ein Konto zu registrieren und zur Sicherheit deines Kontos eine Wiederherstellung von E-Mail-Adresse hinzuzufügen
+tip_7~Wenn du Helden mit Level 80 oder höher als Evolutionsmaterial verkaufst oder verwendest, werden 40% der für die Verbesserung dieser Helden verwendeten Materialien zurückgegeben.
+notice_upgrade_stone_converting~Steine ​​umwandeln oder verbessern
+day_only~Tag
+login_event_progress~Anmeldung läuft %s
+notice_switch_all_summoner~Möchtest du alle Beschwörer tauschen?
+not_enough_point~Nicht genug Punkt
+event_arena_ranking~Arena-Rangliste
+event_arena_ranking_info~Bitte erhöh deine Arena-Ranking-Punkte, um würdige Belohnungen zu erhalten. Belohnungen werden per E-Mail verschickt.
+notice_reset_hero~Die nach dem Zurücksetzen insgesamt zurückgegebene Ressourcenmenge hängt von dem Level des Helden zu diesem Zeitpunkt ab.
+guild_hall~Vereinshalle
+guild_hall_info~Dies ist der Ort, an dem sich Verwaltungsarbeiten und Aktivitäten der Vereinsmitglieder befinden.
+join_now~Jetzt beitreten
+are_you_sure~Bist du sicher?
+registered_member~Mitglied registrieren
+phase_message_tittle~Vereinsleiter
+message_phase_1~Mindestens {1} Mitglied benötigen, um an der Runde {2} teilnehmen zu können
+message_phase_2~Wenn die Verteidigungsformation eingerichtet wurde, kannst du die Formation noch vor der Phase {1} ändern.
+change_formation~Formation ändern
+change_defender~Verteidiger ändern
+guild_leader_benefit~Nur Vereinsleiter und Co-Leiter können sich für den Vereinskrieg registrieren.
+notice_evolve_hero_converting~Dieser Held wird jetzt konvertiert. Bist du sicher, ihn weiterzuentwickeln?
+unlock_previous_stage~Die vorherige Phase freischalten
+missing_join_stage~Du hast die Chance zum Beitritt verpasst
+deal_damage_to_get_reward~Schaden verursachen, um Belohnungen zu erhalten
+only_leader_can_change_boss~Nur Vereinsleiter und Co-Leiter können den Boss wechseln.
+total_damage~Gesamtschaden
+event_release_festival~Ereignis Veröffentlichung Festival
+event_release_festival_info~Während des Ereignisses wenn der Server eine bestimmte Anzahl von Spielern erreicht, erhalten alle Spieler auf diesem Server eine Belohnung.
+player_join_server~Spieler treten dem Server bei
+skip_batte~Schlacht überspringen
+summoner_locked~Der Beschwörer wurde nicht freigeschaltet
+member_has_registered~Mitglieder haben sich registriert
+not_eligible_to_join~Nicht teilnahmeberechtigt
+guild_war_phase_1_name~Registrierungsphase
+guild_war_phase_2_name~Verteidigungs-Setup-Phase
+guild_war_phase_3_name~Kampfphase
+random_boss~Zufälliger Boss
+try_time~Versuche es mal
+check_out_defenders~Die Verteidiger überprüfen
+limited_pack_11~Sonderpaket
+limited_pack_desc_11~Die Vorteile dieser Investition werden sofort bewiesen
+event_shop~Seelenladen
+mission~Event Mission
+exchange~Austausch
+not_enough~Nicht genug
+limit_x~%s begrenzen
+soul_shop~Seelenladen
+hidden_deal~Versteckter Deal
+owned~Im Besitz
+guild_owned~Im Besitz des Vereins
+not_in_guild~Du bist nicht im Verein
+new~Neu
+out_of_turn~Außer der Reihe
+event_exchange_1~Heldenaustausch
+event_exchange_1_info~Sammle die erforderliche Anzahl an Materialien, um Helden auszutauschen, um die Mission abzuschließen.
+event_exchange_2~Gegenstandsaustausch
+event_exchange_2_info~Sammle die erforderliche Anzahl an Materialien, um Gegenstände auszutauschen, um die Mission abzuschließen.
+event_exchange_3~Geheimnisvoller Händler
+event_exchange_3_info~Du kannst interessante Gegenstände beim Geheimnisvollen Händler kaufen.
+profit~Gewinn
+tilion_nick_name~Bester Heiler/Beste Heilerin
+donate~Spenden
+guild_donate_history~Geschichte der Vereinsspenden
+defronowe_nick_name~Der verrückte Attentäter/Die verrückte Attentäterin
+first_time_reward_desc~Erhalte diesen Held mit der ersten Zahlung
+first_time_reward~Erste Zahlung
+go_to_shop~Zum Laden gehen
+guild_donate_help~Hilfe der Vereinsspenden
+guild_donate_title~Vereinsspenden
+starter_pack~Paket für Anfänger
+owned_x~Im Besitz: {1}
+starter_pack_name_1~Ausrüstungen
+starter_pack_desc_2~Großer Schaden
+starter_pack_desc_3~Ein Schuss eine Tötung
+starter_pack_desc_4~Der Lebensretter/die Lebensretterin
+extra~zusätzlich
+quick_battle_ticket_2_0~{1} Stunde - Gold beschleunigen
+quick_battle_ticket_2_10~{1} Stunde - EXP beschleunigen
+quick_battle_ticket_8_0~{1} Stunde - EXP des Beschwörers beschleunigen
+event_type_20~Die Vereinssuche der Verantstaltung
+event_type_20_info~Du musst die 2 Meilensteine sowohl in goldenen Trophäe als auch in silbernen Trophäe erreichen, um die Belohnung zu erhalten
+hero_lock_in_inventory~Held im Inventar sperren
+hero_in_guild_war~Held im Vereinskrieg
+require_vip~Vip %s erfordern
+received~Empfangen
+final_reward~Letzte Belohnung
+day_x~Tag %s
+buy_item_quest_name~Gegenstände kaufen
+event_server_open~Neuer Server wird geöffnet
+item_loot~Gegenstand berauben
+done~Fertig
+support~Unterstützung
+check_game_version~Spielversion prüfen
+check_game_logic~Spiellogik prüfen
+check_game_resources~Spielressourcen prüfen
+check_resources_config~Ressourcenkonfiguration prüfen
+go_to_store~Zum Laden gehen
+switch_all~Alles wechseln
+server_open~Server öffnen
+login_summoner_era~Mit Summoner Era anmelden
+login_facebook~Mit Facebook anmelden
+login_google~Mit Google anmelden
+login_apple~Mit Apple anmelden
+binding_summoner_era~Konto in Summoner Era verbinden
+binding_facebook~Konto in Facebook verbinden
+binding_google~Konto in Google verbinden
+binding_apple~Konto in Apple verbinden
+binded~verbunden
+noti_binding~Das Konto ist ein Gastkonto. Verbind es, um den Verlust deines Kontos zu vermeiden
+mail_verified~Wiederherstellung von E-Mail: %s
+min_donate_event_guild_quest~Mindestspende {1} {2} und {3} {4}
+player_banned~Dein Konto wurde aufgrund verdächtiger Aktivitäten gesperrt. Bitte kontaktiere unseren Kundenservice für weitere Informationen.
+scroll_monthly~Schriftrollenkarte
+sale_off~Rabatt
+hot~Heiß
+level_pass~Level bestanden
+unlock_level_pass~Prämie freischalten
+free_reward~Kostenlose Belohnung
+premium_reward~Prämien-Belohnung
+activated~Entsperrt
+reward_claimed~Empfangen
+summoner_exp~Beschwörer EXP
+tap_to_claim~Tippe, um zu erhalten
+growth_pack_lock~Erreiche spezifizierte Levels nach dem Kauf, um eine enorme Menge wertvoller Belohnungen zu erhalten.
+noti_register~Do you want to register new account?
+skip_cut_scene~Skip cut scene
+turn_on_cut_scene~Turn on cut scene
+select_hero_evolve~Select hero to evolve %s
+noti_confirm_resource~Do you confirm to consume these resources now?
+noti_close_multi_evolve~Wenn Sie bestätigen, dass Sie jetzt gehen, müssen Sie die Helden beim nächsten Mal wieder auffüllen.
+server_maintain_in_x~Server maintenance will be implemented in next %s
+empty_hero_evolve~Please select Hero to evolve
+multi_evolve~Multi Evolve
+potion~Potions
+collection_bag~Buffs
+empty~Empty
+remaining~Remaining
+unpack_resources~Unpack Resources
+choose~Choose
+hero_alive~The here is alive
+hp_full~The hero is full health
+power_full~The hero is full power
+guild_war_season_ranking~Guild War Season Ranking
+guild_war_member_setup_progress~Not enough member registered
+guild_war_member_setup_successful~Member registration for guild war successful
+guild_war_setup_can_be_modified~All formations are setting up. Only Leader & Vice-Leader could change before {1}
+swap_member_successful~Swap member successfully
+ask_for_save_the_change_guild_war_defenders~You just changed your defense line-up. Do you want to save for next time?
+swap_member~Swap member
+win~Win
+your_guild_get~Your guild get %s
+min_hero_dead_requirement~Win with at least %s hero alive
+max_round_requirement~Win in %s round(s)
+save_successful~Save successfully
+power~Combat Power
+point_gained~Point gained
+not_enough_member_registered~Unable to join due to insufficient number of registered members.
+guild_war_point~Guild War Ranking Point
+guild_war_season_end~The new season of guild war is coming soon. Prepare yourself to conquer new enemies.
+guild_war_register_notification~Castle Defense formation has just been changed by another person
+require_event_rate_up_point~Event rate up point is not enough to summon
+summon_rate_up~Guaranteed in %s Summon(s)
+guaranteed_requirement~Rate-up Event Point
+guaranteed_requirement_describe~You are guaranteed to get this Event Hero. Every time you use Premium summon by Scroll or Diamond, you gain 1 Point. After you fulfill the Point Bar, the next summon is guaranteed to get the Event Hero.\n\nPoint Bar will be reset to 0 when you summoned the Event Hero. Even when you've not fulfilled it yet.\n\nRemember: Rate-up Event Summon is the independent system. It doesn't count for another event summon.
+summoner_level~Summoner Level
+daily_packs~Tägliche Packungen
+5_star_hero_reward~5 Sterne Heldenbelohnung
+clear_stage_to_get_reward~Clear this stage to get the rewards at the end of the season
+current_season_reward~Current season reward
+artifact_fragment_title_7~Immortal Artifact (Water)
+artifact_fragment_title_8~Immortal Artifact (Fire)
+artifact_fragment_title_9~Immortal Artifact (Abyss)
+artifact_fragment_title_10~Immortal Artifact (Nature)
+artifact_fragment_title_11~Immortal Artifact (Light)
+artifact_fragment_title_12~Immortal Artifact (Dark)
+guild_market~Guild Store
+market_upgrade_describe~You will need the following resources to upgrade
+attack_log~Attacke
+defense_log~Verteidigung
+attack_count~Attack Count
+special_offer~Sonderangebot
+master_blacksmith~Meisterhafter Schmied
+your_summoner_name~Geben Sie Ihren Namen als Beschwörer ein
+when_upgrade~Statistik-Upgrade
+material_refund~Material Refund
+arena_pass~Arena Pass
+daily_quest_pass~Daily Quest Pass
+arena_pass_desc~Arena Pass Point can be acquired from participating in the arena.
+daily_quest_pass_desc~Daily Quest Pass Point can be acquired from daily quest rewards.
+has_not_skin~This Hero does not have any skins
+select_hero~Select Heros
+exit_guild~Exit Guild
+event_golden_time_name~Event Mid-Autumn
+event_golden_time_desc~During the Main event duration, players claim Lantern & Mooncake in Campaign Idle Reward. Use them to play the event & get rewards. \nLantern & Mooncake are Mid-Autumn Event Currency. They will be disappeared after the end of event period.
+event_feed_beast_name~Mooncake Feast
+event_feed_beast_desc~Give Mooncake to the Beast.\nGet exclusive reward every new evolution form.
+event_gem_box_name~Exclusive Gem Box
+event_gem_box_desc~Get the reward in the event period.\nMore Lantern, More Rewards.
+feed~Feed
+source_money_type_180~∙ Campaign Idle Reward\n∙ Exclusive Gem Box\n∙ Mid-Autumn Pack 1
+source_money_type_181~∙ Campaign Idle Reward\n∙ Festival Check-in\n∙ Mid-Autumn Pack 2 & 3
+select_buff~Select Buff
+drop_time~Event Period: Sep 25, 00:00 ~ Oct 10, 00:00 [UTC+0]
+golden_time_drop_info~∙ 1 Lantern: 60 (sec)\n∙ 1 Mooncake: 480 (sec)
+event_midautumn_specialoffer~Mid-Autumn Offers
+event_midautumn_checkin~Festival Check-in
+event_midautumn_exchange_name~Lantern Exchange
+event_midautumn_exchange_desc~Collect Lantern & Exchange the unlimited rewards below
+no_limit~No Limit
+mid_autumn_offer_1~Lucky Lantern
+mid_autumn_offer_2~Marry Mooncake
+mid_autumn_offer_3~Vermilion Bloom
+item_exchange~Item Exchange
+random_reward~Random Reward
+not_own_this_skin~Not own this skin yet
+arena_pass_unlock_content~Unlock & Claim the rewards every specified point you reach.
+daily_quest_pass_unlock_content~Unlock & Claim the rewards every specified point you reach.
+popup_context_need_resource~Lack of resources. Collect these & come back.
+warning_you_need_more_resources~Not enough resources. You need
+town_center~Town Center
+turret~Turret
+event_golden_time_halloween_name~Halloween Time
+event_golden_time_halloween_desc~Collect Dices and Pumpkins to exchange rewards. Halloween items will disappear after the event end.\nMain event only has 14 days. The 15th day is allowed to exchange rewards only.
+source_money_type_210~∙ Campaign Idle Reward\n∙ Festival Offers\n∙ Shop/Daily Packs
+source_money_type_211~∙ Campaign Idle Reward\n∙ Festival Offers\n∙ Haunted Game (Dices)\n∙ Shop/Daily Packs
+drop_time_halloween~Drop Time: 14 days (00:00 Oct 23 - 23:59 Nov 05) [UTC+0]
+golden_time_halloween_drop_info~∙ 1 Dice: 12 (h)\n∙ 1 Pumpkin: 180 (s)
+dice_title~Haunted Game
+dice_guide~Collect & Roll the Dices - Get awesome prizes.\nFind more in Idle Reward. Daily Packs you go forward.
+event_halloween_exchange_name~Devil Trading
+event_halloween_exchange_desc~Don't miss the Pumpkins. Exchange rewards only on Halloween.\nCollect more in Haunted Game. Tons of rewards you want to claim.
+halloween_daily_checkin~Event Check-in
+event_halloween_specialoffer~Festival Offers
+halloween_purchase_1~Jack O'Lantern
+halloween_purchase_2~Oracle's Dice
+halloween_purchase_3~Poltergeist
+roll~Roll
+lap_reward~Lap Rewards
+lap_x~Lap %s
+event_halloween_dice~Dice Game
+hallo_ween~Halloween
+next_free~Next rewards
+lap_completed~Lap completed: 

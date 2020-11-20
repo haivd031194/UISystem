@@ -42,24 +42,24 @@ namespace Loxodon.Framework.Localizations
 
         protected virtual void OnKeyChanged()
         {
-            if (value != null)
-                value.ValueChanged -= OnValueChanged;
-
-            if (!enabled || target == null || string.IsNullOrEmpty(key))
-                return;
-
-            Localization localization = Localization.Current;
-            value = localization.GetValue(key);
-
-            if (value == null)
-            {
-                if (Application.isPlaying && log.IsErrorEnabled)
-                    log.ErrorFormat("There is an invalid localization key \"{0}\" on the {1} object named \"{2}\".", key, typeof(T).Name, name);
-                return;
-            }
-
-            value.ValueChanged += OnValueChanged;
-            OnValueChanged(value, EventArgs.Empty);
+            // if (value != null)
+            //     value.ValueChanged -= OnValueChanged;
+            //
+            // if (!enabled || target == null || string.IsNullOrEmpty(key))
+            //     return;
+            //
+            // Localization localization = Localization.Current;
+            // value = localization.GetValue(key);
+            //
+            // if (value == null)
+            // {
+            //     if (Application.isPlaying && log.IsErrorEnabled)
+            //         log.ErrorFormat("There is an invalid localization key \"{0}\" on the {1} object named \"{2}\".", key, typeof(T).Name, name);
+            //     return;
+            // }
+            //
+            // value.ValueChanged += OnValueChanged;
+            // OnValueChanged(value, EventArgs.Empty);
         }
 
         public string Key
