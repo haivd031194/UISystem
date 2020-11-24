@@ -24,6 +24,7 @@
 
 using System.Globalization;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 using Loxodon.Log;
@@ -80,14 +81,17 @@ namespace Loxodon.Framework.Localizations
             { SystemLanguage.Ukrainian , new CultureInfo("uk") },
             { SystemLanguage.Vietnamese , new CultureInfo("vi") }
         };
+        
+        public static List<SystemLanguage> SupportLanguages => languages.Keys.ToList();
+
+        public static bool IsSupportLanguage(SystemLanguage systemLanguage)
+        {
+            return languages.ContainsKey(systemLanguage);
+        }
 
         public static CultureInfo GetCultureInfo()
         {
-#if UNITY_2018_1_OR_NEWER
-            return CultureInfo.CurrentUICulture;
-#else
-            return GetCultureInfoByLanguage(Application.systemLanguage, DEFAULT_CULTUREINFO);
-#endif
+            return DEFAULT_CULTURE_INFO;
         }
 
         public static CultureInfo GetCultureInfoByLanguage(SystemLanguage language)

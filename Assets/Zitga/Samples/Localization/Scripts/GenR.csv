@@ -1,5 +1,0 @@
-using Loxodon.Framework.Localizations;
-
-public static partial class R
-{
-}

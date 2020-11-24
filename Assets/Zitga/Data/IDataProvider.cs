@@ -23,13 +23,14 @@
  */
 
 using System.Collections.Generic;
-using System.Globalization;
-using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 
-namespace Loxodon.Framework.Localizations
+namespace Loxodon.Framework.Data
 {
     public interface IDataProvider
     {
-        Task<Dictionary<string, object>> Load(CultureInfo cultureInfo);
+        List<string[]> Load(string path,  char separator = ',');
+
+        UniTask<List<string[]>> LoadAsync(string path,  char separator = ',');
     }
 }

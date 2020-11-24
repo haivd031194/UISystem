@@ -23,17 +23,14 @@
  */
 
 using System;
-using System.Collections.Generic;
-using UnityEngine;
 using System.Globalization;
-
-using Loxodon.Framework.Observables;
-using System.Threading.Tasks;
-using Zitga.Localizations;
+using Cysharp.Threading.Tasks;
+using Loxodon.Framework.Data;
+using UnityEngine;
 
 namespace Loxodon.Framework.Localizations
 {
-    public class Localization : ILocalization
+    public sealed class Localization
     {
         private static readonly object _instanceLock = new object();
         private static Localization instance;
@@ -42,12 +39,17 @@ namespace Loxodon.Framework.Localizations
         private CultureInfo cultureInfo;
         private EventHandler cultureInfoChanged;
 
+        private LocalizeDataProvider dataProvider;
+
         public static Localization Current
         {
             get
             {
                 if (instance != null)
-                    return instance;
+                    lock (_instanceLock)
+                    {
+                        return instance;
+                    }
 
                 lock (_instanceLock)
                 {
@@ -59,15 +61,15 @@ namespace Loxodon.Framework.Localizations
             set { lock (_instanceLock) { instance = value; } }
         }
 
-        protected Localization() : this(null)
+        private Localization() : this(null, new ResourceDataProvider())
         {
         }
 
-        protected Localization(CultureInfo cultureInfo)
+        private Localization(CultureInfo cultureInfo, IDataProvider dataProvider)
         {
-            this.cultureInfo = cultureInfo;
-            if (this.cultureInfo == null)
-                this.cultureInfo = Locale.GetCultureInfo();
+            this.cultureInfo = cultureInfo ?? Locale.GetCultureInfo();
+
+            this.dataProvider = new LocalizeDataProvider(dataProvider, this);
         }
 
         public event EventHandler CultureInfoChanged
@@ -76,7 +78,7 @@ namespace Loxodon.Framework.Localizations
             remove { lock (_lock) { this.cultureInfoChanged -= value; } }
         }
 
-        public virtual CultureInfo CultureInfo
+        public CultureInfo CultureInfo
         {
             get { return this.cultureInfo; }
             set
@@ -84,44 +86,36 @@ namespace Loxodon.Framework.Localizations
                 if (value == null || (this.cultureInfo != null && this.cultureInfo.Equals(value)))
                     return;
 
+                this.dataProvider.ClearData();
+                
                 this.cultureInfo = value;
                 this.OnCultureInfoChanged();
             }
         }
 
-        protected void RaiseCultureInfoChanged()
+        public UniTask<string> Get(string category, string key)
+        {
+            return dataProvider.Get(category, key);
+        }
+
+        private void RaiseCultureInfoChanged()
         {
             try
             {
+                Debug.Log("language: " + this.cultureInfo.Name);
                 this.cultureInfoChanged?.Invoke(this, EventArgs.Empty);
             }
-            catch (Exception) { }
+            catch (Exception)
+            {
+                // ignored
+            }
         }
 
-        protected virtual void OnCultureInfoChanged()
+        private void OnCultureInfoChanged()
         {
             RaiseCultureInfoChanged();
             // this.Refresh();
         }
 
-        // public Task AddDataProvider(IDataProvider provider)
-        // {
-        //     return DoAddDataProvider(provider);
-        // }
-
-        public bool IsSupportLanguage(CultureInfo cultureInfo)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool HasFeature(LocalizeFeature feature)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool HasFeatureKey(LocalizeFeature feature, string key)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

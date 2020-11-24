@@ -8,14 +8,14 @@ namespace Zitga.Samples.Data
     {
         // private DefaultCsvDataProvider defaultCsv;
 
-        private async void Awake()
-        {
-            // defaultCsv = new DefaultCsvDataProvider("CSV");
-            // var request = await defaultCsv.Load(Locale.GetCultureInfoByLanguage(SystemLanguage.English));
-            // foreach (var key in request.Keys)
-            // {
-            //     Debug.Log("key: " + key);
-            // }
-        }
+        // private async void Awake()
+        // {
+        //     // defaultCsv = new DefaultCsvDataProvider("CSV");
+        //     // var request = await defaultCsv.Load(Locale.GetCultureInfoByLanguage(SystemLanguage.English));
+        //     // foreach (var key in request.Keys)
+        //     // {
+        //     //     Debug.Log("key: " + key);
+        //     // }
+        // }
     }
 }

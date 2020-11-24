@@ -25,35 +25,47 @@
 using System;
 using System.Text;
 using System.Collections.Generic;
+using System.IO;
 using System.Text.RegularExpressions;
+using Loxodon.Framework.Data;
+using UnityEditor;
+using UnityEngine;
 
 namespace Loxodon.Framework.Editors
 {
     public class CodeGenerator
 	{
-		public string Generate (string className, Dictionary<string,object> dict)
+		public const string SEARCH_KEY = "Localization/en";
+		private const string SCRIPT_PATH = "Scripts/Gen/";
+		private const string DEFAULT_CLASS_NAME = "R";
+		string template = "using Cysharp.Threading.Tasks;\r\nusing Loxodon.Framework.Localizations;\r\n${namespaces}\r\npublic static class ${name}\r\n{\r\n${properties}}";
+		string subTemplate = "\r\n    public static class ${name}\r\n    {\r\n${properties}    }\r\n";
+		string format = "        public static UniTask<string> {0} => Localization.Current.Get(\"{1}\", \"{2}\");";
+
+		public string Generate (Dictionary<string, List<string>> dict)
 		{
-			string template = "using Loxodon.Framework.Localizations;\r\n${namespaces}\r\npublic static partial class ${name}\r\n{\r\n${properties}}";			
-			string format = "    public readonly static V<{0}> {1} = new V<{0}>(\"{2}\"); ";
-
 			StringBuilder propertiesBuf = new StringBuilder ();
-			StringBuilder namespacesBuf = new StringBuilder ();
-			List<string> namespaces = new List<string> ();
+			StringBuilder namespacesBuf = new StringBuilder (); 
 
-			foreach (KeyValuePair<string,object> kv in dict) {
-				Type type = kv.Value.GetType ();
-
-				if (!string.IsNullOrEmpty (type.Namespace) && !namespaces.Contains (type.Namespace)) {
-					namespaces.Add (type.Namespace);
-
-					namespacesBuf.AppendFormat ("using {0};", type.Namespace).Append (Environment.NewLine);
-				}
-
-				propertiesBuf.AppendFormat (format, GetTypeName (kv.Value.GetType ()), GetPropertyName (kv.Key), kv.Key).Append (Environment.NewLine).Append (Environment.NewLine);
+			foreach (var kv in dict)
+			{
+				propertiesBuf.Append(SetUpClass(kv.Key, kv.Value));
 			}
 
 			var code = template.Replace ("${namespaces}", namespacesBuf.ToString ());
-			code = code.Replace ("${name}", className);
+			code = code.Replace ("${name}", DEFAULT_CLASS_NAME);
+			code = code.Replace ("${properties}", propertiesBuf.ToString ());
+			return code;
+		}
+
+		private string SetUpClass(string className, List<string> keys)
+		{
+			StringBuilder propertiesBuf = new StringBuilder ();
+			foreach (var key in keys) {
+				propertiesBuf.AppendFormat (format, GetPropertyName (key), className, key).Append (Environment.NewLine).Append (Environment.NewLine);
+			}
+
+			var code = subTemplate.Replace("${name}", className);
 			code = code.Replace ("${properties}", propertiesBuf.ToString ());
 			return code;
 		}
@@ -63,71 +75,88 @@ namespace Loxodon.Framework.Editors
 			return Regex.Replace (key, "[.]", "_");
 		}
 
-		private string GetTypeName (System.Type type)
+		private Dictionary<string, List<string>> CollectKeys(string path)
 		{
-			TypeCode typeCode = Type.GetTypeCode (type);
-			switch (typeCode) {
-			case TypeCode.String:
-				return "string";
-			case TypeCode.Boolean:
-				return "bool";
-			case TypeCode.SByte:
-				return "sbyte";
-			case TypeCode.Byte:
-				return "byte";
-			case TypeCode.Int16:
-				return "short";
-			case TypeCode.UInt16:
-				return "ushort";
-			case TypeCode.Int32:
-				return "int";
-			case TypeCode.UInt32:
-				return "uint";
-			case TypeCode.Int64:
-				return "long";
-			case TypeCode.UInt64:
-				return "ulong";
-			case TypeCode.Char:
-				return "char";
-			case TypeCode.Single:
-				return "float";
-			case TypeCode.Double:
-				return "double";
-			case TypeCode.Decimal:
-				return "decimal";
-			default:
-				if (type.IsArray) {
-					if (type.Equals (typeof(string[])))
-						return "string[]";
-					if (type.Equals (typeof(bool[])))
-						return "bool[]";
-					if (type.Equals (typeof(sbyte[])))
-						return "sbyte[]";
-					if (type.Equals (typeof(byte[])))
-						return "byte[]";
-					if (type.Equals (typeof(short[])))
-						return "short[]";
-					if (type.Equals (typeof(ushort[])))
-						return "ushort[]";					
-					if (type.Equals (typeof(int[])))
-						return "int[]";
-					if (type.Equals (typeof(uint[])))
-						return "uint[]";
-					if (type.Equals (typeof(long[])))
-						return "long[]";
-					if (type.Equals (typeof(ulong[])))
-						return "ulong[]";
-					if (type.Equals (typeof(char[])))
-						return "char[]";
-					if (type.Equals (typeof(float[])))
-						return "float[]";
-					if (type.Equals (typeof(double[])))
-						return "double[]";
-					if (type.Equals (typeof(decimal[])))
-						return "decimal[]";
+			var allFiles = Resources.LoadAll<TextAsset>(SEARCH_KEY);
+		    
+			var keyDict = new Dictionary<string, List<string>>();
+
+			foreach (var file in allFiles)
+			{
+				var content = CSVSerializer.ParseCSV(file.text, '~');
+				if (content.Count == 0)
+				{
+					Debug.LogErrorFormat("Content is nil: {0}", file.name);
+					continue;;
 				}
-				return type.Name;
+
+				if (keyDict.ContainsKey(file.name))
+				{
+					Debug.LogErrorFormat("File is exist: {0}", file.name);
+					continue;;
+				}
+				
+				var keys = new List<string>();
+				keyDict.Add(file.name, keys);
+				
+				foreach (var line in content)
+				{
+					try
+					{
+						var key = line[0];
+						if (keys.Contains(key) == false)
+						{
+							keys.Add(key);
+						}
+						else
+						{
+							Debug.LogWarningFormat("Key is exist: {0}", key);
+						}
+					}
+					catch (Exception e)
+					{
+						Console.WriteLine(e);
+						throw;
+					}
+				}
 			}
+			return keyDict;
+		}
+
+		public void WriteFile(string code, string path)
+		{
+			var writeFolder = path.Substring(0, path.IndexOf(SEARCH_KEY, StringComparison.Ordinal)) + SCRIPT_PATH;
+			if (!Directory.Exists (writeFolder))
+				Directory.CreateDirectory (writeFolder);
+			
+			File.WriteAllText (writeFolder + DEFAULT_CLASS_NAME + ".cs", code);
+		}
+
+		public void GenFullProcess(string path)
+		{
+			var keyDict = CollectKeys(path);
+			
+			var code = Generate(keyDict);
+			
+			WriteFile(code, path);
 		}
 	}
+    
+#if UNITY_EDITOR
+    public class CSVImportExamplePostprocessor : AssetPostprocessor
+    {
+	    private static readonly CodeGenerator generator = new CodeGenerator();
+	    static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
+	    {
+		    foreach (string str in importedAssets)
+		    {
+			    if (str.IndexOf(CodeGenerator.SEARCH_KEY, StringComparison.Ordinal) != -1)
+			    {
+					generator.GenFullProcess(str);
+			    }
+		    }
+		    AssetDatabase.Refresh();
+	    }
+    }
+#endif
 }
