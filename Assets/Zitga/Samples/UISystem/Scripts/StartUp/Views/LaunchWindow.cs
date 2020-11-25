@@ -50,7 +50,7 @@ namespace Loxodon.Framework.Examples
 
         protected override void OnShow()
         {
-            Unzip();
+            Unzip().Forget();
         }
 
         public override void DoDismiss()
@@ -61,24 +61,31 @@ namespace Loxodon.Framework.Examples
             subscription = null;
         }
 
+        protected override async UniTaskVoid OnLocalizeChanged()
+        {
+            tipText.text = await R.common.accept;
+
+            UpdateProcess().Forget();
+        }
+
         private void OnClickButton()
         {
             OnOpenLoginWindow();
         }
 
-        private async void Unzip()
+        private float progress = 0;
+        private async UniTaskVoid Unzip()
         {
-            tipText.text = "Do not play with the knife. it's very sharp";
             progressBarSlider.gameObject.SetActive(true);
             try
             {
-                var progress = 0f;
+                progress = 0f;
                 while (progress < 1f)
                 {
                     progress += 0.01f;
                     progressBarSlider.value = progress;
-                    progressBarText.text = $"{progress * 100}%";
-                    await new WaitForSecondsRealtime(0.02f);
+                    UpdateProcess().Forget();
+                    await UniTask.WaitForEndOfFrame();
                 }
             }
             finally
@@ -87,6 +94,11 @@ namespace Loxodon.Framework.Examples
                 tipText.text = "";
                 OnOpenLoginWindow();
             }
+        }
+
+        private async UniTaskVoid UpdateProcess()
+        {
+            progressBarText.text = $"{await R.common.accept} {progress * 100}%";
         }
 
         private void OnOpenLoginWindow()

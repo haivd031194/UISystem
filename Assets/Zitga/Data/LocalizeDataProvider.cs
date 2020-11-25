@@ -8,6 +8,8 @@ namespace Loxodon.Framework.Data
 {
     public class LocalizeDataProvider
     {
+        private readonly object _lock = new object();
+
         private const string Format = "Localization/{0}/{1}";
 
         private readonly IDataProvider dataProvider;
@@ -35,10 +37,16 @@ namespace Loxodon.Framework.Data
             if (data.TryGetValue(category, out var content) == false)
             {
                 await UniTask.SwitchToMainThread();
-                
+
                 content = await LoadAsync(string.Format(Format, localization.CultureInfo.Name, category));
 
-                data.Add(category, content);
+                lock (_lock)
+                {
+                    if (data.ContainsKey(category) == false)
+                    {
+                        data.Add(category, content);
+                    }
+                }
             }
 
             try
@@ -55,7 +63,6 @@ namespace Loxodon.Framework.Data
         private async UniTask<Dictionary<string, string>> LoadAsync(string path)
         {
             var content = await dataProvider.LoadAsync(path, '~');
-
             return Parse(content);
         }
 

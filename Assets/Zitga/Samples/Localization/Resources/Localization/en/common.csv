@@ -370,7 +370,7 @@ require_vip_or_stage~VIP {1} oder Phase {2} {3}-{4} benötigen
 require_vip_or_level_stage~VIP {1} oder Level {2}, Phase {4}-{5} benötigen
 achievement~Leistungen
 quest_tree~Suche-Baum
-achievement_tittle_group_1~Verbindungsmacht
+achievement_tittle_group_1~achievement_tittle_group_1
 achievement_tittle_group_2~Leben oder Tod
 achievement_tittle_group_3~Beschwörungsstrategie
 achievement_tittle_group_4~Enorme Herausforderung

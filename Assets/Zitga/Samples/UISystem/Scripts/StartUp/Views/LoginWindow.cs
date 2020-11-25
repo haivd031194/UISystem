@@ -1,5 +1,6 @@
-﻿using System.Collections;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
+using Cysharp.Threading.Tasks;
+using Loxodon.Framework.Localizations;
 using Loxodon.Framework.Views;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,7 @@ public class LoginWindow : Window<LoginWindowProperties>
     public InputField password;
     public Button confirmButton;
     public Button cancelButton;
+    public Text signIn;
 
     protected override void OnCreate(IBundle bundle)
     {
@@ -28,8 +30,15 @@ public class LoginWindow : Window<LoginWindowProperties>
         log.Debug(Properties.name);
     }
 
+    protected override async UniTaskVoid OnLocalizeChanged()
+    {
+        signIn.text = await R.common.achievement_tittle_group_1;
+        Debug.Log("Localize change: " + signIn.text);
+    }
+
     private void OnClickConfirm()
     {
+        Localization.Current.CultureInfo = Locale.GetCultureInfoByLanguage(SystemLanguage.English);
         if (!(ValidateUsername(username.text) && ValidatePassword(password.text)))
         {
             log.Debug("Input is not valid");

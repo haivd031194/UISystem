@@ -39,7 +39,7 @@ namespace Loxodon.Framework.Localizations
         private CultureInfo cultureInfo;
         private EventHandler cultureInfoChanged;
 
-        private LocalizeDataProvider dataProvider;
+        private readonly LocalizeDataProvider dataProvider;
 
         public static Localization Current
         {
@@ -114,7 +114,6 @@ namespace Loxodon.Framework.Localizations
         private void OnCultureInfoChanged()
         {
             RaiseCultureInfoChanged();
-            // this.Refresh();
         }
 
     }

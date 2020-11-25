@@ -348,6 +348,7 @@ MonoBehaviour:
   password: {fileID: 114000014126718890}
   confirmButton: {fileID: 114000010052373138}
   cancelButton: {fileID: 114000012760492504}
+  signIn: {fileID: 114000011011535664}
 --- !u!114 &5479605457321674498
 MonoBehaviour:
   m_ObjectHideFlags: 0
