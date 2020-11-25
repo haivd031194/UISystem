@@ -38,12 +38,8 @@ namespace Loxodon.Framework.Examples
         public Button button;
         private IDisposable subscription;
 
-        private GlobalWindowManager windowManager;
-
         protected override void OnCreate(IBundle bundle)
         {
-            windowManager = Context.GetApplicationContext().GetService<GlobalWindowManager>();
-
             button.onClick.AddListener(OnClickButton);
         }
 
