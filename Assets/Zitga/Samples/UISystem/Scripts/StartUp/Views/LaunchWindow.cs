@@ -26,7 +26,6 @@ using System;
 using Cysharp.Threading.Tasks;
 using Loxodon.Framework.Contexts;
 using Loxodon.Framework.Views;
-using UnityEngine;
 using UnityEngine.UI;
 
 namespace Loxodon.Framework.Examples
@@ -73,7 +72,7 @@ namespace Loxodon.Framework.Examples
             OnOpenLoginWindow();
         }
 
-        private float progress = 0;
+        private float progress;
         private async UniTaskVoid Unzip()
         {
             progressBarSlider.gameObject.SetActive(true);
