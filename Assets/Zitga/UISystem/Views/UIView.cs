@@ -23,6 +23,9 @@
  */
 
 using System;
+using System.Globalization;
+using Cysharp.Threading.Tasks;
+using Loxodon.Framework.Localizations;
 using Loxodon.Framework.Views.Animations;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -35,14 +38,19 @@ namespace Loxodon.Framework.Views
         private CanvasGroup canvasGroup;
         private RectTransform rectTransform;
 
+        private CultureInfo cultureInfo;
+
         protected override void OnEnable()
         {
             base.OnEnable();
+            AddLocalizeListener();
+            CheckLocalizeChanged();
             OnVisibilityChanged();
         }
 
         protected override void OnDisable()
         {
+            RemoveLocalizeListener();
             OnVisibilityChanged();
             base.OnDisable();
         }
@@ -130,8 +138,59 @@ namespace Loxodon.Framework.Views
 
         [field: NonSerialized] public virtual IAttributes ExtraAttributes { get; } = new Attributes();
 
+        /// <summary>
+        /// Called when Object switch active statement
+        /// </summary>
         protected virtual void OnVisibilityChanged()
         {
+        }
+
+        /// <summary>
+        /// Called when the state of "Current Language Info" is changed. 
+        /// </summary>
+        /// <returns></returns>
+        protected virtual void CheckLocalizeChanged()
+        {
+            var currentCultureInfo = Localization.Current.CultureInfo;
+            if (cultureInfo == null || currentCultureInfo.Name.Equals(cultureInfo.Name) == false)
+            {
+                cultureInfo = currentCultureInfo;
+                OnLocalizeChanged().Forget();
+            }
+            else
+            {
+                // do not update localize
+            }
+        }
+
+        /// <summary>
+        /// Update localize when language changed
+        /// </summary>
+        private void OnLocalizeChanged(object sender, EventArgs e)
+        {
+            OnLocalizeChanged().Forget();
+        }
+
+        protected virtual async UniTaskVoid OnLocalizeChanged()
+        {
+            // do something
+            await UniTask.Yield();
+        }
+
+        /// <summary>
+        /// Listen when language changed
+        /// </summary>
+        private void AddLocalizeListener()
+        {
+            Localization.Current.CultureInfoChanged += OnLocalizeChanged;
+        }
+
+        /// <summary>
+        /// Remove listener
+        /// </summary>
+        private void RemoveLocalizeListener()
+        {
+            Localization.Current.CultureInfoChanged -= OnLocalizeChanged;
         }
     }
 }

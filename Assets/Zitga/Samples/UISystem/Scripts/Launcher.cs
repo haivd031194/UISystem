@@ -24,10 +24,13 @@
 
 using System;
 using System.Collections;
+using System.Globalization;
 using Loxodon.Framework.Views;
 using Loxodon.Framework.Contexts;
+using Loxodon.Framework.Localizations;
 using Loxodon.Framework.Services;
 using Loxodon.Log;
+using UnityEditor;
 using UnityEngine;
 using Zitga.Sound;
 
@@ -62,6 +65,10 @@ namespace Loxodon.Framework.Examples
            
             /* register IUpdateSystem */
             container.Register(new SoundManager());
+
+            CultureInfo cultureInfo = Locale.GetCultureInfoByLanguage(SystemLanguage.Vietnamese);
+            Localization.Current.CultureInfo = cultureInfo;
+            container.Register(Localization.Current);
 
             globalUpdateSystem = context.GetService <GlobalUpdateSystem>();
 

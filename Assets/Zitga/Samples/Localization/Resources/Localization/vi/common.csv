@@ -1,0 +1,989 @@
+key~value
+notice_content~<size=50>Phiên bản 1.1.5 : </size>\n\n1. Tính năng mới: Raise Level\n\n2. Sự kiện Black Friday\n∘ Thời gian sự kiện: 0:00 27/11 - 23:59 04/12 [UTC+0]\n\n3. Tinh chỉnh và sửa lỗi.
+notice~Thông báo
+tap_to_play~Chạm để chơi
+setting~Cài đặt
+account~Tài khoản
+id~Id
+summoner~Tên
+register_account~Đăng ký tài khoản
+change_password~Thay đổi mật khẩu
+switch_server~Chuyển đổi máy chủ
+switch_account~Chuyển đổi tài khoản
+email_verify~Email khôi phục
+game_version~Phiên bản trò chơi
+close~Đóng
+closed~Đã đóng
+sound~Hiệu ứng âm thanh
+music~Nhạc
+graphic_quality~Chất lượng đồ họa
+low~Thấp
+medium~Trung bình
+high~Cao
+language~Ngôn ngữ
+language_setting~Chọn ngôn ngữ
+password~Mật khẩu
+enter_text~Nhập id của bạn bè
+forget~Quên
+do_you_want_restore~Bạn có muốn khôi phục không?
+register~Đăng ký
+login~Đăng nhập
+restore~Khôi phục
+confirm_password~Xác nhận mật khẩu
+cancel~Hủy bỏ
+confirm~Xác nhận
+new_password~Mật khẩu mới
+confirm_new_password~Xác nhận mật khẩu mới
+please_select_language~Vui lòng chọn ngôn ngữ
+daily_checkin~Điểm Danh
+mail~Thư
+friend~Bạn bè
+shop~Cửa Hàng
+main_character~Triệu Hồi Sư
+mastery~Bảng Bổ Trợ
+inventory~Túi
+hero_list~Anh Hùng
+event~Sự Kiện
+daily_reward~Thưởng hàng ngày
+checkin_progress~Tiến trình điểm danh %s
+reply~Trả lời
+claim~Nhận
+mail_box~Hộp thư
+claim_all~Nhận tất cả
+system_mail~Thư hệ thống
+player_mail~Thư người chơi
+mail_empty~Hộp thư trống
+received_applications~Đã nhận yêu cầu
+recommended_friend~Đề xuất
+claim_and_send~Nhận và Gửi
+friend_list~Danh sách bạn bè
+search~Tìm kiếm
+friend_request~Yêu cầu kết bạn
+help_fight~Thám Hiểm
+apply~Áp dụng
+delete_all~Xóa hết
+delete~Xóa
+scout~Do thám
+ranking_point~Điểm xếp hạng
+ranking_reward~Phần thưởng xếp hạng
+battle_reward~Phần thưởng trận đấu
+battle~Trận đấu
+smash~Đánh nhanh
+preview~Xem trước
+auto_fill~Tự động chọn
+disassemble~Tháo dỡ
+heroese~Anh hùng
+ok~Đồng ý
+yes~Có
+no~Không
+not_select_all_hero~Không thể chọn tất cả Anh hùng
+do_disassemble_hero_4_star~Bạn thật sự muốn tháo dỡ Anh hùng có sao cao hơn %s?
+you_need_select_hero~Bạn cần chọn một anh hùng
+do_you_want_disassemble~Bạn thật sự muốn tháo dỡ?
+basic~Cơ bản
+premium~Cao cấp
+refresh~Làm mới
+time~Thời gian
+forge~Rèn
+available_to_forge~Sẵn có để rèn:
+weapon~Vũ khí
+armor~Giáp
+helmet~Mũ
+ring~Nhẫn
+rank_x~Xếp hạng: %s
+season_ranking~Xếp hạng mùa giải
+point~Điểm
+group_ranking~Xếp hạng nhóm
+score~Điểm số
+reward~Phần thưởng
+record~Ghi lại
+defense~Phòng thủ
+choose_rival~Chọn Đối thủ
+change~Đổi
+your_current_rank_x~Thứ hạng hiện tại của bạn: %s
+reward_will_sent~Phần thưởng sẽ được gửi vào 
+reward_will_sent_x~Phần thưởng sẽ được gửi vào: %s
+wave~Đợt
+will_open_in~Sẽ mở sau:
+will_end_in~Sẽ kết thúc sau
+quick~Nhanh
+secret_shop~Thương lái
+skip~Bỏ qua
+buy~Mua
+primary_merchant~Thương nhân tập sự
+medium_merchant~Thương nhân lành nghề
+senior_merchant~Thương nhân lão làng
+mysterious_merchant~Thương nhân bí ẩn
+primary~Tập sự
+senior~Cao cấp
+formation~Đội hình
+save~Lưu
+material~Nguyên liệu
+upgrade~Nâng cấp
+skip_battle~Bỏ qua trận đấu
+back~Quay lại
+front~Hàng trước
+gallery~Bộ sưu tập
+linking~Liên kết
+sort~Sắp xếp
+level~Cấp độ
+star~Sao
+select_hero_altar~Chọn Anh hùng để phân giải
+replay~Diễn lại
+reward_current_ranking~Thưởng thứ hạng hiện tại
+hero_shard~Mảnh Anh hùng
+tap_to_close~Chạm để đóng
+avatar~Hình đại diện
+border~Khung
+avatar_border~Hình đại diện và Khung
+current_avatar~Hình đại diện và Khung hiện tại
+select_avatar~Vui lòng chọn hình đại diên
+select_border~Vui lòng chọn Khung
+world~Thế giới
+send~Gửi
+chat_option_1~Thông Tin VIP
+chat_option_2~Chặn trò chuyện Thế giới
+chat_option_3~Chặn trò chuyện Bang hội
+chat_option_4~Chặn trò chuyện Tuyển mộ
+select_hero_battle~Chọn Anh hùng để chiến đấu
+vs~VS
+hero_info~Thông tin
+equip~Trang bị
+evolve~Tiến hóa
+skin~Trang phục
+level_to_max~Lv.Max
+level_up~Nâng cấp
+unlock_level~Mở khóa ở cấp: %s
+unequip~Cởi bỏ
+auto_equip~Trang bị nhanh
+awaken~Thức tỉnh
+switch_character~Chuyển đổi triệu hồi sư
+exp~EXP
+free~Miễn phí
+free_x~Miễn phí %s
+summon~Triệu hồi
+summon_x~Triệu hồi %s
+storage~Kho đồ
+fragment~Mảnh
+artifact~Cổ vật
+leaderboard~Bảng xếp hạng
+quest~Nhiệm vụ
+damage_stat~Chỉ số sát thương
+notification~Thông báo
+spin_x~Quay %s
+next_force_refresh~Làm mới sau:
+pack_of_item~Gói vật phẩm
+congratulation~Chúc mừng
+smash_title~Bạn muốn thách đấu bao nhiêu lần?
+select_heroes~Chọn Anh hùng
+requirement~Yêu cầu
+start~Bắt đầu
+quest_refresh_in~Nhiệm vụ ({1}) sẽ được đặt lại sau {2}
+speed_up~Tăng tốc
+complete~Hoàn thành
+block~Chặn
+unblock~Bỏ chặn
+send_mail~Thư đã gửi
+refresh_in~Làm mới sau: %s
+remaining_attempts~Lượt còn lại:
+challenge~Vào trận
+rename~Đổi tên
+x_character~%s ký tự
+change_avatar~Tuỳ chỉnh Hình đại diện và Khung
+vip~Thông tin VIP
+replace_hero~Thay thế Anh hùng
+select_your_hero~Chọn Anh hùng của bạn
+please_select_hero_replace~Vui lòng chọn Anh hùng thay thế
+convert~Chuyển đổi
+lock_current_stat~Khóa thuộc tính hiện tại
+upgrade_artifact~Nâng cấp cổ vật
+select_material_artifact~Vui lòng chọn cổ vật nguyên liệu 
+training_hero~Huấn luyện
+to_complete_training~Thời gian huấn luyện tất cả Anh hùng tối đa
+select_item~Chọn vật phẩm
+map~Bản đồ
+select_material_hero~Vui lòng chọn Anh hùng nguyên liệu 
+select~Chọn
+unlock_star~Mở khóa ở %s sao
+guild_application~Danh sách xin gia nhập
+request_x~Yêu cầu %s
+accept~Chấp nhận
+decline~Từ chối
+guild_foundation~Thiết lập bang hội
+recommended~Đề xuất
+enter_guild_name_id~Nhập id hoặc tên Bang hội
+found~Tạo
+guild_content~Bạn có thể tham gia hoặc tự tạo bang hội để nhận quà hoạt động bang hội.
+member_x~Thành viên %s
+emblem~Biểu tượng
+info~Thông tin
+enter_guild_name~Nhập tên bang hội
+enter_guild_info~Nhập thông tin bang hội
+recruit~Tuyển mộ
+daily_boss~Boss Bang hội
+checkin~Điểm danh
+application~Danh sách xin gia nhập
+input_recruit_info~Vui lòng nhập thông tin tuyển mộ của bạn
+kick~Đuổi
+demote~Hạ cấp
+promote~Thăng cấp
+season_reward~Phần thưởng mùa
+self_damage~Sát thương bản thân:
+guild_damage~Sát thương bang hội:
+level_boss_x~Cấp độ Boss %s
+unlock_at_guild_x~Mở khóa ở cấp bang hội %s
+current_reward~Phần thưởng hiện tại
+next_reward~Phần thưởng tiếp theo
+guild_log~Nhật ký bang hội
+stage_reward~Phần thưởng màn chơi
+map_stage~Bản đồ {1}, màn chơi {2}, độ khó {3}
+need_input_code~Vui lòng nhập mã
+need_input_mail~Vui lòng nhập email để khôi phục tài khoản
+input_code_fail~Mã không hợp lệ
+confirm_new_password_fail~Xác nhận mật khẩu mới thất bại
+need_input_new_password~Vui lòng nhập mật khẩu mới
+can_not_claim_reward~Đã Nhận!
+max_buy_turn_daily~Lượt mua hàng ngày đạt tối đa
+coming_soon~Sắp ra mắt
+limit_purchase_this_pack~Bạn đã đạt đến giới hạn mua cho gói này
+member_kick_guild~Thành viên đã bị đuổi khỏi Bang Hội
+failed_kick_member~Đuổi thành viên thất bại
+login_current_account~Đăng nhập tài khoản hiện tại
+member_role_changed~Vai trò của thành viên đã thay đổi
+guild_sub_leader_reached_limit~Phó bang đã đạt đến giới hạn
+failed_change_member_role~Thay đổi vai trò thành viên thất bại
+input_password_failed~Mật khẩu không đúng
+input_user_name_failed~Tên người dùng không đúng
+enter_recruit_info_please~Vui lòng nhập thông tin ứng tuyển
+send_recruit_successful~Gửi yêu cầu gia nhập thành công
+fail_send_recruit_info~Gửi thông tin xin gia nhập thất bại
+fail_get_data~Tải dữ liệu thất bại
+fail_refresh~Làm mới thất bại
+player_joined_guild~Người chơi đã gia nhập một Bang Hội
+guild_limit_member~Bang hội đã đủ thành viên
+need_permission_perform_action~Bạn không có quyền thực hiện hành động này.
+failed_get_dungeon_stage~Tải dữ liệu Hoả Ngục thất bại.
+send_request_successful~Đã gửi yêu cầu thành công
+already_in_guild~Bạn đã ở trong Bang Hội
+please_enter_guild_name~Vui lòng nhập tên Bang Hội
+create_guild_success~Tạo thành công Bang Hội
+create_guild_failed~Tạo bang hội thất bại.
+upgrade_guild_success~Cập nhật thông tin Bang Hội thành công
+challenge_guild_dungeon_success~Thách đấu Hoả Ngục Bang Hội thành công
+guild_description_invalid~Mô tả bang hội không hợp lệ
+failed_challenge_guild_dungeon~Thách đấu Ngục Tối Bang Hội thất bại
+guild_description_bad_word~Mô tả chứa từ bị cấm.
+password_failed~Mật khẩu không đúng
+try_again_few_seconds~Vui lòng thử lại sau vài giây
+need_input~Vui lòng nhập id hoặc tên Bang Hội
+insert_least_one_hero~Vui lòng chọn ít nhất một Anh hùng
+change_success~Thay đổi thành công!
+email~Email
+code_verify~Mã xác nhận
+master_can_not_quit_guild~Bang chủ không thể rời khỏi Hội
+sure_leave_guild~Bạn có chắc chắn muốn rời khỏi Bang Hội?
+have_left_guild~Bạn đã rời khỏi Bang Hội
+need_level_mastery~Bạn cần nâng cấp tất cả Bảng Bổ trợ lên cấp %s
+login_failed~Đăng nhập thất bại
+boss_died~Boss đã bị đánh bại
+limit_level_x~Không thể tấn công do chênh lêch cấp độ quá %s
+continue_facebook~Tiếp tục với facebook
+remove_friend_success~Xóa thành công!
+do_want_delete_mail~Bạn có muốn xóa thư không?
+can_not_claim_mail~Nhận thư thất bại
+send_success~Gửi thành công!
+claim_success~Nhận thành công!
+claim_send_success~Nhận và gửi thành công!
+can_not_claim_send~Không có trái tim để nhận hoặc gửi
+do_want_delete_all~Bạn có muốn xóa tất cả?
+add_friend_success~Thêm bạn thành công
+hero_in_arena~Anh hùng trong đấu trường
+hero_in_training~Anh hùng trong huấn luyện tự động
+require_level_x~Yêu cầu cấp độ %s
+help~Trợ giúp
+guild_name_contain_banned_word~Tên Bang Hội không hợp lệ
+guild_desc_contain_banned_word~Mô tả Bang Hội không hợp lệ
+selected~Đã chọn
+not_enough_x~Không đủ %s
+casino_shop~Cửa hàng Mong Ước
+altar_shop~Cửa hàng Điện Thờ
+guild_shop~Cửa hàng Bang Hội
+arena_shop~Cửa hàng Đấu Trường
+want_to_buy~Bạn chắc chắn muốn mua?
+require_tavern~Anh hùng này không đáp ứng yêu cầu nhiệm vụ
+require_hero_star_x~Yêu cầu Anh hùng %s sao
+require_hero_faction_x~Yêu cầu anh hùng thuộc hệ %s
+require_hero_class_x~Yêu cầu anh hùng thuộc lớp %s
+want_to_cancel_quest~Bạn có muốn hủy bỏ nhiệm vụ?
+want_to_speed_up~Bạn có muốn tăng tốc nhiệm vụ?
+not_enough_equipment~Không đủ nguyên liệu
+noti_full_hero~Vị trí Anh hùng đã đầy
+unlock_new_function~Chức năng mới
+reset~Cài lại
+mastery_skill~Kỹ năng của Bảng Bổ Trợ
+need_reset_main_mastery~Bạn cần thiết lập lại Bảng Bổ Trợ
+want_to_reset~Bạn có muốn thiết lập lại?
+not_enough_resource~Không đủ tài nguyên
+user_profile~Thông tin người dùng
+fanpage~Page Facebook
+go_to_fanpage_notice~Vui lòng đi tới trang chủ để được hỗ trợ
+want_to_switch_server~Bạn có muốn chuyển đổi máy chủ?
+want_to_new_server~Bạn có muốn đăng ký một nhân vật mới ở máy chủ này?
+want_to_clear_data~Bạn có muốn xóa dữ liệu?
+connecting_server~Kết nối với máy chủ...
+init_service~Khởi tạo...
+init_data_request~Khởi tạo dữ liệu...
+init_resource_request~Khởi tạo tài nguyên...
+download_asset_bundle~Tải xuống tài nguyên...
+next_scout~Do thám lần tới vào: %s
+summoner_can_view~Tác dụng của Triệu hồi sư giống nhau với mọi hệ nguyên tố.
+require_stage_x~Hoàn thành màn chơi {1} {2}-{3} để mở khóa
+hero_info_max_level~Anh hùng đã đạt cấp độ tối đa
+daily_quest~Nhiệm vụ hàng ngày
+hero_level_cap_to~Cấp Anh hùng tối đa: %s
+bonus_class~Thưởng thêm cho phái {1}
+bonus_faction~Thưởng thêm cho hệ {1}
+bonus_class_faction~Thưởng thêm cho phái {1} và hệ {2}
+free_gem~Ngọc miễn phí
+skill_enhance~Tiến hóa kỹ năng
+level_cap~Giới hạn cấp độ
+how_many_purchase~Vui lòng nhập số lượng {1}
+sell~Bán
+vip_full~Cấp VIP đã đạt tới giới hạn
+copy_to_clipboard~Sao chép vào khay nhớ tạm
+player_blocked~Người chơi đã bị chặn
+hero_fragment_title_star~Mảnh Anh hùng {1} sao
+hero_fragment_faction~Mảnh Anh hùng {1} sao hệ {2}
+hero_fragment_name~Mảnh của {1}
+hero_fragment_star~Mảnh Anh hùng {1} sao
+hero_fragment_star_faction~Mảnh Anh hùng {2} {1} sao
+hero_fragment_info~Thu thập {1} mảnh để triệu hồi Anh hùng
+artifact_fragment_title_1~Mảnh Cổ Vật Hiếm
+artifact_fragment_title_2~Mảnh Cổ Vật Cổ Đại
+artifact_fragment_title_3~Mảnh Cổ Vật Huyền Thoại
+artifact_fragment_title_4~Mảnh Cổ Vật Huyền Thoại (Đặc Biệt)
+artifact_fragment_title_5~Mảnh Cổ Vật Bất Diệt
+artifact_fragment_title_6~Mảnh Cổ Vật Bất Diệt(Đặc Biệt)
+artifact_fragment_info~Thu thập {1} mảnh để triệu hồi một Cổ vật ngẫu nhiên.
+require_level_stage~Yêu cầu màn chơi {2} {3}-{4} và cấp {1}
+require_vip_or_stage~Yêu cầu VIP {1} hoặc màn chơi {2} {3}-{4}
+require_vip_or_level_stage~Yêu cầu VIP {1} hoặc cấp {2}, màn chơi {4}-{5}
+achievement~Thành Tựu
+quest_tree~Cây Nhiệm Vụ
+achievement_tittle_group_1~Sức Mạnh Liên Kết
+achievement_tittle_group_2~Sống hoặc Chết
+achievement_tittle_group_3~Chiến Lược Triệu Hồi
+achievement_tittle_group_4~Thử Thách Lớn Lao
+achievement_tittle_group_5~Khác
+quest_tree_tittle_group_1~Khởi đầu Hành Trình
+quest_tree_tittle_group_2~Chinh Phục Quái Vật
+quest_tree_tittle_group_3~Thử Thách Bất Tận
+completed~Hoàn Thành
+player_already_show_info~Thông tin người chơi đã hiển thị
+in_progress~Đang tiến hành
+new_password_is_last~Mật khẩu bị trùng
+new_password_failed~Xác nhận mật khẩu mới không thành công
+chat_delay~Trò chuyện sau: %s giây
+search_failed~Tìm kiếm thất bại
+need_input_friend_id~Cần nhập id bạn bè!
+send_failed~Gửi thất bại!
+warning_send_mail~Có thể gửi sau: %s giây
+mail_content~Cần nhập nội dụng mail!
+max_hero~Anh hùng đã tối đa!
+enough_hero_material~Không đủ nguyên liệu Anh hùng!
+max_turn_bought~Lượt mua đã đạt giới hạn!
+hero_max_star~Sao Anh hùng đã tối đa!
+need_up_max_level~Anh hùng cần lên cấp tối đa!
+hero_is_training~Đang tiến hành
+hour_x~%s giờ
+min_x~%s phút
+smash_reward~Phần thưởng tua nhanh
+refresh_x~Làm mới sau: %s
+potion_1~Hồi %s HP
+potion_2~Tăng %s Năng lượng
+potion_3~Tăng %s HP và %s Năng lượng
+full_slot~Hết chỗ
+want_to_use_potion~Bạn có muốn dùng Lọ Thuốc không?
+day_ago_format~{0} ngày {1} giờ trước
+hour_ago_format~{0} giờ {1} phút trước
+min_ago_format~{0} phút {1} giây trước
+second_ago_format~{0} giây trước
+tower_record_error~Phát lại trận đấu thất bại. Hãy thử phát lại trận khác.
+require_vip_or_level~Yêu cầu VIP {1} hoặc cấp {2}
+reach_limited_pack~Gói này đã đạt tới giới hạn!
+all_heroes_were_killed~Tất cả Anh hùng đã chết!
+use_id_format~Sử dụng định dạng id để thay thế
+guild_not_found~Không tìm thấy Bang Hội!
+recommend_guild_failed~Không thể hiển thị các bang hội đề xuất
+have_just_joined_guild~Bạn đã gia nhập một bang hội!
+boss_changed_successful~Thay đổi Boss thành công!
+select_boss_failed~Không thể chọn Boss!
+challenge_guild_boss_successful~Chiến Boss bang hội thành công
+challenge_guild_boss_failed~Chiến Boss bang hội thất bại
+guild_was_kicked~Bạn đã bị đuổi khỏi Bang hội
+check_in_successful~Điểm danh thành công!
+restore_failed~Khôi phục thất bại!
+play_record_failed~Có một lỗi với bản ghi này, vui lòng thử một cái khác!
+need_clear_previous_stage~Bạn cần hoàn thành màn chơi trước đó!
+map_cleared~Hoàn thành
+no_video~Video hiện không có sẵn!
+current_name~Tên hiện tại
+product_not_exist~Id này không tồn tại!
+purchase_processing~Đang xử lý
+register_account_success~Đăng ký tài khoản thành công!
+new_pass_limit~Giới hạn mật khẩu mới %s ký tự
+new_pass_special~Mật khẩu mới chứa ký tự đặc biệt
+confirm_pass_fail~Xác nhận mật khẩu thất bại!
+disconnect~Mất kết nối!
+dungeon_time_up~Hầm ngục đã đóng!
+change_language~Bạn có muốn thay đổi ngôn ngữ thành %s
+create_guild~Bạn có muốn tạo Bang hội không?
+want_block~Bạn có muốn chặn không?
+want_unblock~Bạn có muốn bỏ chặn không?
+want_delete_all_mail~Bạn có muốn xóa tất cả thư?
+want_refresh_tavern~Bạn có muốn làm mới quán rượu?
+remove_friend~Bạn có muốn xóa bạn bè?
+have_verified_email~Bạn đã thêm email khôi phục chưa?
+quit_game~Bạn có muốn thoát khỏi trò chơi?
+want_refresh_shop~Bạn có muốn làm mới Cửa Hàng?
+all_hero_died~Tất cả các anh hùng đã thất bại!
+resend~Gửi lại
+input_code~Nhập mã
+noti_code~Một tin nhắn đã được gửi đến hộp thư của bạn!
+update~Cập nhật
+raw_pack_1~Nắm ngọc
+raw_pack_2~Đống ngọc
+raw_pack_3~Túi ngọc
+raw_pack_4~Hộp ngọc
+raw_pack_5~Rương ngọc
+limited_pack_1~Gói Tuần Nhỏ
+limited_pack_2~Gói Tuần Trung
+limited_pack_3~Gói Tuần Lớn
+limited_pack_4~Gói Tuần Mặt Trời 
+limited_pack_5~Gói Tuần Vàng
+limited_pack_6~Gói Tháng Nhỏ
+limited_pack_7~Gói Tháng Trung
+limited_pack_8~Gói Tháng Lớn
+limited_pack_9~Gói Tháng Bạc
+limited_pack_10~Gói Tháng Vàng
+smash_many~Vui lòng nhập số lượng
+events~Sự Kiện
+event_summon~Triệu Hồi
+event_prophet_tree~Cây Nguyện Ước
+event_arena~Đấu Trường
+event_wheel_of_fate~Vòng Quay Định Mệnh
+event_tavern~Quán Rượu
+event_collection~Thu Thập
+event_exchange~Trao Đổi
+event_bundle~Gói Sự Kiện
+event_hot_deal~Ưu Đãi Hấp Dẫn
+event_prophet_tree_info~Hoàn thành đủ số lần triệu hồi theo yêu cầu trong Cây Tiên Tri để nhận thưởng.
+event_wheel_of_fate_info~Hoàn thành đủ số lần quay theo yêu cầu trong Vòng Quay Định Mệnh để nhận thưởng.
+event_collection_info~Thu thập đủ số lượng Anh hùng theo yêu cầu để nhận thưởng.
+event_tavern_info~Hoàn thành đủ số nhiệm vụ theo yêu cầu trong Quán rượu để nhận thưởng.
+event_summon_info~Hoàn thành đủ số lần triệu hồi theo yêu cầu trong Trận Pháp Triệu Hồi để nhận thưởng.
+event_arena_info~Hoàn thành đủ số lần chơi theo yêu cầu trong Đấu Trường để nhận thưởng.
+event_bundle_info~Trong suốt sự kiện, bạn có có thể mua các gói được giới hạn.
+event_hot_deal_info~Trong suốt sự kiện, bạn có có thể mua các gói được giới hạn.
+gate~Bản Đồ
+enemy~Kẻ Địch
+faction_restrain~Khắc chế phe phái
+faction_restrain_info~Khắc chế phe phái gây thêm {1} sát thương và tăng {2} chính xác
+round~Lượt
+invite~Mời
+name~Tên
+stock~Giới hạn
+select_guild_logo~Chọn Biểu tượng cho Bang hội của bạn
+member~Thành viên
+master~Bang Chủ
+deputy~Phó Bang
+guild_notice~Thông Báo
+season_end_in~Mùa giải kết thúc sau:
+stage~Màn chơi
+hall_of_fame~Bảng Danh Vọng
+floor~Tầng
+remove_all~Bỏ Hết
+enemy_team~Bên Địch
+go~Đi tới
+save_point~Điểm lưu trữ
+next_stage~Màn chơi kế tiếp
+attacker~Bên Công
+defender~Bên Thủ
+forge_equipment~Rèn Trang Bị
+upgrade_hero~N.cấp Anh hùng
+summon_hero~Triệu hồi Anh hùng
+enter_redemption_code~Nhập mã đổi quà
+gift_code~Quà tặng
+current_ranking~Xếp hạng hiện tại
+monthly_packs~Ưu đãi hàng tháng
+raw_packs~Gói Ngọc
+limited_packs~Gói G.hạn
+total_reward~Tổng Quà
+instant_reward~Nhận Ngay
+weekly~Thẻ tháng
+monthly~Thẻ ngọc
+premium_monthly~Thẻ ngọc Đặc Biệt
+free_acquire_video_reward~Nhận thưởng xem video miễn phí
+limit_pack_per_week~Giới hạn %s gói/tuần
+limit_pack_per_month~Giới hạn %s gói/tháng
+lock~Khóa
+edit_lock_heroes~Tùy chọn khóa
+back_to_current~Hiện tại
+mastery_name~{1} của {2}
+get_vip_point_to_reach~Cần %s VIP point để đạt được
+remove~Xóa
+replace~Thay thế
+use~Dùng
+add_one~Thêm x1
+add_ten~Thêm x10
+admin_mail~Mail quản trị
+moderator_mail~Mail điều hành
+merchant~Lái buôn
+enter_name_please~Vui lòng nhập tên!
+enter_chat~Nhập chữ
+chat~Trò chuyện
+join~Tham gia
+please_wait_for_seconds~Vui lòng đợi trong %s giây
+max~Tối đa
+gold_mine~Mỏ Vàng
+friend_not_save_formation~Người bạn này chưa tạo đội hình
+not_enough_quest_refresh~Không có nhiệm vụ để làm mới
+do_you_want_use_resource~Bạn có muốn dùng {1} {2} không?
+wanna_kick_member~Bạn có muốn khai trừ thành viên này không?
+special~Đặt biệt
+first_purchase~Dành cho bạn
+account_limit_character~Yêu cầu {1}-{2} ký tự
+hero_food_moon_title~Mặt Trăng
+hero_food_sun_info~Dùng để tiến hóa Anh hùng thuộc hệ: Bóng tối và Ánh sáng.
+hero_food_sun_title~Mặt Trời
+hero_food_moon_info~Dùng để tiến hóa Anh hùng thuộc hệ: Thiên nhiên, Lửa, Nước, Vực thẳm.
+boss~Trùm
+verify_email_success~Thêm email khôi phục thành công
+level_up_reward~Thưởng lên cấp
+no_tavern_quest~Không có nhiệm vụ
+season_open_in~Mùa giải sẽ mở sau:
+cleared~Xong
+claim_reach_level~Nhận ngay Thưởng Ủy Thác để đạt cấp độ yêu cầu
+more_time_reach_level~Cần hơn {1} để đạt cấp độ {2}
+claim_to_not_max~Đừng quên nhận Thưởng Ủy Thác trước khi nó đạt giới hạn
+to_reach_level_x~Cần {1} để đạt cấp độ {2}
+ranking_1~Sắt
+ranking_2~Đồng
+ranking_3~Bạc
+ranking_4~Vàng
+ranking_5~Bạch Kim
+ranking_6~Kim Cương
+ranking_7~Bậc Thầy
+ranking_top_1~Trưởng Môn
+ranking_top_2~Thách Đấu
+top_x~Hạng {1}
+top_x+~Hạng {1}+
+top_x_x~Hạng {1} - Hạng {2}
+point_x-~{1}pt-
+point_x+~{1}pt+
+point_x_x~{1}pt - {2}pt
+not_ranked~Chưa được xếp hạng
+version_outdate~Phiên bản %s của bạn đã cũ, hãy cập nhập phiên bản mới
+role~Vai trò
+ago~trước
+preload_resources~Tải trước tài nguyên
+download_resource_complete~Đã tải xong tài nguyên
+load_user_data~Đang tải dữ liệu...
+start_game~Bắt đầu trò chơi
+under_maintenance~Máy chủ đang được bảo trì
+no_data~Không có dữ liệu
+change_leader~Thay đổi chủ hội
+set_as_leader~Đặt làm chủ hội
+guild_member_list~Danh sách thành viên
+confirm_change_leader~Bạn có chắc muốn đưa {1} thành {2}?
+unblock_training_condition~Bạn có thể thay đổi anh dùng sau khi thu hoạch
+quick_battle~Tua nhanh
+quick_battle_info~Bạn sẽ nhận ngay lập tức phần thưởng đã tích sẵn trong %s phút, bao gồm Bình Kinh Nghiệm và Vàng.
+monthly_reward~Thưởng mỗi tháng
+max_quick_battle_turn~Đạt giới hạn tua nhanh
+event_has_ended~Sự kiện đã kết thúc
+archived~Thành tựu
+more_items~Còn %s Mục khác
+purchase_items~Mua vật phẩm
+limited_pack_desc_1~1 lựa chọn thông minh
+limited_pack_desc_2~Lựa chọn này sẽ làm gia tăng danh tiếng của bạn
+limited_pack_desc_3~Lựa chọn này sẽ mang lại lợi ích bất ngờ
+limited_pack_desc_4~Là 1 sự đầu tư thiên tài
+limited_pack_desc_5~Sự lựa chọn này sẽ mang lại cho bạn vinh quang của của một nhà vô địch
+limited_pack_desc_6~Là một sự lựa chọn cần thiết của một nhà chinh phục tài ba
+limited_pack_desc_7~Là một đầu tư lớn thống lĩnh tất cả
+limited_pack_desc_8~Lợi ích lớn của món đầu tư này bạn sẽ được nhìn thấy ngay
+companion_buff~Cộng Hưởng Phe Phái
+total~Tổng Cộng
+when_you_login~Khi bạn đăng nhập
+claim_each_day~Mỗi ngày trong %s ngày
+day~Ngày
+speed_up_gold~Tăng tốc {e(money_type_0)}
+speed_up_hero_exp~Tăng tốc {e(money_type_11)}
+speed_up_summoner_exp~Tăng tốc EXP Triệu hồi Sư
+speed_up_gold_info~Nhận ngay {e(money_type_0)} trị giá %s giờ
+speed_up_hero_exp_info~Nhận ngay {e(money_type_0)} trị giá %s giờ
+speed_up_summoner_exp_info~Nhận ngay EXP Triệu Hồi Sư trị giá %s giờ
+all_received~Tất cả đã nhận
+attack_success~Tấn công thành công
+attack_fail~Tấn công thất bại
+defense_success~Phòng thủ thành công
+defense_fail~Phòng thủ thất bại
+revenge~Báo thù
+hide~Ẩn
+season_end_reward~Phần thưởng mùa
+champion~Nhà vô địch
+reward_area_end~Đến phần thư để nhận phần quà của bạn
+go_to_mail~Đến phần thư
+arena_point_reset~Điểm xếp hạng của bạn trở về %s
+rate_x~%s xác suất
+season_end~Kết thúc mùa
+highest_ever~Kỉ lục
+random_item_pool~Danh Sách Vật phẩm
+next_refresh~Làm mới sau:
+community~Cộng đồng
+guild_log_join~{0} đã gia nhập bang hội
+guild_log_leave~{0} đã thoát bang hội
+guild_log_assign_leader~{0} đã bổ nhiệm {1} thành trưởng bang hội
+guild_log_assign_sub_leader~{0} đã bổ nhiệm {1} thành phó bang hội
+guild_log_kick_out~{0} đã bị đuổi khỏi bang hội
+free_refresh~Miễn phí làm mới trong:
+flash_sale~Flash sale
+rate_title~Bạn có yêu thích trò chơi?
+not_rate_contain~Chúng tôi rất xin lỗi về trải nghiệm chưa tốt mà bạn đã gặp phải. Vui lòng đến trang fanpage của chúng tôi và để lại phản hồi của bạn. Chúng tôi sẽ cố gắng hết sức để làm tốt hơn về trải nghiêm của trò chơi.
+transaction_mail~Thư giao dịch
+weekly_packs~Ưu đãi hàng tuần
+subscription_packs~Thẻ tháng
+rate_content~Bạn đã tận hưởng trò chơi Summoners Era? Vui lòng đánh giá chúng tôi 5 sao
+rate~Bình chọn
+not_rate~Không cám ơn
+go_to_fanpage~Đến Fanpage 
+notice_watch_ads~Bạn có muốn xem một quảng cáo để nhận thưởng không?
+play_video~Chạy video
+init_proceed_failed~Đơn đặt hàng hiện tại không thể thanh toán với tài khoản của bạn, vui lòng kiểm tra tài khoản của bạn và thử lại
+start_free_trial~Dùng miễn phí %s ngày
+trial_available~Cảm ơn bạn đã kích hoạt dùng thử
+warning_flash_sale~Gói này chỉ xuất hiện 1 lần. Bạn có chắc chắn muốn bỏ qua cơ hội này?
+warning_download_data~Tải {1}MB của dữ liệu.\n<color=#{2}>Khuyến khích nên dùng Wi-fi</color>
+not_enough_space_memory~Không đủ chỗ trống để tải dữ liệu. Cần %sMB để tiếp tục tải dữ liệu.
+retry~Thử lại
+download~Tải xuống
+event_login~Sự kiện đăng nhập
+event_login_info~Trong thời gian sự kiện, đăng nhập để nhận được phần thưởng miễn phí
+tip_1~When reset or using Heroes as evolution material, 100% of materials used for leveling those Heroes will be returned.
+tip_2~Chú ý! Những Anh Hùng từ 1-3 sao không hề vô dụng đâu nhé. Hãy nâng sao của chúng lên để làm thức ăn cho những Anh Hùng chính của bạn
+tip_3~Chỉ số cốt lõi của anh hùng sẽ được tăng nhiều khi tiến hóa
+tip_4~Cố gắng đạt được xếp hạng ở đấu trường cao nhất có thể. Bạn có thể có rất nhiều điểm để cộng ở bảng bổ trợ
+tip_5~Tự động luyện tập là con đường tốt nhất để tăng cấp cho anh hùng từ 3 sao đổ xuống
+tip_6~Đừng quên đăng kí tài khoản và thêm email khôi phục để bảo tài khoản của bạn an toàn
+tip_7~When reset or using Heroes as evolution material, 80% of materials used for upgrading Runes will be returned.
+notice_upgrade_stone_converting~Hãy sử dụng chuyển đổi đá, hoặc nâng cấp chúng
+day_only~Ngày
+login_event_progress~Tiến trình đăng nhập %s
+notice_switch_all_summoner~Bạn có muốn đổi tất cả nhà triệu hồi?
+not_enough_point~Không đủ điểm
+event_arena_ranking~Xếp hạng đấu trường
+event_arena_ranking_info~Hãy nâng điểm xếp hạng đấu trường của bạn để nhận được phần thưởng xứng đáng, phần thưởng sẽ được gửi về qua thư
+notice_reset_hero~Lượng tài nguyên trả lại khi cài lại sẽ phụ thuộc vào cấp độ của anh hùng lúc đó
+guild_hall~Nhà bang hội
+guild_hall_info~Nơi đặt các công trình bang hội và là nơi hoạt động của thành viên bang hội
+join_now~Vào ngay
+are_you_sure~Bạn có chắc không?
+registered_member~Đăng kí thành viên
+phase_message_tittle~Guild Assistant
+message_phase_1~Ít nhất cần {1} thành viên để tham gia {2}
+message_phase_2~Your guild can't join {1} because defense formation hasn't been set up. Only Leader & Vice-Leader could set up.
+change_formation~Thay đổi đội hình
+change_defender~Thay đổi phòng thủ
+guild_leader_benefit~Chỉ có trưởng và phó bang hội mới có thể đăng kí tham gia bang hội chiến 
+notice_evolve_hero_converting~Anh hùng này đang được chuyển đổi, bạn có chắc chắn muốn tiến hóa không?
+unlock_previous_stage~Mở khóa ở chặng trước
+missing_join_stage~Bạn đã bỏ lỡ tham gia 
+deal_damage_to_get_reward~gây sát thương để nhận được phần thưởng
+only_leader_can_change_boss~Chỉ có trưởng và phó bang hội mới có thể thay đổi Boss
+total_damage~Tổng sát thương
+event_release_festival~Sự kiện chào mừng ra mắt
+event_release_festival_info~Trong sự kiện, khi máy chủ đạt được số lượng người chơi nhất định, tất cả người chơi tại máy chủ đó sẽ nhận được phần thưởng.
+player_join_server~Người chơi vào máy chủ
+skip_batte~Tua nhanh thời gian
+summoner_locked~Người triệu hồi chưa được mở khóa
+member_has_registered~Thành viên đã đăng kí
+not_eligible_to_join~Không đủ điều kiện tham gia
+guild_war_phase_1_name~Giai đoạn đăng kí
+guild_war_phase_2_name~Giai đoạn đặt phòng thủ
+guild_war_phase_3_name~Giai đoạn chiến đấu
+random_boss~Boss ngẫu nhiên
+try_time~Thử lại
+check_out_defenders~Kiểm tra đội phòng thủ
+limited_pack_11~Gói Tháng Đặc Biệt 
+limited_pack_desc_11~Lợi ích lớn của món đầu tư này bạn sẽ được nhìn thấy ngay
+event_shop~Cửa hàng linh hồn
+mission~Nhiệm vụ sự kiện
+exchange~Trao đổi
+not_enough~Không đủ
+limit_x~Giới hạn %s 
+soul_shop~Cửa hàng linh hồn
+hidden_deal~Thỏa thuận bí mật
+owned~Đã sở hữu
+guild_owned~Sở hữu bang hội
+not_in_guild~Bạn không ở trong bang hội
+new~Mới
+out_of_turn~Hết lượt
+event_exchange_1~Trao đổi anh hùng
+event_exchange_1_info~Để hoàn thành nhiệm vụ, thu thập số lượng vật liệu cần thiết để trao đổi anh hùng.
+event_exchange_2~Trao đổi trang bị
+event_exchange_2_info~Để hoàn thành nhiệm vụ, thu thập số lượng Vật liệu cần thiết để trao đổi trang bị.
+event_exchange_3~Thương nhân bí ẩn
+event_exchange_3_info~Bạn có thể mua được những trang bị thú vị ở thương nhân bí ẩn
+profit~Lợi nhuận
+tilion_nick_name~Hồi máu xuất sắc
+donate~Quyên góp
+guild_donate_history~Lịch sử quyên góp bang hội
+defronowe_nick_name~Sát thủ điên cuồng
+first_time_reward_desc~Nhận được anh hùng này với lần trả tiền đầu tiên
+first_time_reward~Nạp lần đầu
+go_to_shop~Đến cửa hàng
+guild_donate_help~Hỗ trợ quyên góp bang hội
+guild_donate_title~Quyên góp bang hội
+starter_pack~Gói khởi đầu
+owned_x~Đã sở hữu: {1}
+starter_pack_name_1~Trang bị
+starter_pack_desc_2~Sát thương rộng lớn
+starter_pack_desc_3~1 chiêu 1 mạng
+starter_pack_desc_4~Thần giữ mạng sống
+extra~Thêm
+quick_battle_ticket_2_0~{1} Giờ - Tua nhanh vàng
+quick_battle_ticket_2_10~{1} Giờ - Tua nhanh kinh nghiệm
+quick_battle_ticket_8_0~{1} Giờ - Tua nhanh kinh nghiệm Summoners
+event_type_20~Sự kiện nhiệm vụ bang hội
+event_type_20_info~Bạn cần hoàn thành cả 2 mốc ở chiến tích vàng và bạc để nhận phần thưởng
+hero_lock_in_inventory~Khóa anh hùng trong kho
+hero_in_guild_war~Anh hùng trong bang hội chiến
+require_vip~Yêu cầu Vip %s
+received~Đã nhận
+final_reward~Phần thưởng cuối
+day_x~Ngày %s
+buy_item_quest_name~Mua đồ
+event_server_open~Mừng máy chủ mới
+item_loot~Vật phẩm thu được
+done~Xong
+support~Hỗ trợ
+check_game_version~Kiểm tra phiên bản trò chơi
+check_game_logic~Kiểm tra độ hợp lý của trò chơi
+check_game_resources~Kiểm tra tài nguyên của trò chơi
+check_resources_config~Kiểm tra cấu hình tài nguyên
+go_to_store~Đi đến cửa hàng
+switch_all~Chuyển tất cả
+server_open~Mở máy chủ
+login_summoner_era~Đăng nhập tài khoản Summoner Era
+login_facebook~Đăng nhập tài khoản Facebook
+login_google~Đăng nhập tài khoản Google
+login_apple~Đăng nhập tài khoản Apple
+binding_summoner_era~Liên kết tài khoản Summoner Era
+binding_facebook~Liên kết tài khoản Facebook
+binding_google~Liên kết tài khoản Google
+binding_apple~Liên kết tài khoản Apple
+binded~Đã liên kết
+noti_binding~Tài khoản đang là khách, hãy liên kết tài khoản để tránh mất dữ liệu
+mail_verified~Email khôi phục: %s
+min_donate_event_guild_quest~Quyên góp tối thiểu {1} {2} và {3} {4}
+player_banned~Bạn đã bị cho ra đảo vì chúng tôi đã phát hiện một số hành vi đáng ngờ. Xin hãy liên hệ với bộ phận Chăm Sóc Khách Hàng của chúng tôi để biết thêm chi tiết.
+scroll_monthly~Thẻ cuộn triệu hồi
+sale_off~Giảm giá
+hot~Hot
+level_pass~Level Pass
+unlock_level_pass~Mở phần thưởng cao cấp
+free_reward~Phần thưởng miễn phí
+premium_reward~Phần thưởng cao cấp
+activated~Đã mở khóa
+reward_claimed~Đã nhận quà
+summoner_exp~Summoner EXP
+tap_to_claim~Chạm để nhận
+growth_pack_lock~Sau khi mua, hãy cố gắng tiến cấp để nhận thêm nhiều phần thưởng vô cùng giá trị nữa nhé.
+noti_register~Bạn muốn đăng ký tài khoản mới chứ?
+skip_cut_scene~Bỏ qua cắt cảnh
+turn_on_cut_scene~Bật cắt cảnh
+select_hero_evolve~Chọn hero để Tiến Hóa %s
+noti_confirm_resource~Bạn xác nhận sẽ sử dụng những tài nguyên này chứ?
+noti_close_multi_evolve~Nếu thoát bạn sẽ phải chọn lại các anh hùng
+server_maintain_in_x~Server sẽ được bảo trì trong %s
+empty_hero_evolve~Hãy chọn anh hùng để tiến hóa
+multi_evolve~Đa tiến hóa
+potion~Potions
+collection_bag~Cường hóa
+empty~Còn trống
+remaining~Còn lại
+unpack_resources~Giải nén dữ liệu
+choose~Chọn
+hero_alive~Hero vẫn còn sống
+hp_full~Hero vẫn đầy máu
+power_full~Hero vẫn đầy nộ
+guild_war_season_ranking~Xếp hạng Mùa Bang hội chiến
+guild_war_member_setup_progress~Chưa đủ thành viên
+guild_war_member_setup_successful~Đăng ký tham gia bang hội chiến thành công
+guild_war_setup_can_be_modified~Sắp xếp đội hình giao chiến đã xong. Chỉ Bang Chủ và Phó Bang có quyền thay đổi trước {1}
+swap_member_successful~Đổi thành viên thành công
+ask_for_save_the_change_guild_war_defenders~Bạn vừa thay đổi đội hình phòng thủ. Bạn có muốn lưu lại thay đổi không?
+swap_member~Đổi thành viên
+win~Chiến thắng
+your_guild_get~Bang hội của bạn nhận được %s
+min_hero_dead_requirement~Chiến thắng với ít nhất %s anh hùng còn sống
+max_round_requirement~Chiến thắng trong %s vòng
+save_successful~Lưu thành công
+power~Lực chiến
+point_gained~Điểm nhận được
+not_enough_member_registered~Không thể tham gia do không đủ số lượng thành viên đăng kí.
+guild_war_point~Điểm xếp hạng Bang hội chiến
+guild_war_season_end~Mùa giải Bang hội chiến mới sắp bắt đầu. Hãy chuẩn bị kĩ lưỡng để chinh phạt những đối thủ khác.
+guild_war_register_notification~Đội hình phòng thủ đã được ai đó thay đổi.
+require_event_rate_up_point~Điểm sự kiện không đủ để triệu hồi.
+summon_rate_up~Chắc chắn thành công sau %s lần triệu hồi.
+guaranteed_requirement~Điểm sự kiện tăng
+guaranteed_requirement_describe~You are guaranteed to get this Event Hero. Every time you use Premium summon by Scroll or Diamond, you gain 1 Point. After you fulfill the Point Bar, the next summon is guaranteed to get the Event Hero.\n\nPoint Bar will be reset to 0 when you summoned the Event Hero. Even when you've not fulfilled it yet.\n\nRemember: Rate-up Event Summon is the independent system. It doesn't count for another event summon.
+summoner_level~Cấp độ Triệu hồi sư
+daily_packs~Gói Hàng Ngày
+5_star_hero_reward~Thưởng anh hùng 5 sao
+clear_stage_to_get_reward~Hoàn thành màn chơi này để nhận phần thưởng vào cuối mùa.
+current_season_reward~Phần thưởng mùa hiện tại
+artifact_fragment_title_7~Immortal Artifact (Water)
+artifact_fragment_title_8~Immortal Artifact (Fire)
+artifact_fragment_title_9~Immortal Artifact (Abyss)
+artifact_fragment_title_10~Immortal Artifact (Nature)
+artifact_fragment_title_11~Immortal Artifact (Light)
+artifact_fragment_title_12~Immortal Artifact (Dark)
+guild_market~Guild Store
+market_upgrade_describe~You will need the following resources to upgrade
+attack_log~Tấn Công
+defense_log~Phòng Thủ
+attack_count~Lượt Đánh
+special_offer~Ưu đãi khổng lồ
+master_blacksmith~Trang bị bậc thầy
+your_summoner_name~Nhập tên Triệu hồi sư của bạn
+when_upgrade~Nâng cấp chỉ số
+material_refund~Material Refund
+arena_pass~Arena Pass
+daily_quest_pass~Daily Quest Pass
+arena_pass_desc~Arena Pass Point can be acquired from participating in the arena.
+daily_quest_pass_desc~Daily Quest Pass Point can be acquired from daily quest rewards.
+has_not_skin~This Hero does not have any skins
+select_hero~Select Heros
+exit_guild~Exit Guild
+event_golden_time_name~Event Mid-Autumn
+event_golden_time_desc~During the Main event duration, players claim Lantern & Mooncake in Campaign Idle Reward. Use them to play the event & get rewards. \nLantern & Mooncake are Mid-Autumn Event Currency. They will be disappeared after the end of event period.
+event_feed_beast_name~Mooncake Feast
+event_feed_beast_desc~Give Mooncake to the Beast.\nGet exclusive reward every new evolution form.
+event_gem_box_name~Exclusive Gem Box
+event_gem_box_desc~Get the reward in the event period.\nMore Lantern, More Rewards.
+feed~Feed
+source_money_type_180~∙ Campaign Idle Reward\n∙ Exclusive Gem Box\n∙ Mid-Autumn Pack 1
+source_money_type_181~∙ Campaign Idle Reward\n∙ Festival Check-in\n∙ Mid-Autumn Pack 2 & 3
+select_buff~Select Buff
+drop_time~Event Period: Sep 25, 00:00 ~ Oct 10, 00:00 [UTC+0]
+golden_time_drop_info~∙ 1 Lantern: 60 (sec)\n∙ 1 Mooncake: 480 (sec)
+event_midautumn_specialoffer~Ưu đãi Trung Thu
+event_midautumn_checkin~Festival Check-in
+event_midautumn_exchange_name~Lantern Exchange
+event_midautumn_exchange_desc~Collect Lantern & Exchange the unlimited rewards below
+no_limit~No Limit
+mid_autumn_offer_1~Lucky Lantern
+mid_autumn_offer_2~Marry Mooncake
+mid_autumn_offer_3~Vermilion Bloom
+item_exchange~Item Exchange
+random_reward~Random Reward
+not_own_this_skin~Not own this skin yet
+arena_pass_unlock_content~Unlock & Claim the rewards every specified point you reach.
+daily_quest_pass_unlock_content~Unlock & Claim the rewards every specified point you reach.
+popup_context_need_resource~Lack of resources. Collect these & come back.
+warning_you_need_more_resources~Not enough resources. You need
+town_center~Main Construction
+turret~Turret
+event_golden_time_halloween_name~Halloween Time
+event_golden_time_halloween_desc~Collect Dices and Pumpkins to exchange rewards. Halloween items will disappear after the event end.\nMain event only has 14 days. The 15th day is allowed to exchange rewards only.
+source_money_type_210~∙ Campaign Idle Reward\n∙ Festival Offers\n∙ Shop/Daily Packs
+source_money_type_211~∙ Campaign Idle Reward\n∙ Festival Offers\n∙ Haunted Game (Dices)\n∙ Shop/Daily Packs
+drop_time_halloween~Drop Time: 14 days (00:00 Oct 23 - 23:59 Nov 05) [UTC+0]
+Collect New through Campaign Idle Reward, Daily Bundle,  ~∙ 1 Dice: 12 (h)\n∙ 1 Pumpkin: 180 (s)
+dice_title~Haunted Game
+dice_guide~Collect & Roll the Dices - Get awesome prizes.\nFind more in Idle Reward. Daily Packs you go forward.
+event_halloween_exchange_name~Devil Trading
+event_halloween_exchange_desc~Don't miss the Pumpkins. Exchange rewards only on Halloween.\nCollect more in Haunted Game. Tons of rewards you want to claim.
+halloween_daily_checkin~Event Check-in
+event_halloween_specialoffer~Festival Offers
+halloween_purchase_1~Jack O'Lantern
+halloween_purchase_2~Oracle's Dice
+halloween_purchase_3~Poltergeist
+roll~Roll
+lap_reward~Lap Rewards
+lap_x~Lap %s
+event_halloween_dice~Dice Game
+hallo_ween~Halloween
+next_free~Next rewards
+lap_completed~Lap completed: 
+black_friday_remain_x~Black Friday card remaining %s
+black_friday_gem_pack~Black Friday Shop
+event_card_black_friday~Subscription Card
+event_card_gem_pack~Gem Box Exchange
+black_friday_card_content~Login every day for 7 days to claim daily reward
+black_friday_card~Black Friday Card
+black_friday~Black Friday
+do_you_want_to~Please confirm to use
+reset_this_slot~to reset this slot?
+raised_list~Raised List
+raise_hero_describe~Choose Hero you want to strengthen in Raised List. Their level will be raised equal to the lowest level Hero of the Mighty Five below.
+describe_unbinding_raise_level~Unbind the hero from this slot will revert raised level to its original level. This slot will be available after
+hero_in_pentagram~Hero is one of the Mighty Five
+hero_in_raise_level~Hero is in Raised List
+hero_in_ancient_tree~Hero is in Ancient Tree
+need_to_select~You need to select a hero
+same_hero_id~This hero has the same Hero ID with the other hero in Raised List
+revert_to~Revert to
+binding_sungame~Liên kết tài khoản Sungame
+login_sungame~Đăng nhập tài khoản Sungame
+open_slot_before~Please open the previous slot first
+on_cooldown~On Cooldown
+unlock_slot_success~You've just opened extra slot
+tower~Tower 
+defense_stage_reward~Instant Reward
+failed~Failed
+success~Success
+require_login_sungame_to_purchase~Bạn cần đăng nhập tài khoản Sungame để có thể thực hiện giao dịch
+event_shop_name~NHÀ MÁY KẸO
+event_frosty_ignatius~Ignatius Băng Giá
+event_exclusive_offer~Ưu đãi đặc biệt
+event_xmas_daily_checkin~Lắc chuông nhận quà
+event_golden_time~QUÀ NGẬP TRÀN
+event_xmas_exchange_desc~Đổi kẹo que để lấy quà.
+xmas_purchase_1~Giáng sinh an lành
+xmas_purchase_2~Giánh sinh thú vị
+xmas_purchase_3~Giáng sinh tuyệt vời
+xmas~Giáng sinh
+need_login_by_sungame~Bạn cần đăng nhập bằng tài khoản Sungame
+binding_success~Liên kết thành công
+full_of_gift_name~HỘP QUÀ CỦA ÔNG GIÀ NÔ-EN
+full_of_gift_desc~Mở hộp quà của ông già Nô-en để nhận những phần quà bất ngờ
+drop_time_xmas~Thời gian: 14 ngày (00:00 19/12/2020 - 23:59 02/01/2021) [UTC+0]
+full_of_gift_drop_info~1 Hộp quà của ông già Nô-en rơi ra sau mỗi 7200 giây.
+reward_pool~Ring-Ding-Dong 
+completed_level_x~Làm tốt lắm! Bạn đã hoàn thành %s Level Pass
+need_reload_data~Cần tải lại dữ liệu
+need_set_formation_road_x~Yêu cầu ít nhất một anh hùng ở đường %s
+wave_x~Đợt %s
+happy_new_year~Happy New Year
+new_year_golden_time_name~Khoảnh Khắc Hân Hoan
+new_year_golden_time_desc~Sử dụng Thiệp năm mới để quay Lời chúc may mắn và nhận những phần quà bất ngờ. Thiệp năm mới có thể nhận được qua Rương treo máy, Gói hàng ngày và Hộp quà năm mới.
+drop_time_new_year~Thời gian rơi vật phẩm: 7 ngày (Từ 0:00 ngày 02/01 đến 23:59 ngày 08/01 [UTC + 0])
+event_new_year_card~Thẻ Phước Lành
+new_year_remain_x~Bạn sẽ tiếp tục nhận được quà trong %s ngày.
+event_new_year_card_content~Phần thưởng sẽ được gửi đến bạn trong %s ngày. 
+event_new_year_lottery~Điều Ước May Mắn
+event_new_year_exchange~Tạm Biệt Năm Cũ
+new_year_golden_time_drop_info~Thiệp năm mới sẽ rơi ra ngẫu nhiên khi mở rương trong chiến dịch.
+lottery_title~Điều Ước May Mắn
+source_money_type_230~Thiệp Năm Mới
+event_ignatius_name~SỰ THỊNH NỘ TỪ CỰC HÀN
+event_ignatius_desc~Chiến đấu Siêu cấp Boss - Ignatius băng giá để nhận được những phần thưởng xứng đáng.
+highest_damage~Sát thương cao nhất
+new_year_card_title~THẺ PHƯỚC LÀNH
+xmas_daily_checkin_title~LẮC CHUÔNG NHẬN QUÀ
+event_xmas_golden_time_name~Quà Ngập Tràn
+event_xmas_shop_name~Nhà Máy Kẹo

@@ -32,12 +32,12 @@ using Object = UnityEngine.Object;
 
 namespace Loxodon.Framework.Views
 {
-    public class ResourcesViewLocator : UIViewLocatorBase
+    public sealed class ResourcesViewLocator : UIViewLocatorBase
     {
         private GlobalWindowManager globalWindowManager;
         private readonly Dictionary<string, WeakReference> templates = new Dictionary<string, WeakReference>();
 
-        protected string Normalize(string name)
+        private string Normalize(string name)
         {
             var index = name.IndexOf('.');
             if (index < 0)
@@ -46,7 +46,7 @@ namespace Loxodon.Framework.Views
             return name.Substring(0, index);
         }
 
-        protected virtual IWindowManager GetDefaultWindowManager()
+        private IWindowManager GetDefaultWindowManager()
         {
             if (globalWindowManager != null)
                 return globalWindowManager;
@@ -63,7 +63,7 @@ namespace Loxodon.Framework.Views
             return DoLoadView<T>(name);
         }
 
-        protected virtual T DoLoadView<T>(string name)
+        private T DoLoadView<T>(string name)
         {
             name = Normalize(name);
             WeakReference weakRef;
@@ -115,7 +115,7 @@ namespace Loxodon.Framework.Views
             return result;
         }
 
-        protected virtual IEnumerator DoLoad<T>(IProgressPromise<float, T> promise, string name,
+        private IEnumerator DoLoad<T>(IProgressPromise<float, T> promise, string name,
             IWindowManager windowManager = null)
         {
             name = Normalize(name);
