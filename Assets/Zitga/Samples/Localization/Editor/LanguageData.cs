@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Text.RegularExpressions;
-using System.Text;
 #if UNITY_EDITOR
-using System.Collections;
 using System.IO;
 using Cysharp.Threading.Tasks;
 using Loxodon.Framework.Data;
@@ -22,7 +19,7 @@ public class LanguageData : ScriptableObject
     public List<LanguageItem> itemList;
 }
 
-[System.Serializable]
+[Serializable]
 public class LanguageItem
 {
     public string sheetName;
@@ -204,7 +201,7 @@ public class LevelScriptEditor : Editor
                 }
                 catch (Exception e)
                 {
-                    Debug.Log($"Something Error: {language.code} - {language.index} \n=> {e.ToString()}");
+                    Debug.Log($"Something Error: {language.code} - {language.index} \n=> {e}");
                     throw;
                 }
             }
@@ -252,7 +249,7 @@ public class LevelScriptEditor : Editor
             File.WriteAllText(outFile, text);
             return true;
         }
-        catch (System.Exception ex)
+        catch (Exception ex)
         {
             Debug.LogError($"SafeWriteAllText failed! path = {outFile} with err = {ex.Message}");
             return false;
@@ -266,11 +263,11 @@ public class LevelScriptEditor : Editor
             return;
         }
 
-        FileInfo file_info = new FileInfo(filePath);
-        DirectoryInfo dir_info = file_info.Directory;
-        if (!dir_info.Exists)
+        FileInfo fileInfo = new FileInfo(filePath);
+        DirectoryInfo dirInfo = fileInfo.Directory;
+        if (dirInfo != null && !dirInfo.Exists)
         {
-            Directory.CreateDirectory(dir_info.FullName);
+            Directory.CreateDirectory(dirInfo.FullName);
         }
     }
 }
@@ -281,10 +278,11 @@ class Language
     {
         this.code = code;
         this.index = index;
+        keyDict = new Dictionary<string, string>();
     }
 
-    public int index;
-    public string code;
-    public Dictionary<string, string> keyDict = new Dictionary<string, string>();
+    public readonly int index;
+    public readonly string code;
+    public readonly Dictionary<string, string> keyDict;
 }
 #endif
