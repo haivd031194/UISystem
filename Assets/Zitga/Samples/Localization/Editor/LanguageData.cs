@@ -13,7 +13,7 @@ using UnityEngine.Networking;
 
 #endif
 
-[CreateAssetMenu(fileName = "ScriptTableObject", menuName = "LanguageData", order = 1)]
+[CreateAssetMenu(fileName = "Language", menuName = "Localization/Language Data", order = 1)]
 public class LanguageData : ScriptableObject
 {
     public string downloadPath;
