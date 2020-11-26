@@ -48,8 +48,7 @@ namespace Loxodon.Framework.Services
 
         public virtual T Resolve<T>(string name)
         {
-            IFactory factory;
-            if (services.TryGetValue(name, out factory))
+            if (services.TryGetValue(name, out IFactory factory))
                 return (T) factory.Create();
             return default;
         }
