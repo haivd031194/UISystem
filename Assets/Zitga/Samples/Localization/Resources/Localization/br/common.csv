@@ -1,5 +1,5 @@
 key~value
-notice_content~<size=50>1.0.12 Patch Note: </size>\n\n1. New Hero - Arryl\n∘ Faction: Nature\n∘ Class: Assassin \n\n2. Halloween Event\n∘ Main Event Time: 0:00 23/10 - 23:59 05/11 [UTC+0]\n∘ You will have 1 more day to exchange rewards and buy bundle\n\n3. Optimize and fix bugs
+notice_content~<size = 50> 1.1.5 Nota do patch: </size>\n\n1. Novo recurso: aumentar o nível\n\n2. Evento Black Friday\n∘ Horário do evento: 0:00 27 de novembro - 23:59 4 de dezembro [UTC + 0]\n\n3. Otimize e corrija bugs
 notice~Aviso
 tap_to_play~Toque para jogar
 setting~Confirgurações
@@ -477,11 +477,11 @@ event_collection~Cobrança
 event_exchange~Troca
 event_bundle~Conjunto
 event_hot_deal~Hot Deals
-event_prophet_tree_info~Durante o evento, complete o número necessário de convocação no Árvore Anciã para obter as recompensas.
-event_wheel_of_fate_info~Durante o evento, complete o número necessário de giros no Roda do Destino para obter as recompensas.
+event_prophet_tree_info~Durante o evento, complete o número necessário de convocação no {e(feature_8)} para obter as recompensas.
+event_wheel_of_fate_info~Durante o evento, complete o número necessário de giros no {e(feature_11)} para obter as recompensas.
 event_collection_info~Durante o evento, colete o número necessário de heróis para obter as recompensas.
-event_tavern_info~Durante o evento, complete o número necessário de missões no Taverna para obter as recompensas.
-event_summon_info~Durante o evento, complete o número necessário de convocação no Invocação para obter as recompensas.
+event_tavern_info~Durante o evento, complete o número necessário de missões no {e(feature_7)} para obter as recompensas.
+event_summon_info~Durante o evento, complete o número necessário de convocação no {e(feature_2)} para obter as recompensas.
 event_arena_info~Durante o evento, complete o número necessário de jogadas na Arena para obter as recompensas.
 event_bundle_info~Durante o evento, você pode comprar pacotes limitados.
 event_hot_deal_info~Durante o evento, você pode comprar pacotes limitados.
@@ -598,7 +598,7 @@ guild_member_list~Lista de membros
 confirm_change_leader~Tem certeza de que deseja definir {1} como {2}?
 unblock_training_condition~Você pode mudar o herói para treinar depois de reivindicar
 quick_battle~Batalha Rápida
-quick_battle_info~Você receberá a Recompensa Inativa de %s minutos no valor de EXP do Herói, EXP do Invocador, Ouro e itens.
+quick_battle_info~Você receberá a Recompensa Inativa de %s minutos no valor de {e(money_type_10)}, {e(money_type_8)}, {e(money_type_0)} e itens.
 monthly_reward~Recompensa Mensal
 max_quick_battle_turn~Max turnos rápidos de batalha
 event_has_ended~Este evento terminou
@@ -618,12 +618,12 @@ total~Total
 when_you_login~Quando você entra
 claim_each_day~Todos os dias para %s dias
 day~Dia(s)
-speed_up_gold~Aceleração Ouro
-speed_up_hero_exp~Aceleração EXP do Herói
-speed_up_summoner_exp~Aceleração EXP do Invocador
-speed_up_gold_info~Adquira instantaneamente %s horas no valor de Ouro
-speed_up_hero_exp_info~Adquira instantaneamente %s horas no valor de EXP do Herói
-speed_up_summoner_exp_info~Adquira instantaneamente %s horas no valor de EXP do Invocador
+speed_up_gold~Aceleração {e(money_type_0)}
+speed_up_hero_exp~Aceleração {e(money_type_10)}
+speed_up_summoner_exp~Aceleração {e(money_type_8)}
+speed_up_gold_info~Adquira instantaneamente %s horas no valor de {e(money_type_0)}
+speed_up_hero_exp_info~Adquira instantaneamente %s horas no valor de {e(money_type_10)}
+speed_up_summoner_exp_info~Adquira instantaneamente %s horas no valor de {e(money_type_8)}
 all_received~recebido
 attack_success~Sucesso no ataque
 attack_fail~Falha no ataque
@@ -671,7 +671,7 @@ download~Download
 event_login~Login de evento
 event_login_info~Durante o evento, colete o número necessário de login para obter as recompensas.
 tip_1~When reset or using Heroes as evolution material, 100% of materials used for leveling those Heroes will be returned.
-tip_2~Por favor, pense com cuidado antes de vender qualquer Herói. Mesmo o herói 1 estrela pode ser usado como material para a evolução de outros heróis.
+tip_2~Notice! The low stars' Heroes (1-3) are not useless. Evolve and bring them to your Main Heroes as emergency food 
 tip_3~As estatísticas baseadas no nível dos heróis serão bastante aumentadas com a evolução.
 tip_4~Por favor, não esqueça de alcançar uma classificação mais alta na Arena. Você pode obter muitos &quot;Pontos de domínio&quot; como recompensa semanal no ranking.
 tip_5~O treinamento de heróis é a melhor maneira de aumentar o nível de heróis de 3 estrelas ou menos.
@@ -895,14 +895,14 @@ arena_pass_unlock_content~Unlock & Claim the rewards every specified point you r
 daily_quest_pass_unlock_content~Unlock & Claim the rewards every specified point you reach.
 popup_context_need_resource~Lack of resources. Collect these & come back.
 warning_you_need_more_resources~Not enough resources. You need
-town_center~Town Center
+town_center~Main Construction
 turret~Turret
 event_golden_time_halloween_name~Halloween Time
 event_golden_time_halloween_desc~Collect Dices and Pumpkins to exchange rewards. Halloween items will disappear after the event end.\nMain event only has 14 days. The 15th day is allowed to exchange rewards only.
 source_money_type_210~∙ Campaign Idle Reward\n∙ Festival Offers\n∙ Shop/Daily Packs
 source_money_type_211~∙ Campaign Idle Reward\n∙ Festival Offers\n∙ Haunted Game (Dices)\n∙ Shop/Daily Packs
 drop_time_halloween~Drop Time: 14 days (00:00 Oct 23 - 23:59 Nov 05) [UTC+0]
-golden_time_halloween_drop_info~∙ 1 Dice: 12 (h)\n∙ 1 Pumpkin: 180 (s)
+Collect New through Campaign Idle Reward, Daily Bundle,  ~∙ 1 Dice: 12 (h)\n∙ 1 Pumpkin: 180 (s)
 dice_title~Haunted Game
 dice_guide~Collect & Roll the Dices - Get awesome prizes.\nFind more in Idle Reward. Daily Packs you go forward.
 event_halloween_exchange_name~Devil Trading
@@ -919,3 +919,71 @@ event_halloween_dice~Dice Game
 hallo_ween~Halloween
 next_free~Next rewards
 lap_completed~Lap completed: 
+black_friday_remain_x~Black Friday card remaining %s
+black_friday_gem_pack~Black Friday Shop
+event_card_black_friday~Subscription Card
+event_card_gem_pack~Gem Box Exchange
+black_friday_card_content~Login every day for 7 days to claim daily reward
+black_friday_card~Black Friday Card
+black_friday~Black Friday
+do_you_want_to~Please confirm to use
+reset_this_slot~to reset this slot?
+raised_list~Raised List
+raise_hero_describe~Choose Hero you want to strengthen in Raised List. Their level will be raised equal to the lowest level Hero of the Mighty Five below.
+describe_unbinding_raise_level~Unbind the hero from this slot will revert raised level to its original level. This slot will be available after
+hero_in_pentagram~Hero is one of the Mighty Five
+hero_in_raise_level~Hero is in Raised List
+hero_in_ancient_tree~Hero is in Ancient Tree
+need_to_select~You need to select a hero
+same_hero_id~This hero has the same Hero ID with the other hero in Raised List
+revert_to~Revert to
+binding_sungame~Binding Sungame
+login_sungame~Login Sungame
+open_slot_before~Please open the previous slot first
+on_cooldown~On Cooldown
+unlock_slot_success~You've just opened extra slot
+tower~Tower 
+defense_stage_reward~Instant Reward
+failed~Failed
+success~Success
+require_login_sungame_to_purchase~You need to login by Sungame account to occur this transaction
+event_shop_name~SWEETS FACTORY
+event_frosty_ignatius~Frosty Ignatius
+event_exclusive_offer~Exclusive Offer
+event_xmas_daily_checkin~Jingle Bells Checkin
+event_golden_time~FULL OF GIFT
+event_xmas_exchange_desc~Exchange candy canes for gifts.
+xmas_purchase_1~Merry Xmas
+xmas_purchase_2~Jolly Xmas
+xmas_purchase_3~Fancy Xmas
+xmas~Xmas
+need_login_by_sungame~You need to login by Sungame account
+binding_success~Binding Success
+full_of_gift_name~SANTA CLAUS' SACK
+full_of_gift_desc~Open Santa Claus' Sack to get surprising gifts.
+drop_time_xmas~Drop Time: 14 days (00:00 Dec 19, 2020 - 23:59 Jan 02, 2021) [UTC+0]
+full_of_gift_drop_info~1 Santa Claus' Sack will drop every 7200 second.
+reward_pool~Ring-Ding-Dong 
+completed_level_x~Good job! You have completed Level Pass %s 
+need_reload_data~Need reload data
+need_set_formation_road_x~At least one hero required for road %s
+wave_x~Wave %s
+happy_new_year~Happy New Year
+new_year_golden_time_name~Joyful Moment
+new_year_golden_time_desc~Collect New Year postcards to play New Year Lucky Wishes and win super prizes. Postcards can be optained through Idle Reward, Daily Bundle and New Year Box.
+drop_time_new_year~Drop Time: 7 days (0:00 January 2 - 23:59 January 8 [UTC + 0])
+event_new_year_card~Blessing Card
+new_year_remain_x~You will continuously receive rewards the next %s days.
+event_new_year_card_content~Gifts will be sent to you daily in %s days. 
+event_new_year_lottery~Lucky Wishes
+event_new_year_exchange~Farewell to the Old
+new_year_golden_time_drop_info~Postcards will be randomly optain from Idle Reward.
+lottery_title~Lucky Wishes
+source_money_type_230~Postcard
+event_ignatius_name~FURY IN FREEZE
+event_ignatius_desc~Challenge the Super Boss - Frosty Ignatius to get worthy prizes
+highest_damage~Highest damage
+new_year_card_title~BLESSING CARD
+xmas_daily_checkin_title~JINGLE BELLS CHECKIN
+event_xmas_golden_time_name~Full Of Gift
+event_xmas_shop_name~Sweets Factory

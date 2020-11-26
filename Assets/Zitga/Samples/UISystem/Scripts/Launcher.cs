@@ -66,7 +66,7 @@ namespace Loxodon.Framework.Examples
             /* register IUpdateSystem */
             container.Register(new SoundManager());
 
-            CultureInfo cultureInfo = Locale.GetCultureInfoByLanguage(SystemLanguage.Indonesian);
+            CultureInfo cultureInfo = Locale.GetCultureInfoByLanguage(SystemLanguage.Vietnamese);
             Localization.Current.CultureInfo = cultureInfo;
             container.Register(Localization.Current);
 

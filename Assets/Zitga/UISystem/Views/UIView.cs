@@ -44,8 +44,8 @@ namespace Loxodon.Framework.Views
         {
             base.OnEnable();
             AddLocalizeListener();
-            OnVisibilityChanged();
             CheckLocalizeChanged();
+            OnVisibilityChanged();
         }
 
         protected override void OnDisable()
