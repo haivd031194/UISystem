@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -61,7 +59,7 @@ public class GroupPostprocessor : AssetPostprocessor
                     gm = ScriptableObject.CreateInstance<ShopGroupExample>();
                     AssetDatabase.CreateAsset(gm, assetfile);
                 }
-
+                
                 gm.shopGroups = CSVSerializer.Deserialize<ShopGroupExample.ShopGroup>(data.text);
 
                 EditorUtility.SetDirty(gm);

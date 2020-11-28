@@ -158,7 +158,7 @@ public class LevelScriptEditor : Editor
     void TextProcessing(string content, int index)
     {
         List<Language> langList = new List<Language>();
-        var csvTable = CSVSerializer.ParseCSV(content, ',', true);
+        var csvTable = CSVSerializer.ParseCSV(content, ',');//CSVSerializer.ParseCSV(content, ',', true);
         var lang = csvTable[0];
         for (int i = 0; i < lang.Length; i++)
         {
