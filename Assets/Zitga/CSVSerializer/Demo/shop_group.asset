@@ -21,99 +21,124 @@ MonoBehaviour:
       group_rate: 5
       rewardStocks:
       - id: 0
-        reward:
-          res_type: 2
+        rate: 3
+        stock: -1
+        resources:
+        - res_type: 2
           res_id: 10
+          res_number: 100000
+        reward:
           money_type: 1
           money_value: 100
+      - id: 1
         rate: 3
         stock: -1
-      - id: 1
-        reward:
-          res_type: 2
+        resources:
+        - res_type: 2
           res_id: 51
+          res_number: 1
+        reward:
           money_type: 1
           money_value: 200
-        rate: 3
-        stock: -1
       - id: 2
-        reward:
-          res_type: 2
-          res_id: 30
-          money_type: 1
-          money_value: 250
         rate: 2
         stock: -1
+        resources:
+        - res_type: 2
+          res_id: 30
+          res_number: 5
+        - res_type: 2
+          res_id: 30
+          res_number: 5
+        reward:
+          money_type: 1
+          money_value: 250
     - shop_type: 2
       group_rate: 3
       rewardStocks:
       - id: 4
-        reward:
-          res_type: 2
-          res_id: 51
-          money_type: 1
-          money_value: 750
         rate: 3
         stock: -1
-      - id: 5
-        reward:
-          res_type: 2
+        resources:
+        - res_type: 2
           res_id: 51
+          res_number: 5
+        reward:
           money_type: 1
-          money_value: 150
+          money_value: 750
+      - id: 5
         rate: 3
         stock: 1
-      - id: 6
+        resources:
+        - res_type: 2
+          res_id: 51
+          res_number: 1
         reward:
-          res_type: 2
+          money_type: 1
+          money_value: 150
+      - id: 6
+        rate: 2
+        stock: 1
+        resources:
+        - res_type: 2
           res_id: 30
+          res_number: 5
+        reward:
           money_type: 1
           money_value: 200
+      - id: 7
         rate: 2
         stock: 1
-      - id: 7
-        reward:
-          res_type: 2
+        resources:
+        - res_type: 2
           res_id: 31
+          res_number: 1
+        reward:
           money_type: 1
           money_value: 500
-        rate: 2
-        stock: 1
     - shop_type: 3
       group_rate: 2
       rewardStocks:
       - id: 8
-        reward:
-          res_type: 2
-          res_id: 51
-          money_type: 1
-          money_value: 600
         rate: 3
         stock: -1
-      - id: 9
-        reward:
-          res_type: 2
+        resources:
+        - res_type: 2
           res_id: 51
+          res_number: 5
+        reward:
           money_type: 1
-          money_value: 100
+          money_value: 600
+      - id: 9
         rate: 3
         stock: 1
+        resources:
+        - res_type: 2
+          res_id: 51
+          res_number: 1
+        reward:
+          money_type: 1
+          money_value: 100
       - id: 10
-        reward:
-          res_type: 2
+        rate: 2
+        stock: 1
+        resources:
+        - res_type: 2
           res_id: 60
-          money_type: 1
-          money_value: 400
-        rate: 2
-        stock: 1
-      - id: 11
+          res_number: 1
         reward:
-          res_type: 2
-          res_id: 31
           money_type: 1
           money_value: 400
+      - id: 11
         rate: 2
         stock: 1
+        resources:
+        - res_type: 2
+          res_id: 31
+          res_number: 1
+        reward:
+          money_type: 1
+          money_value: 400
   - group_id: 2
     stage_min: 100
     stage_max: 600
@@ -122,139 +147,174 @@ MonoBehaviour:
       group_rate: 50
       rewardStocks:
       - id: 12
-        reward:
-          res_type: 2
+        rate: 3
+        stock: -1
+        resources:
+        - res_type: 2
           res_id: 10
+          res_number: 500000
+        reward:
           money_type: 1
           money_value: 100
+      - id: 13
         rate: 3
         stock: -1
-      - id: 13
-        reward:
-          res_type: 2
+        resources:
+        - res_type: 2
           res_id: 51
+          res_number: 1
+        reward:
           money_type: 1
           money_value: 200
-        rate: 3
-        stock: -1
       - id: 14
-        reward:
-          res_type: 2
+        rate: 2
+        stock: -1
+        resources:
+        - res_type: 2
           res_id: 30
+          res_number: 5
+        reward:
           money_type: 1
           money_value: 250
+      - id: 15
         rate: 2
         stock: -1
-      - id: 15
-        reward:
-          res_type: 2
+        resources:
+        - res_type: 2
           res_id: 30
+          res_number: 1
+        reward:
           money_type: 0
           money_value: 100000
-        rate: 2
-        stock: -1
     - shop_type: 2
       group_rate: 30
       rewardStocks:
       - id: 16
-        reward:
-          res_type: 2
-          res_id: 51
-          money_type: 1
-          money_value: 750
         rate: 3
         stock: -1
-      - id: 17
-        reward:
-          res_type: 2
+        resources:
+        - res_type: 2
           res_id: 51
+          res_number: 5
+        reward:
           money_type: 1
-          money_value: 150
+          money_value: 750
+      - id: 17
         rate: 3
         stock: 5
-      - id: 18
+        resources:
+        - res_type: 2
+          res_id: 51
+          res_number: 1
         reward:
-          res_type: 2
+          money_type: 1
+          money_value: 150
+      - id: 18
+        rate: 2
+        stock: 5
+        resources:
+        - res_type: 2
           res_id: 30
+          res_number: 5
+        reward:
           money_type: 1
           money_value: 200
+      - id: 19
         rate: 2
         stock: 5
-      - id: 19
-        reward:
-          res_type: 2
+        resources:
+        - res_type: 2
           res_id: 31
+          res_number: 1
+        reward:
           money_type: 1
           money_value: 500
-        rate: 2
-        stock: 5
     - shop_type: 3
       group_rate: 20
       rewardStocks:
       - id: 20
-        reward:
-          res_type: 2
-          res_id: 51
-          money_type: 1
-          money_value: 600
         rate: 3
         stock: -1
-      - id: 21
-        reward:
-          res_type: 2
+        resources:
+        - res_type: 2
           res_id: 51
+          res_number: 5
+        reward:
           money_type: 1
-          money_value: 100
+          money_value: 600
+      - id: 21
         rate: 3
         stock: 5
+        resources:
+        - res_type: 2
+          res_id: 51
+          res_number: 1
+        reward:
+          money_type: 1
+          money_value: 100
       - id: 22
-        reward:
-          res_type: 2
+        rate: 2
+        stock: 5
+        resources:
+        - res_type: 2
           res_id: 60
-          money_type: 1
-          money_value: 400
-        rate: 2
-        stock: 5
-      - id: 23
+          res_number: 1
         reward:
-          res_type: 2
-          res_id: 31
           money_type: 1
           money_value: 400
+      - id: 23
         rate: 2
         stock: 5
+        resources:
+        - res_type: 2
+          res_id: 31
+          res_number: 1
+        reward:
+          money_type: 1
+          money_value: 400
     - shop_type: 4
       group_rate: 20
       rewardStocks:
       - id: 20
-        reward:
-          res_type: 2
-          res_id: 51
-          money_type: 1
-          money_value: 600
         rate: 3
         stock: -1
-      - id: 21
-        reward:
-          res_type: 2
+        resources:
+        - res_type: 2
           res_id: 51
+          res_number: 5
+        reward:
           money_type: 1
-          money_value: 100
+          money_value: 600
+      - id: 21
         rate: 3
         stock: 5
+        resources:
+        - res_type: 2
+          res_id: 51
+          res_number: 1
+        reward:
+          money_type: 1
+          money_value: 100
       - id: 22
-        reward:
-          res_type: 2
+        rate: 2
+        stock: 5
+        resources:
+        - res_type: 2
           res_id: 60
-          money_type: 1
-          money_value: 400
-        rate: 2
-        stock: 5
-      - id: 23
+          res_number: 1
         reward:
-          res_type: 2
-          res_id: 31
           money_type: 1
           money_value: 400
+      - id: 23
         rate: 2
         stock: 5
+        resources:
+        - res_type: 2
+          res_id: 31
+          res_number: 1
+        - res_type: 2
+          res_id: 31
+          res_number: 1
+        reward:
+          money_type: 1
+          money_value: 400

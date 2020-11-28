@@ -5,10 +5,15 @@ using UnityEngine;
 public class ShopGroupExample : ScriptableObject
 {
     [System.Serializable]
-    public class Reward
+    public class Resource
     {
         public int res_type;
         public int res_id;
+        public int res_number;
+    }
+    [System.Serializable]
+    public class Reward
+    {
         public int money_type;
         public int money_value;
     }
@@ -17,9 +22,10 @@ public class ShopGroupExample : ScriptableObject
     public class RewardStock
     {
         public int id;
-        public Reward reward;
         public int rate;
         public int stock;
+        public Resource[] resources;
+        public Reward reward;
     }
 
     [System.Serializable]
