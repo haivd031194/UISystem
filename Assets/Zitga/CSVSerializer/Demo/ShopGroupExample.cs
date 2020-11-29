@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using Zitga.CSVSerializer.Dictionary;
 
 public class ShopGroupExample : ScriptableObject
 {
@@ -46,6 +49,11 @@ public class ShopGroupExample : ScriptableObject
     }
 
     public ShopGroup[] shopGroups;
+    
+    [Serializable]
+    public class ShopGroupDictionary : SerializableDictionary<int, ShopGroup> { }
+
+    public ShopGroupDictionary shopDict;
 }
 
 #if UNITY_EDITOR
@@ -68,6 +76,11 @@ public class GroupPostprocessor : AssetPostprocessor
                 
                 gm.shopGroups = CSVSerializer.Deserialize<ShopGroupExample.ShopGroup>(data.text);
 
+                foreach (var shopGroup in gm.shopGroups)
+                {
+                    gm.shopDict.Add(shopGroup.group_id, shopGroup);
+                }
+                
                 EditorUtility.SetDirty(gm);
                 AssetDatabase.SaveAssets();
 #if DEBUG_LOG || UNITY_EDITOR

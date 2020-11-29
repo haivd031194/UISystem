@@ -1,44 +1,32 @@
 using System.Collections.Generic;
- 
 using UnityEngine;
+
+namespace Zitga.CSVSerializer.Dictionary
+{
+    public abstract class SerializableDictionary<K, V> : Dictionary<K, V>, ISerializationCallbackReceiver {
+        [SerializeField]
+        private List<K> keys = new List<K>();
+        [SerializeField]
+        private List<V> values = new List<V>();
  
-public abstract class SerializableDictionary<K, V> : ISerializationCallbackReceiver {
-    [SerializeField]
-    private K[] keys;
-    [SerializeField]
-    private V[] values;
- 
-    public Dictionary<K, V> dictionary;
- 
-    public static T New<T>() where T : SerializableDictionary<K, V>, new() {
-        var result = new T {dictionary = new Dictionary<K, V>()};
-        return result;
-    }
- 
-    public void OnAfterDeserialize() {
-        var c = keys.Length;
-        dictionary = new Dictionary<K, V>(c);
-        for (int i = 0; i < c; i++) {
-            dictionary[keys[i]] = values[i];
-        }
-        keys = null;
-        values = null;
-    }
- 
-    public void OnBeforeSerialize() {
-        var c = dictionary.Count;
-        keys = new K[c];
-        values = new V[c];
-        int i = 0;
-        Dictionary<K, V>.Enumerator e;
-        using (e = dictionary.GetEnumerator())
+        void ISerializationCallbackReceiver.OnAfterDeserialize()
         {
-            while (e.MoveNext())
+            this.Clear();
+            for (int i = 0; i < this.keys.Count && i < this.values.Count; i++)
             {
-                var kvp = e.Current;
-                keys[i] = kvp.Key;
-                values[i] = kvp.Value;
-                i++;
+                this[this.keys[i]] = this.values[i];
+            }
+        }
+
+        void ISerializationCallbackReceiver.OnBeforeSerialize()
+        {
+            this.keys.Clear();
+            this.values.Clear();
+
+            foreach (var item in this)
+            {
+                this.keys.Add(item.Key);
+                this.values.Add(item.Value);
             }
         }
     }

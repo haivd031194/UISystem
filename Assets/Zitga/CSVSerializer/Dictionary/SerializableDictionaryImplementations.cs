@@ -1,7 +1,8 @@
 using System;
  
 using UnityEngine;
- 
+using Zitga.CSVSerializer.Dictionary;
+
 // ---------------
 //  String => Int
 // ---------------

@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
+using Zitga.CSVSerializer.Dictionary;
 
 public class RankingData : ScriptableObject
 {
@@ -11,7 +14,8 @@ public class RankingData : ScriptableObject
         fi,
         be
     }
-    [System.Serializable]
+    
+    [Serializable]
     public class Item
     {
         public int ranking;
@@ -20,10 +24,12 @@ public class RankingData : ScriptableObject
         public int score;
         public int podium;
 
-        public Sprite icon;
         public Country country;
         public string[] win;
     }
+    
+    [Serializable]
+    public class ItemDictionary : SerializableDictionary<int, Item> { }
 
-    public Item[] m_Items;
+    public ItemDictionary itemDict;
 }

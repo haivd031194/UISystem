@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -33,7 +34,7 @@ public class CSVImportExamplePostprocessor : AssetPostprocessor
                 CSVImportExample gm = AssetDatabase.LoadAssetAtPath<CSVImportExample>(assetfile);
                 if (gm == null)
                 {
-                    gm = new CSVImportExample();
+                    gm = ScriptableObject.CreateInstance<CSVImportExample>();
                     AssetDatabase.CreateAsset(gm, assetfile);
                 }
 
@@ -52,12 +53,17 @@ public class CSVImportExamplePostprocessor : AssetPostprocessor
                 RankingData gm = AssetDatabase.LoadAssetAtPath<RankingData>(assetfile);
                 if (gm == null)
                 {
-                    gm = new RankingData();
+                    gm = ScriptableObject.CreateInstance<RankingData>();
                     AssetDatabase.CreateAsset(gm, assetfile);
                 }
 
-                gm.m_Items = CSVSerializer.Deserialize<RankingData.Item>(data.text);
+                var items = CSVSerializer.Deserialize<RankingData.Item>(data.text);
 
+                foreach (var item in items)
+                {
+                    gm.itemDict.Add(item.ranking, item);
+                }
+                
                 EditorUtility.SetDirty(gm);
                 AssetDatabase.SaveAssets();
 #if DEBUG_LOG || UNITY_EDITOR
@@ -71,7 +77,7 @@ public class CSVImportExamplePostprocessor : AssetPostprocessor
                 LanguageStringData gm = AssetDatabase.LoadAssetAtPath<LanguageStringData>(assetfile);
                 if (gm == null)
                 {
-                    gm = new LanguageStringData();
+                    gm = ScriptableObject.CreateInstance<LanguageStringData>();
                     AssetDatabase.CreateAsset(gm, assetfile);
                 }
 
@@ -90,7 +96,7 @@ public class CSVImportExamplePostprocessor : AssetPostprocessor
                 ConstData gm = AssetDatabase.LoadAssetAtPath<ConstData>(assetfile);
                 if (gm == null)
                 {
-                    gm = new ConstData();
+                    gm = ScriptableObject.CreateInstance<ConstData>();
                     AssetDatabase.CreateAsset(gm, assetfile);
                 }
 
