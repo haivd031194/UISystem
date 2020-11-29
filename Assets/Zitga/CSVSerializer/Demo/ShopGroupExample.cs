@@ -40,7 +40,7 @@ public class ShopGroupExample : ScriptableObject
     public class ShopGroup
     {
         public int group_id;
-        public int stage_min;
+        public int[] stage_min;
         public int stage_max;
         public Shop[] shops;
     }

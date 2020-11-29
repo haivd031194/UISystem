@@ -83,7 +83,7 @@ namespace Loxodon.Framework.Editors
 
 			foreach (var file in allFiles)
 			{
-				var content = CSVSerializer.ParseCSV(file.text, '~');
+				var content = CSVSerializer.ParseCsv(file.text, '~');
 				if (content.Count == 0)
 				{
 					Debug.LogErrorFormat("Content is nil: {0}", file.name);

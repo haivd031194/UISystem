@@ -53,7 +53,7 @@ public class CSVImportExampleFromWeb : Editor
 
     static void ImportRankingData(string text, string assetfile)
     {
-        List<string[]> rows = CSVSerializer.ParseCSV(text);
+        List<string[]> rows = CSVSerializer.ParseCsv(text);
         if (rows != null)
         {
             RankingData gm = AssetDatabase.LoadAssetAtPath<RankingData>(assetfile);

@@ -16,7 +16,7 @@ public class CSVSerializer
 {
     static public T[] Deserialize<T>(string text)
     {
-        return (T[]) CreateArray(typeof(T), ParseCSV(text));
+        return (T[]) CreateArray(typeof(T), ParseCsv(text));
     }
 
     static public T[] Deserialize<T>(List<string[]> rows)
@@ -26,7 +26,7 @@ public class CSVSerializer
 
     static public T DeserializeIdValue<T>(string text, int id_col = 0, int value_col = 1)
     {
-        return (T) CreateIdValue(typeof(T), ParseCSV(text), id_col, value_col);
+        return (T) CreateIdValue(typeof(T), ParseCsv(text), id_col, value_col);
     }
 
     static public T DeserializeIdValue<T>(List<string[]> rows, int id_col = 0, int value_col = 1)
@@ -82,25 +82,29 @@ public class CSVSerializer
         var cols = rows[index];
         foreach (FieldInfo tmp in fieldInfo)
         {
-            if (table.ContainsKey(tmp.Name))
+            bool isArray = tmp.FieldType.IsArray;
+            bool isPrimitive = IsPrimitive(tmp);
+            if (isArray)
             {
-                int idx = table[tmp.Name];
-                if (idx < cols.Length)
-                    SetValue(v, tmp, cols[idx]);
-            }
-            else
-            {
-                bool isArray = tmp.FieldType.IsArray;
-                if (isArray)
+                if (isPrimitive)
+                {
+                    if (table.ContainsKey(tmp.Name))
+                    {
+                        
+                    }
+                    else
+                    {
+                        throw new Exception("Key is not exist: " + tmp.Name);
+                    }
+                }
+                else
                 {
                     if (tmp.FieldType.FullName == null)
                     {
-                        return null;
+                        throw new Exception("Full name is nil");
                     }
 
-                    var typeName = tmp.FieldType.FullName.Substring(0, tmp.FieldType.FullName.Length - 2);
-
-                    Type elementType = GetType(typeName);
+                    var elementType = GetElementTypeFromFieldInfo(tmp);
 
                     var objectIndex = GetObjectIndex(elementType, table);
 
@@ -114,6 +118,22 @@ public class CSVSerializer
                         arrayValue.SetValue(value, i);
                     }
                     tmp.SetValue(v, arrayValue);
+                }
+            }
+            else
+            {
+                if (isPrimitive)
+                {
+                    if (table.ContainsKey(tmp.Name))
+                    {
+                        int idx = table[tmp.Name];
+                        if (idx < cols.Length)
+                            SetValue(v, tmp, cols[idx]);
+                    }
+                    else
+                    {
+                        throw new Exception("Key is not exist: " + tmp.Name);
+                    }
                 }
                 else
                 {
@@ -133,49 +153,49 @@ public class CSVSerializer
         return v;
     }
 
-    static void SetValue(object v, FieldInfo fieldinfo, string value)
+    static void SetValue(object v, FieldInfo fieldInfo, string value)
     {
-        if (value == null || value == "")
+        if (string.IsNullOrEmpty(value))
             return;
 
-        if (fieldinfo.FieldType.IsArray)
+        if (fieldInfo.FieldType.IsArray)
         {
-            Type elementType = fieldinfo.FieldType.GetElementType();
+            Type elementType = fieldInfo.FieldType.GetElementType();
             string[] elem = value.Split(',');
-            Array array_value = Array.CreateInstance(elementType, elem.Length);
+            Array arrayValue = Array.CreateInstance(elementType, elem.Length);
             for (int i = 0; i < elem.Length; i++)
             {
                 if (elementType == typeof(string))
-                    array_value.SetValue(elem[i], i);
+                    arrayValue.SetValue(elem[i], i);
                 else
-                    array_value.SetValue(Convert.ChangeType(elem[i], elementType), i);
+                    arrayValue.SetValue(Convert.ChangeType(elem[i], elementType), i);
             }
 
-            fieldinfo.SetValue(v, array_value);
+            fieldInfo.SetValue(v, arrayValue);
         }
-        else if (fieldinfo.FieldType.IsEnum)
-            fieldinfo.SetValue(v, Enum.Parse(fieldinfo.FieldType, value.ToString()));
+        else if (fieldInfo.FieldType.IsEnum)
+            fieldInfo.SetValue(v, Enum.Parse(fieldInfo.FieldType, value));
         else if (value.IndexOf('.') != -1 &&
-                 (fieldinfo.FieldType == typeof(Int32) || fieldinfo.FieldType == typeof(Int64) ||
-                  fieldinfo.FieldType == typeof(Int16)))
+                 (fieldInfo.FieldType == typeof(Int32) || fieldInfo.FieldType == typeof(Int64) ||
+                  fieldInfo.FieldType == typeof(Int16)))
         {
             float f = (float) Convert.ChangeType(value, typeof(float));
-            fieldinfo.SetValue(v, Convert.ChangeType(f, fieldinfo.FieldType));
+            fieldInfo.SetValue(v, Convert.ChangeType(f, fieldInfo.FieldType));
         }
 #if UNITY_EDITOR
-        else if (fieldinfo.FieldType == typeof(UnityEngine.Sprite))
+        else if (fieldInfo.FieldType == typeof(Sprite))
         {
-            Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(value.ToString());
-            fieldinfo.SetValue(v, sprite);
+            Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(value);
+            fieldInfo.SetValue(v, sprite);
         }
 #endif
-        else if (fieldinfo.FieldType == typeof(string))
-            fieldinfo.SetValue(v, value);
+        else if (fieldInfo.FieldType == typeof(string))
+            fieldInfo.SetValue(v, value);
         else
-            fieldinfo.SetValue(v, Convert.ChangeType(value, fieldinfo.FieldType));
+            fieldInfo.SetValue(v, Convert.ChangeType(value, fieldInfo.FieldType));
     }
 
-    static object CreateIdValue(Type type, List<string[]> rows, int id_col = 0, int val_col = 1)
+    static object CreateIdValue(Type type, List<string[]> rows, int idCol = 0, int valCol = 1)
     {
         object v = Activator.CreateInstance(type);
 
@@ -183,18 +203,18 @@ public class CSVSerializer
 
         for (int i = 1; i < rows.Count; i++)
         {
-            if (rows[i][id_col].Length > 0)
-                table.Add(rows[i][id_col].TrimEnd(' '), i);
+            if (rows[i][idCol].Length > 0)
+                table.Add(rows[i][idCol].TrimEnd(' '), i);
         }
 
-        FieldInfo[] fieldinfo = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-        foreach (FieldInfo tmp in fieldinfo)
+        FieldInfo[] fieldInfo = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+        foreach (FieldInfo tmp in fieldInfo)
         {
             if (table.ContainsKey(tmp.Name))
             {
                 int idx = table[tmp.Name];
-                if (rows[idx].Length > val_col)
-                    SetValue(v, tmp, rows[idx][val_col]);
+                if (rows[idx].Length > valCol)
+                    SetValue(v, tmp, rows[idx][valCol]);
             }
             else
             {
@@ -205,7 +225,7 @@ public class CSVSerializer
         return v;
     }
 
-    static public List<string[]> ParseCSV(string text, char separator = ',')
+    static public List<string[]> ParseCsv(string text, char separator = ',')
     {
         List<string[]> lines = new List<string[]>();
         List<string> line = new List<string>();
@@ -382,6 +402,41 @@ public class CSVSerializer
     private static bool IsValidKeyFormat(string key)
     {
         return key.Equals(key.ToLower());
+    }
+
+    /// <summary>
+    /// Use to check variable and array variables is Primitive or not.
+    /// Can't use IsClass or IsPrimitive because Array is always a class.
+    /// Want to check the real type of element in array
+    /// </summary>
+    /// <param name="tmp"></param>
+    /// <returns></returns>
+    private static bool IsPrimitive(FieldInfo tmp)
+    {
+        if (tmp.FieldType.IsArray)
+        {
+            Type type = GetElementTypeFromFieldInfo(tmp);
+            return type.IsPrimitive;
+        }
+        else
+        {
+            return tmp.FieldType.IsPrimitive;
+        }
+    }
+
+    private static Type GetElementTypeFromFieldInfo(FieldInfo tmp)
+    {
+        string fullName = string.Empty;
+        if (tmp.FieldType.IsArray)
+        {
+            fullName = tmp.FieldType.FullName.Substring(0, tmp.FieldType.FullName.Length - 2);
+        }
+        else
+        {
+            fullName = tmp.FieldType.FullName;
+        }
+
+        return GetType(fullName);
     }
 
 #if UNITY_EDITOR
