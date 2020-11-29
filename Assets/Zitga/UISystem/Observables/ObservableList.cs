@@ -25,12 +25,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Threading;
-#if NETFX_CORE
-using System.Reflection;
-#endif
+using INotifyCollectionChanged = System.Collections.Specialized.INotifyCollectionChanged;
+using NotifyCollectionChangedAction = System.Collections.Specialized.NotifyCollectionChangedAction;
+using NotifyCollectionChangedEventArgs = System.Collections.Specialized.NotifyCollectionChangedEventArgs;
+using NotifyCollectionChangedEventHandler = System.Collections.Specialized.NotifyCollectionChangedEventHandler;
 
 namespace Loxodon.Framework.Observables
 {
