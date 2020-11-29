@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopGroupExample
   shopGroups:
   - group_id: 1
-    stage_min: 
+    stage_min: 010000000200000003000000
     stage_max: 99
     shops:
     - shop_type: 1
@@ -140,7 +140,7 @@ MonoBehaviour:
           money_type: 1
           money_value: 400
   - group_id: 2
-    stage_min: 
+    stage_min: 64000000
     stage_max: 600
     shops:
     - shop_type: 1

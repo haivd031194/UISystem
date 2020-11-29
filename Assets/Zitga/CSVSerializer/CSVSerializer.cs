@@ -84,26 +84,23 @@ public class CSVSerializer
         {
             bool isArray = tmp.FieldType.IsArray;
             bool isPrimitive = IsPrimitive(tmp);
-            if (isArray)
+            if (isPrimitive)
             {
-                if (isPrimitive)
+                if (table.ContainsKey(tmp.Name))
                 {
-                    if (table.ContainsKey(tmp.Name))
-                    {
-                        Debug.LogWarning("Primitive Method does not support now");
-                    }
-                    else
-                    {
-                        throw new Exception("Key is not exist: " + tmp.Name);
-                    }
+                    int idx = table[tmp.Name];
+                    if (idx < cols.Length)
+                        SetValue(v, tmp, cols[idx]);
                 }
                 else
                 {
-                    if (tmp.FieldType.FullName == null)
-                    {
-                        throw new Exception("Full name is nil");
-                    }
-
+                    throw new Exception("Key is not exist: " + tmp.Name);
+                }
+            }
+            else
+            {
+                if (isArray)
+                {
                     var elementType = GetElementTypeFromFieldInfo(tmp);
 
                     var objectIndex = GetObjectIndex(elementType, table);
@@ -117,34 +114,23 @@ public class CSVSerializer
                         var value = Create(startRows[i], objectIndex, rows, table, elementType);
                         arrayValue.SetValue(value, i);
                     }
+
                     tmp.SetValue(v, arrayValue);
-                }
-            }
-            else
-            {
-                if (isPrimitive)
-                {
-                    if (table.ContainsKey(tmp.Name))
-                    {
-                        int idx = table[tmp.Name];
-                        if (idx < cols.Length)
-                            SetValue(v, tmp, cols[idx]);
-                    }
-                    else
-                    {
-                        throw new Exception("Key is not exist: " + tmp.Name);
-                    }
                 }
                 else
                 {
                     var typeName = tmp.FieldType.FullName;
-
-                    Type elementType = GetType(typeName);
+                    if (typeName == null)
+                    {
+                        throw new Exception("Full name is nil");
+                    }
                     
+                    Type elementType = GetType(typeName);
+
                     var objectIndex = GetObjectIndex(elementType, table);
 
                     var value = Create(index, objectIndex, rows, table, elementType);
-                    
+
                     tmp.SetValue(v, value);
                 }
             }
