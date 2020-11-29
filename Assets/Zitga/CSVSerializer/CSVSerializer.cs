@@ -90,7 +90,7 @@ public class CSVSerializer
                 {
                     if (table.ContainsKey(tmp.Name))
                     {
-                        
+                        Debug.LogWarning("Primitive Method does not support now");
                     }
                     else
                     {

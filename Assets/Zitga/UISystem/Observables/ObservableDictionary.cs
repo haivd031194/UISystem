@@ -28,6 +28,10 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
+using INotifyCollectionChanged = System.Collections.Specialized.INotifyCollectionChanged;
+using NotifyCollectionChangedAction = System.Collections.Specialized.NotifyCollectionChangedAction;
+using NotifyCollectionChangedEventArgs = System.Collections.Specialized.NotifyCollectionChangedEventArgs;
+using NotifyCollectionChangedEventHandler = System.Collections.Specialized.NotifyCollectionChangedEventHandler;
 
 namespace Loxodon.Framework.Observables
 {
@@ -336,33 +340,28 @@ namespace Loxodon.Framework.Observables
 
         protected virtual void OnPropertyChanged(PropertyChangedEventArgs eventArgs)
         {
-            if (propertyChanged != null)
-                propertyChanged(this, eventArgs);
+            propertyChanged?.Invoke(this, eventArgs);
         }
 
         private void OnCollectionChanged()
         {
-            if (collectionChanged != null)
-                collectionChanged(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+            collectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
         }
 
         private void OnCollectionChanged(NotifyCollectionChangedAction action, KeyValuePair<TKey, TValue> changedItem)
         {
-            if (collectionChanged != null)
-                collectionChanged(this, new NotifyCollectionChangedEventArgs(action, changedItem));
+            collectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(action, changedItem));
         }
 
         private void OnCollectionChanged(NotifyCollectionChangedAction action, KeyValuePair<TKey, TValue> newItem,
             KeyValuePair<TKey, TValue> oldItem)
         {
-            if (collectionChanged != null)
-                collectionChanged(this, new NotifyCollectionChangedEventArgs(action, newItem, oldItem));
+            collectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(action, newItem, oldItem));
         }
 
         private void OnCollectionChanged(NotifyCollectionChangedAction action, IList newItems)
         {
-            if (collectionChanged != null)
-                collectionChanged(this, new NotifyCollectionChangedEventArgs(action, newItems));
+            collectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(action, newItems));
         }
     }
 }
