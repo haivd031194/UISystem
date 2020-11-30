@@ -147,7 +147,7 @@ public class CSVSerializer
         if (fieldInfo.FieldType.IsArray)
         {
             Type elementType = fieldInfo.FieldType.GetElementType();
-            string[] elem = value.Split(',');
+            string[] elem = value.Split(',', '~');
             Array arrayValue = Array.CreateInstance(elementType, elem.Length);
             for (int i = 0; i < elem.Length; i++)
             {
@@ -177,8 +177,14 @@ public class CSVSerializer
 #endif
         else if (fieldInfo.FieldType == typeof(string))
             fieldInfo.SetValue(v, value);
+        else if (value.Equals(string.Empty))
+        {
+            fieldInfo.SetValue(v, 0);  
+        }
         else
+        {
             fieldInfo.SetValue(v, Convert.ChangeType(value, fieldInfo.FieldType));
+        }
     }
 
     static object CreateIdValue(Type type, List<string[]> rows, int idCol = 0, int valCol = 1)
