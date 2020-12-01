@@ -58,7 +58,7 @@ namespace Loxodon.Framework.Examples
 
         protected override async UniTaskVoid OnLocalizeChanged()
         {
-            tipText.text = await R.common.accept;
+            tipText.text = await R.mail.email_sender_name;
 
             UpdateProcess().Forget();
         }
@@ -93,7 +93,7 @@ namespace Loxodon.Framework.Examples
 
         private async UniTaskVoid UpdateProcess()
         {
-            progressBarText.text = $"{await R.common.accept} {progress * 100}%";
+            progressBarText.text = $"{await R.mail.email_sender_name} {progress * 100}%";
         }
 
         private void OnOpenLoginWindow()

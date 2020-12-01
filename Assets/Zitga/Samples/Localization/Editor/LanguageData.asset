@@ -20,9 +20,6 @@ MonoBehaviour:
   - br
   - de
   itemList:
-  - sheetName: common
-    sheetId: 1468523545
-    download: 1
   - sheetName: mail
     sheetId: 511876470
     download: 1

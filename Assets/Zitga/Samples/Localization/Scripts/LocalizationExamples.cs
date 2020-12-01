@@ -60,7 +60,7 @@ namespace Loxodon.Framework.Tutorials
         
         private async UniTaskVoid UpdateText(object sender, EventArgs e)
         {
-            var value = await R.common.accept;
+            var value = await R.mail.event_arena_subject;
             score++;
             content.text = value + " " + score;
         }

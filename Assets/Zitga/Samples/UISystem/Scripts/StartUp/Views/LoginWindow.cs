@@ -32,7 +32,7 @@ public class LoginWindow : Window<LoginWindowProperties>
 
     protected override async UniTaskVoid OnLocalizeChanged()
     {
-        signIn.text = await R.common.achievement_tittle_group_1;
+        signIn.text = await R.mail.arena_season_ranking_reward_content;
         Debug.Log("Localize change: " + signIn.text);
     }
 

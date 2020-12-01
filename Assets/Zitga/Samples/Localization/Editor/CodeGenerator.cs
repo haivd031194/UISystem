@@ -145,14 +145,14 @@ namespace Loxodon.Framework.Editors
 #if UNITY_EDITOR
     public class CSVImportExamplePostprocessor : AssetPostprocessor
     {
-	    private static readonly CodeGenerator generator = new CodeGenerator();
+	    private static readonly CodeGenerator Generator = new CodeGenerator();
 	    static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
 	    {
 		    foreach (string str in importedAssets)
 		    {
 			    if (str.IndexOf(CodeGenerator.SEARCH_KEY, StringComparison.Ordinal) != -1)
 			    {
-					generator.GenFullProcess(str);
+					Generator.GenFullProcess(str);
 			    }
 		    }
 		    AssetDatabase.Refresh();

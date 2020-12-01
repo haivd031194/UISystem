@@ -39,7 +39,7 @@ namespace Loxodon.Framework.Editors
 			var selections = Selection.GetFiltered (typeof(TextAsset), SelectionMode.DeepAssets);
 			if (selections == null || selections.Length <= 0)
 				return;
-
+			
 			CodeGenerator generator = new CodeGenerator ();
 			foreach (var s in selections) {
 				try {
@@ -61,20 +61,20 @@ namespace Loxodon.Framework.Editors
 
 
 
-		// [MenuItem (MENU_NAME, true)]
-		// static bool IsValidated ()
-		// {
-		// 	var selections = Selection.GetFiltered (typeof(TextAsset), SelectionMode.DeepAssets);
-		// 	if (selections == null || selections.Length <= 0)
-		// 		return false;
-		// 	
-		// 	foreach (var s in selections) {
-		// 		string path = AssetDatabase.GetAssetPath (s);
-		// 		if (path.ToLower ().EndsWith (EXTENSION))
-		// 			return true;
-		// 	}
-		// 	return false;
-		// }
+		[MenuItem (MENU_NAME, true)]
+		static bool IsValidated ()
+		{
+			var selections = Selection.GetFiltered (typeof(TextAsset), SelectionMode.DeepAssets);
+			if (selections == null || selections.Length <= 0)
+				return false;
+			
+			foreach (var s in selections) {
+				string path = AssetDatabase.GetAssetPath (s);
+				if (path.ToLower ().EndsWith (EXTENSION))
+					return true;
+			}
+			return false;
+		}
 	}
 }
 
