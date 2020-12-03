@@ -1,3 +1,6 @@
-[submodule "CsvSerialize"]
-	path = CsvSerialize
-	url = ../CsvSerialize.git
+[submodule "Localization"]
+	path = Localization
+	url = ../Localization.git
+[submodule "CsvReader"]
+	path = CsvReader
+	url = ../CsvReader.git
