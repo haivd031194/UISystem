@@ -22,12 +22,10 @@
  * SOFTWARE.
  */
 
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Loxodon.Framework.Contexts;
-using Loxodon.Framework.Examples;
 using Loxodon.Log;
 using UnityEngine;
 
@@ -255,14 +253,14 @@ namespace Loxodon.Framework.Views
             }
             else
             {
-                if (Current as LaunchWindow)
-                {
-                    log.Warn("Do something! Can't close this popup");
-                }
-                else
-                {
-                    StartCoroutine(HideWindow(Current));
-                }
+                // if (Current as LaunchWindow)
+                // {
+                //     log.Warn("Do something! Can't close this popup");
+                // }
+                // else
+                // {
+                //     StartCoroutine(HideWindow(Current));
+                // }
             }
         }
 
